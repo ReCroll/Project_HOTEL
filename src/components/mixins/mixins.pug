@@ -26,6 +26,21 @@ mixin socialList()
 		a.social__link-text(href=socialLink[number])
 			p=socialName[number]
 //- ============================================================
+//- ========================== BUTTONS DECOR ====================
+mixin buttonSmall()
+	span.line__button.line-1 
+	span.line__button.line-2
+	span.line__button.line-3
+	span.line__button.line-4
+
+mixin buttonBig()
+	span.line__button.line-1 
+	span.line__button.line-2
+	span.line__button.line-3
+	span.line__button.line-4
+	span.line__button.line-5
+
+//- ============================================================
 //- ========================== BANNER PRICE ====================
 mixin bannerPrice(number)
 	.swiper-slide 

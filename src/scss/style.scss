@@ -1,83 +1,41 @@
 // @import "swiper10_swiper-bundle.min.css";
-@import 'swiper10';
-@import "fonts";
-@import "functions";
-
-@function prc($pxOne, $pxTwo) {
-  $result: calc($pxOne / $pxTwo) * 100%;
-  @return $result;
-}
-
-@function rem($px) {
-  $result: calc($px / 16) + rem;
-  @return $result;
-}
-
-@function em($px) {
-  $result: calc($px / 16) + em;
-  @return $result;
-}
-
+@import 'fonts';
+@import 'functions';
 @import 'mixins';
+@import 'swiper10';
 
-@font-face {
-  font-family: 'Mak';
-  src: url('../fonts/Mak-SemiBoldHigh.eot');
-  src: local('0'), url('../fonts/Mak-SemiBoldHigh.woff') format('woff'),
-    url('../fonts/Mak-SemiBoldHigh.ttf') format('truetype'), url('../fonts/Mak-SemiBoldHigh.svg') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
+// @function prc($pxOne, $pxTwo) {
+//     $result: calc($pxOne / $pxTwo) * 100%;
+//     @return $result;
+//   }
 
-// @font-face {
-//     font-family: 'HelveticaItalic';
-//     src: url('../fonts/HelveticaNeueCyr-Italic.eot');
-//     src: local('0'), url('../fonts/HelveticaNeueCyr-Italic.woff') format('woff'),
-//         url('../fonts/HelveticaNeueCyr-Italic.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Italic.svg') format('svg');
-//     font-weight: 400;
-//     font-style: normal;
+//   @function rem($px) {
+//     $result: calc($px / 16) + rem;
+//     @return $result;
+//   }
+
+//   @function em($px) {
+//     $result: calc($px / 16) + em;
+//     @return $result;
+//   }
+
+
+
+
+// @function prc($pxOne, $pxTwo) {
+//   $result: calc($pxOne / $pxTwo) * 100%;
+//   @return $result;
 // }
-@font-face {
-  font-family: 'Helvetica';
-  src: url('../fonts/HelveticaNeueCyr-Medium.eot');
-  src: local('0'), url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff'),
-    url('../fonts/HelveticaNeueCyr-Medium.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Medium.svg') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Helvetica';
-  src: url('../fonts/HelveticaNeueCyr-Roman.eot');
-  src: local('0'), url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff'),
-    url('../fonts/HelveticaNeueCyr-Roman.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Roman.svg') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
+// @function rem($px) {
+//   $result: calc($px / 16) + rem;
+//   @return $result;
+// }
 
-@font-face {
-  font-family: 'Miracle';
-  src: url('../fonts/Miracle_Personal_use.eot');
-  src: local('0'), url('../fonts/Miracle_Personal_use.woff') format('woff'),
-    url('../fonts/Miracle_Personal_use.ttf') format('truetype'), url('../fonts/Miracle_Personal_use.svg') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@function prc($pxOne, $pxTwo) {
-  $result: calc($pxOne / $pxTwo) * 100%;
-  @return $result;
-}
-
-@function rem($px) {
-  $result: calc($px / 16) + rem;
-  @return $result;
-}
-
-@function em($px) {
-  $result: calc($px / 16) + em;
-  @return $result;
-}
+// @function em($px) {
+//   $result: calc($px / 16) + em;
+//   @return $result;
+// }
 
 // $header__height
 $header__height: rem(100);
@@ -876,7 +834,7 @@ input {
   transform: translate(-50%, -50%);
   width: rem(24);
   height: rem(12);
-  background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+  background: url(@img/icons/arow_ellow.svg) no-repeat center/contain;
 
 }
 

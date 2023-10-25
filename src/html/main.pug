@@ -1,5 +1,6 @@
 include ../components/mixins/mixins.pug
 
+
 //- ========================== BANNER PRICE ====================
 - 
 	let bannerPriceTitle = [
@@ -242,6 +243,32 @@ include ../components/mixins/mixins.pug
 - 
 	var altGalleryImgArray = ['gallery1', 'gallery2', 'gallery3', 'gallery4', 'gallery5', 'gallery6', 'gallery7', 'gallery8', 'gallery9'];
 
+
+//- ========================== CALENDAR ====================
+- 
+	let calendarHours = [
+		'8:00',
+		'9:00',
+		'10:00',
+		'11:00',
+		'12:00',
+		'13:00',
+		'14:00',
+		'15:00',
+		'16:00',
+		'17:00',
+		'18:00',
+		'19:00',
+		'20:00',
+		'21:00',
+		'22:00'
+	]
+//- ============================================================
+- headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
+- socialName = ["Facebook", "Instagram", "Twitter"]
+- socialLink = ["#", "#", "#"]
+- socialClass = ["_fb", "_in", "_tw"]
+
 //- ===========================================================================
 
 main.page
@@ -263,6 +290,115 @@ main.page
 					.main__info-date 
 						span.date__hotel 
 							img(src="@img/icons/Star_ellow.svg", alt="star")
+							p з 2023 року
+						.main__info-button.button._small
+							+buttonSmall()
+					p.text__hotel.text. 
+						Розкішний готель у незламному Українському місті з
+						ексклюзивним рестораном, конференц-залом та арт-баром.
+			.main__img-wrapper 
+				.main__images 
+					img.main__img-room._img(src="@img/banner/01.jpg", alt="room")
+					img.main__img-room._img._hide(src="@img/banner/01_1.jpg", alt="room")
+					ul.check__list.banner 
+						li.check-link.check-in 
+							p дата поселення
+							img(src="@img/icons/arow_ellow.svg", alt="arow")
+						li.check-link.check-out 
+							p дата виїзду
+							img(src="@img/icons/arow_ellow.svg", alt="arow")
+						li.check-link.check-rooms 
+							p обрати номер
+					.container 
+						.calendar 
+							.calendar-body 
+								.calendar-body-wrapper 
+									.calendar-week-title.calendar-title
+										h3 обрати дату
+									.calendar-header 
+										span.month-picker#month-picker Березень
+										.year-picker#year-picker 
+											span.year-change#pre-year 
+												pre <
+											span#year 2023
+											span.year-change#next-year 
+												pre > 
+									.calendar-week-days
+										div пон
+										div вів
+										div сер
+										div чет
+										div птн
+										div пнх
+										div нед
+									.calendar-days
+								.calendar-hours-wrapper.show
+									.calendar-hours-title.calendar-title
+										h3 обрати годину
+									.days-hours 
+										div=calendarHours[0]
+										div=calendarHours[1]
+										div=calendarHours[2]
+										div=calendarHours[3]
+										div=calendarHours[4]
+										div=calendarHours[5]
+										div=calendarHours[6]
+										div=calendarHours[7]
+										div=calendarHours[8]
+										div=calendarHours[9]
+										div=calendarHours[10]
+										div=calendarHours[11]
+										div=calendarHours[12]
+										div=calendarHours[13]
+										div=calendarHours[14]
+							.calendar-footer 
+							.date-time-formate 
+								.day-text-formate СЬОГОДНІ
+								.date-time-value 
+									.time-formate 15:50:20
+									.date-formate 24 - 03 - 2023
+								.show_checked-date
+							.month-list
+				.main__info-button.button._big
+					p.yellow__button обрати номер
+					+buttonBig()
+			.main__actions 
+				span.actions__column-first
+					p.main__actions-telephone.info__telephone=headerInfo[0]
+					p.main__actions-street=headerInfo[1]
+				span.actions__column-second
+					p.actions__art Art & Congress
+					p.action__art hall
+	section.page__about.about
+		.about__contain-padding.about__container
+			.about__column-1
+				.about__images._big._pc
+					img.about__img._pc(src="@img/reception/1 (2).jpg", alt="reception")
+				.about__content._pc
+					.content__title-wrapper(data-da=".about__column-1, 767, 0")
+						h1.about__content-title.main__titles._about про
+						h1.about__content-title.main__titles._us нас
+					h3.about__content-sub-title.main__sub-titles висока якість
+					.about__text-wrapper
+						p.about__content-text.text._stamp-place. 
+							У 2023 році готель Reikartz нарешті
+							відкрився для відвідувачів. Будівля була відремонтована та модернізована, щоб
+							задовольнити очікування найвибагливіших гостей. Ми пропонуємо розкішні номери,
+							численні зручності та винятковий сервіс.
+			.about__column-2
+				.about__images._small
+					.about__stamp.stamp.stamp-img(data-da="._stamp-place, 767, 1")
+						.circular premium rooms. Reikartz hotel
+						img.stamp__rotate(src="@img/icons/icon.svg", alt="icon_stamp")
+					img.about__img._small(src="@img/reception/2.jpg", alt="reception",)
+				.main__info-button.button._big
+					div 
+						h4 номери
+						p.transparent__button та
+						p.transparent__button апартаменти
+					+buttonBig()
+
+
 
 	//- section.page__banner.banner 
 		.banner__container 

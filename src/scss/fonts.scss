@@ -1,35 +1,39 @@
 @font-face {
-									font-family: Gilroy;
-									font-display: swap;
-									src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
-									font-weight: 700;
-									font-style: normal;
-							}
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Italic.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
-									font-family: Gilroy;
-									font-display: swap;
-									src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
-									font-weight: 500;
-									font-style: normal;
-							}
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 @font-face {
-									font-family: Gilroy;
-									font-display: swap;
-									src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
-									font-weight: 400;
-									font-style: normal;
-							}
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Roman.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
-									font-family: HelveticaNeueCyr;
-									font-display: swap;
-									src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
-									font-weight: 500;
-									font-style: normal;
-							}
+  font-family: Mak;
+  font-display: swap;
+  src: url("../fonts/Mak-SemiBoldHigh.woff2") format("woff2"), url("../fonts/Mak-SemiBoldHigh.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
-									font-family: Gilroy;
-									font-display: swap;
-									src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"), url("../fonts/Gilroy-SemiBold.woff") format("woff");
-									font-weight: 600;
-									font-style: normal;
-							}
+  font-family: Miracle;
+  font-display: swap;
+  src: url("../fonts/Miracle_Personal_use.woff2") format("woff2"), url("../fonts/Miracle_Personal_use.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}

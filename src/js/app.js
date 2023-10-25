@@ -2,6 +2,13 @@ import * as flsFunctions from "./modules/functions.js";
 import * as maskFunctions from "./modules/inputmask.js";
 
 flsFunctions.isWebp();
+import "./jquery.js";
+// import * as useDynamicAdapt from "./modules/dynamicAdapt.js";
+
+// useDynamicAdapt();
+import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
+
+useDynamicAdapt();
 // maskFunctions();
 
 // import "./swiper10_swiper-bundle.min.js";
@@ -17,10 +24,6 @@ flsFunctions.isWebp();
 // import "./swiper9.min.js";
 // import "../components/js/net_npm_swiper10_swiper-bundle.min.js";
 
-import "./jquery.js";
-import { useDynamicAdapt } from "../js/dynamicAdapt.js";
-
-useDynamicAdapt();
 // import "../components/js/menu.js";
 // import * as maskFunctions from "../js/modules/inputmask";
 // import "./modules/inputmask";
@@ -78,46 +81,75 @@ for (let index = 0; index < menuMobile.length; index++) {
 //============================== ПРОКРУТКА ДО БЛОКА ===============
 //========================== SCROLLING =======================
 
-const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
-// console.log(menuLinks);
-if (menuLinks.length > 0) {
-  menuLinks.forEach((menuLink) => {
-    menuLink.addEventListener("click", onMenuLinkClick);
-    menuLink.addEventListener("click", sortingProducts);
-  });
+// const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+// // console.log(menuLinks);
+// if (menuLinks.length > 0) {
+//   menuLinks.forEach((menuLink) => {
+//     menuLink.addEventListener("click", onMenuLinkClick);
+//     menuLink.addEventListener("click", sortingProducts);
+//   });
 
-  function onMenuLinkClick(e) {
-    // console.log(menuLinks);
+//   function onMenuLinkClick(e) {
+//     // console.log(menuLinks);
 
-    const menuLink = e.target;
-    if (
-      menuLink.dataset.goto &&
-      document.querySelector(menuLink.dataset.goto)
-    ) {
-      // console.log(menuLink.dataset.goto);
-      // console.log(document.querySelector(menuLink.dataset.goto));
-      const gotoBlock = document.querySelector(menuLink.dataset.goto);
-      const gotoBlockValue =
-        gotoBlock.getBoundingClientRect().top +
-        scrollY -
-        document.querySelector("header").offsetHeight;
+//     const menuLink = e.target;
+//     if (
+//       menuLink.dataset.goto &&
+//       document.querySelector(menuLink.dataset.goto)
+//     ) {
+//       // console.log(menuLink.dataset.goto);
+//       // console.log(document.querySelector(menuLink.dataset.goto));
+//       const gotoBlock = document.querySelector(menuLink.dataset.goto);
+//       const gotoBlockValue =
+//         gotoBlock.getBoundingClientRect().top +
+//         scrollY -
+//         document.querySelector("header").offsetHeight;
 
-      if (iconMenu.classList.contains("_active")) {
-        document.body.classList.remove("_lock");
-        iconMenu.classList.remove("_active");
-        menuBody.classList.remove("_active");
-      }
+//       if (iconMenu.classList.contains("_active")) {
+//         document.body.classList.remove("_lock");
+//         iconMenu.classList.remove("_active");
+//         menuBody.classList.remove("_active");
+//       }
 
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: "smooth",
-      });
-      e.preventDefault();
-    }
-  }
-}
+//       window.scrollTo({
+//         top: gotoBlockValue,
+//         behavior: "smooth",
+//       });
+//       e.preventDefault();
+//     }
+//   }
+// }
 
 //============================================================
+// ======================= ТЕКСТ ПО КОЛУ ======================
+function $$(selector, context) {
+  context = context || document;
+  var elements = context.querySelectorAll(selector);
+  return Array.prototype.slice.call(elements);
+}
+$$(".circular").forEach(function (el) {
+  var NS = "http://www.w3.org/2000/svg";
+  // var xlinkNS = "http://www.w3.org/1999/xlink";
+  var svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 100 100");
+  var circle = document.createElementNS(NS, "path");
+  circle.setAttribute("d", "M0,50 a50,50 0 1,1 0,1z");
+  circle.setAttribute("id", "circle");
+  var text = document.createElementNS(NS, "text");
+  var textPath = document.createElementNS(NS, "textPath");
+  textPath.textContent = el.textContent;
+  textPath.setAttributeNS(
+    "http://www.w3.org/1999/xlink",
+    "xlink:href",
+    "#circle"
+  );
+  text.appendChild(textPath);
+  svg.appendChild(circle);
+  svg.appendChild(text);
+  el.textContent = "";
+  el.appendChild(svg);
+});
+//===========================================================
 //=================================================================
 
 // //========================= OUR PRODUCT HIDDEN ========================
