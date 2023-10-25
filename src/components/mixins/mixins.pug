@@ -1,0 +1,137 @@
+//- ========================== HEADER ==========================
+
+mixin createLists(number, scrollClass)
+	if(menuList[number] && newPageLink[number])
+		li.header__menu-link
+			a(href=newPageLink[number])
+				p.menu__link(data-goto=scrollClass)= menuList[number]
+	else if(menuList[number] && newPageLink[number] === undefined)
+		li.header__menu-link
+			p.menu__link(data-goto=scrollClass)= menuList[number]
+			
+
+
+mixin menu()
+	nav.menu__body-wrapper 
+		ul.header__menu-list(class=attributes.class)
+			+createLists('0', '._home')
+			+createLists('1', '._about')
+			+createLists('2', '._rooms')
+			+createLists('3', '._restaurant')
+			+createLists('4', '._conference')
+			+createLists('5', '._contacts')
+
+mixin socialList()
+	li.social__link(class=socialClass[number])
+		a.social__link-text(href=socialLink[number])
+			p=socialName[number]
+//- ============================================================
+//- ========================== BANNER PRICE ====================
+mixin bannerPrice(number)
+	.swiper-slide 
+		.card__price-title 
+			h4= bannerPriceTitle[number]
+		.card__price-text 
+			p= bannerPriceText[number]
+		.card__price-number 
+			p= bannerPricePrice[number]
+			.card__price-arrow 
+				.arrow__wrapper 
+					.arrow__wrapper-arrow
+						span
+			//- img(src="@img/icons/Arrow.svg", alt="", srcset="")
+//- ===========================================================
+//- ========================== PRODUCTS CARD ===================
+
+mixin createCard(number, discount, category, subCategory)
+	.product__content-card.card(class=attributes.class, class=category, class =subCategory, get-attr = "_" + number)
+		.card__hover 
+			button.card__hover-button.button__more.popup-link(href = "#popup", get-attr = "_" + number) Add to cart 
+			.card__hover-links 
+				.share 
+					img(src="@img//icons/share.svg", alt="share")
+					p Share
+				.like(class = "like_card-" + number)
+					//- img(src="@img//icons/like.svg", alt="like")
+					.heart
+						span
+						img(src="@img//icons/like.svg", alt="like")
+					p Like
+		.card__img
+			.first__row
+				.images__wrapper 
+					.card__img-wrap.img__wrappers
+						img.first__child(src=imgArray[number][0], alt=altImgArray[number], class= "_" + number, srcset="")
+					.card__img-wrap.img__wrappers
+						img(src=imgArray[number][1], alt=altImgArray[number], class= "_" + number, srcset="")
+					//- .card__img-wrap
+					//- 	img(src= imgArray[number][2], alt=altImgArray[number], class= "_" + number)
+					if (typeof discount == 'number')
+						.sales__wrapper
+							p= '-' + discount + '%'
+					else if (typeof discount == 'string')
+						.news__wrapper 
+							p= discount
+			.second__row
+				.images__wrapper 
+					.card__img-wrap.img__wrappers
+						img(src=imgArray[number][2], alt=altImgArray[number], class= "_" + number, srcset="")
+			.third__row
+				p.third__row-text=popupCardText[number][0]
+				.third__row-composes
+					span= popupCardText[number][1]
+					p= popupCardText[number][2]
+				.third__row-article
+					span= popupCardText[number][3]
+					p= popupCardText[number][4]
+		.card__info-wrapper
+			.card__info-wrapper-price-phone 
+				.card__info.block__text 
+					h5.block__text-title(class= "_" + number)= titleArray[number]
+					p.block__text-text(class= "_" + number)= textArray[number]
+					.block__text-price-wrapper
+						if (typeof discount == 'number')
+							p.price(class= "_" + number)= priceArray[number] - (priceArray[number] * discount / 100) + ' грн.'
+							p.price.sale(class= "_" + number)= priceArray[number] + ' грн.'
+						else
+							p.price(class= "_" + number)= priceArray[number] + ' грн.'
+				
+			.close__btn.close-popup#close-popup
+
+
+//- ============================================================
+
+
+//- =========================== SWIPER TWO SLIDES VAR ==============
+
+mixin createSlideSwiperTwo(number)
+	.swiper-slide 
+		.swiper-slide-wrapper
+			img(src=swiperTwoImgArray[number], alt=altSwiperTwoImgArray[number], srcset="")
+		.info-block__text-block 
+			p.categories__name= swiperTwoCtgName[number]
+			h4.product__name= swiperTwoPrdName[number] 
+			.arrow__wrapper 
+				.arrow__wrapper-arrow
+					span  
+//- ===========================================================================
+
+//- =========================== SWIPER THREE SLIDES VAR ==============
+
+mixin createSlideSwiperThree(number)
+	.swiper-slide 
+		.swiper-slide-wrapper
+			img(src=swiperThreeImgArray[number], alt=altSwiperThreeImgArray[number], srcset="")
+		.info-block__text-block 
+			h5.categories__name= swiperThreeCtgName[number] 
+			p.posts__date= swiperThreeDate[number] 
+//- ===========================================================================
+
+//- =========================== GALLERY =======================================
+
+mixin createGalleryBlocks(number)
+	.furniture__img-wrapper-blocks(class=attributes.class)
+		.img__wrapper-popup 
+		img(src=galleryImgArray[number], alt=altGalleryImgArray[number], srcset="")
+
+//- ===========================================================================

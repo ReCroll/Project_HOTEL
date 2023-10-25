@@ -1,0 +1,50 @@
+// а тут includes
+
+
+$header__height: rem(100);
+$mobile-header: rem(60);
+// $header__height: 100px;
+// $mobile-header: 60px;
+
+
+// розмір шрифту за замовчуванням в макеті
+// $fontSize: rem(18); 
+
+// колір тексу з макету
+$mainColor: rgba(255, 252, 246, 0.8);
+
+// колір тексу з макету (темний)
+$mainDarkColor: rgba(27, 59, 54, 0.8);
+
+// мінімальна ширина сторінки
+$minWidth: 320;
+
+// максимальна ширина сторінки
+$maxWidth: 1920;
+
+// максимальна ширина контейнера (0 = немає обмежень)
+$maxWidthContainer: 1860;
+
+//загальний відступ у контейнера
+$containerPadding: 60;
+
+//ширина спрацювання першого брейкпоінту
+$containerWidth: $maxWidthContainer+$containerPadding;
+
+$pc: em($containerWidth);
+$_1920: 1919.98;
+$_1440: 1439.98;
+$_1024: 1023.98;
+$_768: 767.98;
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+$_375: 374.98;
+$_320: 319.98;
+
+
+
+
+// @mixin includes {
+
+// }

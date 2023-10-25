@@ -1,0 +1,39 @@
+include ../components/mixins/mixins.pug
+block headerVars
+
+
+- var menuList = ['головна', 'про нас', 'кімнати', 'ресторан', 'конференс зал', 'контакти'];
+
+-	
+	let newPageLink = [
+		["index.html"],
+		undefined,
+		["twinroom.html"],
+		["restaurant.html"],
+		undefined,
+		undefined
+	];
+
+- headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
+- socialName = ["Facebook", "Instagram", "Twitter"]
+- socialLink = ["#", "#", "#"]
+- socialClass = ["_fb", "_in", "_tw"]
+
+header.header
+	.header__container
+		.header__logo.header__page 
+			h1 Reikartz 
+		.header__menu 
+			.menu__body
+				+menu()(class='menu__list')
+				.header__info 
+					p.header__info-telephone.info__telephone=headerInfo[0]
+					p.header__info-street.info__street=headerInfo[1]
+					ul.header__info-social.social__list 
+						+socialList(0)
+						+socialList(1)
+						+socialList(2)
+		.header__menu-telephone 
+			p=headerInfo[0]
+		.menu__icon 
+			span 
