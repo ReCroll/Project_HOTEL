@@ -3,6 +3,7 @@ import * as maskFunctions from "./modules/inputmask.js";
 
 flsFunctions.isWebp();
 import "./jquery.js";
+import "./modules/swiper.js";
 // import * as useDynamicAdapt from "./modules/dynamicAdapt.js";
 
 // useDynamicAdapt();
@@ -11,7 +12,7 @@ import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
 useDynamicAdapt();
 // maskFunctions();
 
-// import "./swiper10_swiper-bundle.min.js";
+// import "./swiper10_swiper-bundle.js";
 // import Swiper from "swiper";
 // import "./swiper10_swiper-bundle.min.js";
 // import "./swiper10_swiper-bundle.min.js";
@@ -630,9 +631,9 @@ $$(".circular").forEach(function (el) {
 //   Zoom,
 // } from "swiper";
 // // // import styles bundle
-// // import "swiper/swiper-element-bundle.js";
+// // // import "swiper/swiper-element-bundle.js";
 
-// // init Swiper:
+// // // init Swiper:
 // const swiperPrice = new Swiper(".swiper__price", {
 //   modules: [
 //     A11y,

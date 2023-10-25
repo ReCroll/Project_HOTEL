@@ -3069,7 +3069,7 @@ input {
   max-height: 2rem;
   min-width: 1.5rem;
   min-height: 1.25rem;
-  background: url(../images/icons/arrow.svg) no-repeat center/contain;
+  background: url(../img/icons/arrow.svg) no-repeat center/contain;
 }
 
 .button._transparent::before {
@@ -3396,7 +3396,7 @@ input {
   left: 63%;
   width: 3.125rem;
   height: 3.125rem;
-  background: url(../images/icons/Star_7.png) no-repeat center/cover;
+  background: url(../img/icons/Star_7.png) no-repeat center/cover;
 }
 
 .title__icon::before {

@@ -270,6 +270,30 @@ include ../components/mixins/mixins.pug
 - socialClass = ["_fb", "_in", "_tw"]
 
 //- ===========================================================================
+//- ===========================================================================
+- 
+	let swiperRoomsTitle = [
+		"Покращений <br> двомісний номер",
+		"Покращений <br> одномісний номер",
+		"Якийсь <br> крутезний номер",
+		"Стандартний <br> двомісний номер",
+		"Стандартний <br> одномісний номер",
+		"Люкс <br> двомісний",
+		"Люкс <br> одномісний",
+		"Президентський <br> номер"
+	]
+- 
+	let swiperRoomsText = [
+		"Покращений двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Покращений крутезний номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Якийсь двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Стандартний двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Стандартний одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Люкс двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Люкс одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+		"Президентський номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним"
+	]
+//- ===========================================================================
 
 main.page
 	section.page__main.main 
@@ -397,6 +421,60 @@ main.page
 						p.transparent__button та
 						p.transparent__button апартаменти
 					+buttonBig()
+	section.page__rooms.rooms
+		.rooms__container
+			.rooms__page-content
+				.rooms__page-title-title
+					h1.rooms__content-title.main__titles._rooms кімнати & <br> апартаменти
+				.rooms__page-title-text
+					p.rooms__content-text.text.big-text. 
+						Всі оздоблення кімнат виконані екологічно сертифікованими та безпечними матеріалами.
+			.rooms__swiper
+				.rooms__slider.swiper-container
+					.swiper-wrapper
+						+createSlideSwiperRooms(0)
+						+createSlideSwiperRooms(1)
+						+createSlideSwiperRooms(2)
+						+createSlideSwiperRooms(3)
+						+createSlideSwiperRooms(4)
+						+createSlideSwiperRooms(5)
+						+createSlideSwiperRooms(6)
+						+createSlideSwiperRooms(7)
+					.swiper-button-prev
+					.swiper-button-next
+					.swiper-pagination
+	section.page__services.services
+		.services__container
+			.services__head-wrapper
+				.head__column-1
+					span.actions__column-second._services
+						p.actions__art._services Art & Congress 
+						p.actions__art._services hall
+					.services__head-images
+						img.services__img(src="@img/services/01_head.jpg", alt="services")
+						.services__stamp.stamp.stamp-content
+							.circular premium rooms. Reikartz hotel
+				.head__column-2 
+					h1.services__head-title.main__titles._services Our <br> faci <br>
+						.title__icon
+							h1.services__head-title.main__titles._services._hidden 
+								span fai 
+						span lities
+					.services__head-images
+						img.services__img(src="@img/services/01_head.jpg", alt="services")
+						.services__stamp.stamp.stamp-content
+							.circular premium rooms. Reikartz hotel 
+					.head__text-wrapper
+						p.services__head-text.text.text-dark. 
+							Bank Hotel offers you a wide range of
+							additional services and facilities. Visit our restaurant to try exclusive meals,
+							book a conference hall to organize a business meeting, or relax in the art-bar.
+				.head__column-3
+					.services__head-images
+						img.services__img(src="@img/services/02_head.jpg", alt="services")
+						.services__stamp.stamp
+							.circular premium rooms. Reikartz hotel
+
 
 
 
@@ -446,41 +524,6 @@ main.page
 					.swiper__button-wrapper
 						.swiper-button-prev.arrow-corner.button-p-m.position__button-prev
 						.swiper-button-next.arrow-corner.button-p-m.position__button-next
-	section.page__feautures.features
-		.feautures__container 
-			.features__wrapper
-				.features__blocks 
-					.features__block-icon 
-						img(src="@img/icons/trophy1.svg", alt="")
-					.features__block-text.block__text
-						p.title. 
-							High Quality
-						p.text. 
-							crafted from top materials
-				.features__blocks 
-					.features__block-icon 
-						img(src="@img/icons/shipping.svg", alt="")
-					.features__block-text.block__text
-						p.title. 
-							Warrany Protection
-						p.text. 
-							crafted from top materials
-				.features__blocks 
-					.features__block-icon 
-						img(src="@img/icons/guarantee.svg", alt="")
-					.features__block-text.block__text 
-						p.title. 
-							Free Shipping
-						p.text. 
-							crafted from top materials
-				.features__blocks 
-					.features__block-icon 
-						img(src="@img/icons/customer-support.svg", alt="")
-					.features__block-text.block__text 
-						p.title. 
-							24 / 7 Support
-						p.text. 
-							crafted from top materials
 	section.page__products.products 
 		.products__container 
 			.products__wrapper 
