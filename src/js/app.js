@@ -143,6 +143,11 @@ function createCalendar() {
     return isLeapYear(year) ? 29 : 28;
   };
   let calendar = document.querySelector(".calendar");
+  console.log(calendar);
+  let calendarContainer = calendar.closest(".container");
+  if (calendarContainer.classList.contains("_hide")) {
+    calendarContainer.classList.remove("_hide");
+  }
   const month_names = [
     "Січень",
     "Лютий",

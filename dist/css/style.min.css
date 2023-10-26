@@ -1658,6 +1658,10 @@ input {
   color: #1B3B36;
 }
 
+.container._hide {
+  display: none;
+}
+
 .calendar {
   width: max-content;
   padding: 1.875rem 3.125rem 0 3.125rem;

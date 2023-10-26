@@ -1154,6 +1154,10 @@ input {
   color: #1B3B36;
 }
 
+.container._hide {
+  display: none;
+}
+
 .calendar {
   // height: rem(610);
   width: max-content;
