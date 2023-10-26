@@ -240,12 +240,12 @@ include ../components/mixins/mixins.pug
 		"@img//gallery/9.png",
 	];
 
-- 
+-
 	var altGalleryImgArray = ['gallery1', 'gallery2', 'gallery3', 'gallery4', 'gallery5', 'gallery6', 'gallery7', 'gallery8', 'gallery9'];
 
 
 //- ========================== CALENDAR ====================
-- 
+-
 	let calendarHours = [
 		'8:00',
 		'9:00',
@@ -263,15 +263,15 @@ include ../components/mixins/mixins.pug
 		'21:00',
 		'22:00'
 	]
-//- ============================================================
+//- ========================== BANNER ==================================
 - headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
 - socialName = ["Facebook", "Instagram", "Twitter"]
 - socialLink = ["#", "#", "#"]
 - socialClass = ["_fb", "_in", "_tw"]
 
 //- ===========================================================================
-//- ===========================================================================
-- 
+//- ========================== SWIPER ROOMS ===================================
+-
 	let swiperRoomsTitle = [
 		"Покращений <br> двомісний номер",
 		"Покращений <br> одномісний номер",
@@ -282,7 +282,7 @@ include ../components/mixins/mixins.pug
 		"Люкс <br> одномісний",
 		"Президентський <br> номер"
 	]
-- 
+-
 	let swiperRoomsText = [
 		"Покращений двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
 		"Покращений крутезний номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
@@ -292,7 +292,35 @@ include ../components/mixins/mixins.pug
 		"Люкс двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
 		"Люкс одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
 		"Президентський номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним"
-	]
+	];
+//- ===========================================================================
+//- ================================= SERVICES CARD ===========================
+-
+	let servicesNumber = ['01', '02', '03'];
+-
+	let servicesTitleFirstHidden = ['Ice', 'conference', 'Wine bar'];
+-
+	let servicesTitleSecondHidden = ['restaurant', 'hall', '“reserve”'];
+-
+	let servicesTitleOllShow = ['Ice restaurant', 'conference hall', 'Wine bar “reserve”'];
+-
+	let servicesText = [
+		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
+		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
+		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.'
+		];
+-
+	let servicesImg = [
+		"@img/services/restaurant/01.jpg",
+		"@img//services/restaurant/02.jpg",
+		"@img//services/restaurant/03.jpg"
+		];
+-
+	let servicesBigImg = [
+		"@img/services/restaurant/01_big.jpg",
+		"@img//services/restaurant/02_big.jpg",
+		"@img//services/restaurant/03_big.jpg"
+		];
 //- ===========================================================================
 
 main.page
@@ -474,6 +502,27 @@ main.page
 						img.services__img(src="@img/services/02_head.jpg", alt="services")
 						.services__stamp.stamp
 							.circular premium rooms. Reikartz hotel
+			.services__content-wrapper
+				+createServices(0)
+				+createServices(1)
+				+createServices(2)
+	section.page__best.best
+		.best__images
+			img.best__img._show(src="@img/best_room/01_big.jpg", alt="best_apartments")
+			img.best__img._hidden(src="@img/best_room/01_small.jpg", alt="best_apartments")
+		.best__sinus-wrapper
+			img(src="@img/icons/sinus.svg", alt="sinus")
+		.best__container
+			h1.best__head-title.main__titles._services Best <br> apartments
+			.best__text-wrapper
+				p.best__content-text.text.big-text All room decoration was made with ecological certified and safe materials.
+
+				
+
+
+
+
+
 
 
 
@@ -533,19 +582,19 @@ main.page
 					//- 	.footer__male-send-wrapper.card__send-wrapper
 					//- 		input#phone.order__form-phone.req.form__one(type="text" name="phone" placeholder="Телефон")
 					//- 	button#submit.form-order-btn.form-btn-send(type="submit" name="sab") ми вам зателефонуємо
-				.products__wrapper-content.product__content 
-					+createCard('0', 50, '_menu-1', '_sub-4')
-					+createCard('1', 'new', '_menu-1', '_sub-2')
-					+createCard('2', 25, '_menu-2', '_sub-2')
-					+createCard('3', 'new', '_menu-3', '_sub-1')
-					+createCard('4', null, '_menu-4', '_sub-3')
-					+createCard('5', 47, '_menu-2', '_sub-1')
-					+createCard('6', 35, '_menu-3', '_sub-1')
-					+createCard('7', 12, '_menu-1', '_sub-2')
-					+createCard('8', 'new', '_menu-4', '_sub-2')
-					+createCard('9', 32, '_menu-2', '_sub-5')
-					+createCard('10', 55, '_menu-1', '_sub-4')
-					+createCard('11', "new", '_menu-3', '_sub-1')
+				//- .products__wrapper-content.product__content 
+				//- 	+createCard('0', 50, '_menu-1', '_sub-4')
+				//- 	+createCard('1', 'new', '_menu-1', '_sub-2')
+				//- 	+createCard('2', 25, '_menu-2', '_sub-2')
+				//- 	+createCard('3', 'new', '_menu-3', '_sub-1')
+				//- 	+createCard('4', null, '_menu-4', '_sub-3')
+				//- 	+createCard('5', 47, '_menu-2', '_sub-1')
+				//- 	+createCard('6', 35, '_menu-3', '_sub-1')
+				//- 	+createCard('7', 12, '_menu-1', '_sub-2')
+				//- 	+createCard('8', 'new', '_menu-4', '_sub-2')
+				//- 	+createCard('9', 32, '_menu-2', '_sub-5')
+				//- 	+createCard('10', 55, '_menu-1', '_sub-4')
+				//- 	+createCard('11', "new", '_menu-3', '_sub-1')
 					
 				.button__wrapper
 					.product__wrapper-button.button.button__more._scrolling__mode#product__button(data-goto=".button__wrapper") Show Oll

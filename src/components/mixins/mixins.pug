@@ -41,77 +41,77 @@ mixin buttonBig()
 	span.line__button.line-5
 
 //- ============================================================
-//- ========================== BANNER PRICE ====================
-mixin bannerPrice(number)
-	.swiper-slide 
-		.card__price-title 
-			h4= bannerPriceTitle[number]
-		.card__price-text 
-			p= bannerPriceText[number]
-		.card__price-number 
-			p= bannerPricePrice[number]
-			.card__price-arrow 
-				.arrow__wrapper 
-					.arrow__wrapper-arrow
-						span
-			//- img(src="@img/icons/Arrow.svg", alt="", srcset="")
-//- ===========================================================
+//- //- ========================== BANNER PRICE ====================
+//- mixin bannerPrice(number)
+//- 	.swiper-slide 
+//- 		.card__price-title 
+//- 			h4= bannerPriceTitle[number]
+//- 		.card__price-text 
+//- 			p= bannerPriceText[number]
+//- 		.card__price-number 
+//- 			p= bannerPricePrice[number]
+//- 			.card__price-arrow 
+//- 				.arrow__wrapper 
+//- 					.arrow__wrapper-arrow
+//- 						span
+//- 			//- img(src="@img/icons/Arrow.svg", alt="", srcset="")
+//- //- ===========================================================
 //- ========================== PRODUCTS CARD ===================
 
-mixin createCard(number, discount, category, subCategory)
-	.product__content-card.card(class=attributes.class, class=category, class =subCategory, get-attr = "_" + number)
-		.card__hover 
-			button.card__hover-button.button__more.popup-link(href = "#popup", get-attr = "_" + number) Add to cart 
-			.card__hover-links 
-				.share 
-					img(src="@img//icons/share.svg", alt="share")
-					p Share
-				.like(class = "like_card-" + number)
-					//- img(src="@img//icons/like.svg", alt="like")
-					.heart
-						span
-						img(src="@img//icons/like.svg", alt="like")
-					p Like
-		.card__img
-			.first__row
-				.images__wrapper 
-					.card__img-wrap.img__wrappers
-						img.first__child(src=imgArray[number][0], alt=altImgArray[number], class= "_" + number, srcset="")
-					.card__img-wrap.img__wrappers
-						img(src=imgArray[number][1], alt=altImgArray[number], class= "_" + number, srcset="")
-					//- .card__img-wrap
-					//- 	img(src= imgArray[number][2], alt=altImgArray[number], class= "_" + number)
-					if (typeof discount == 'number')
-						.sales__wrapper
-							p= '-' + discount + '%'
-					else if (typeof discount == 'string')
-						.news__wrapper 
-							p= discount
-			.second__row
-				.images__wrapper 
-					.card__img-wrap.img__wrappers
-						img(src=imgArray[number][2], alt=altImgArray[number], class= "_" + number, srcset="")
-			.third__row
-				p.third__row-text=popupCardText[number][0]
-				.third__row-composes
-					span= popupCardText[number][1]
-					p= popupCardText[number][2]
-				.third__row-article
-					span= popupCardText[number][3]
-					p= popupCardText[number][4]
-		.card__info-wrapper
-			.card__info-wrapper-price-phone 
-				.card__info.block__text 
-					h5.block__text-title(class= "_" + number)= titleArray[number]
-					p.block__text-text(class= "_" + number)= textArray[number]
-					.block__text-price-wrapper
-						if (typeof discount == 'number')
-							p.price(class= "_" + number)= priceArray[number] - (priceArray[number] * discount / 100) + ' грн.'
-							p.price.sale(class= "_" + number)= priceArray[number] + ' грн.'
-						else
-							p.price(class= "_" + number)= priceArray[number] + ' грн.'
+//- mixin createCard(number, discount, category, subCategory)
+//- 	.product__content-card.card(class=attributes.class, class=category, class =subCategory, get-attr = "_" + number)
+//- 		.card__hover 
+//- 			button.card__hover-button.button__more.popup-link(href = "#popup", get-attr = "_" + number) Add to cart 
+//- 			.card__hover-links 
+//- 				.share 
+//- 					img(src="@img//icons/share.svg", alt="share")
+//- 					p Share
+//- 				.like(class = "like_card-" + number)
+//- 					//- img(src="@img//icons/like.svg", alt="like")
+//- 					.heart
+//- 						span
+//- 						img(src="@img//icons/like.svg", alt="like")
+//- 					p Like
+//- 		.card__img
+//- 			.first__row
+//- 				.images__wrapper 
+//- 					.card__img-wrap.img__wrappers
+//- 						img.first__child(src=imgArray[number][0], alt=altImgArray[number], class= "_" + number, srcset="")
+//- 					.card__img-wrap.img__wrappers
+//- 						img(src=imgArray[number][1], alt=altImgArray[number], class= "_" + number, srcset="")
+//- 					//- .card__img-wrap
+//- 					//- 	img(src= imgArray[number][2], alt=altImgArray[number], class= "_" + number)
+//- 					if (typeof discount == 'number')
+//- 						.sales__wrapper
+//- 							p= '-' + discount + '%'
+//- 					else if (typeof discount == 'string')
+//- 						.news__wrapper 
+//- 							p= discount
+//- 			.second__row
+//- 				.images__wrapper 
+//- 					.card__img-wrap.img__wrappers
+//- 						img(src=imgArray[number][2], alt=altImgArray[number], class= "_" + number, srcset="")
+//- 			.third__row
+//- 				p.third__row-text=popupCardText[number][0]
+//- 				.third__row-composes
+//- 					span= popupCardText[number][1]
+//- 					p= popupCardText[number][2]
+//- 				.third__row-article
+//- 					span= popupCardText[number][3]
+//- 					p= popupCardText[number][4]
+//- 		.card__info-wrapper
+//- 			.card__info-wrapper-price-phone 
+//- 				.card__info.block__text 
+//- 					h5.block__text-title(class= "_" + number)= titleArray[number]
+//- 					p.block__text-text(class= "_" + number)= textArray[number]
+//- 					.block__text-price-wrapper
+//- 						if (typeof discount == 'number')
+//- 							p.price(class= "_" + number)= priceArray[number] - (priceArray[number] * discount / 100) + ' грн.'
+//- 							p.price.sale(class= "_" + number)= priceArray[number] + ' грн.'
+//- 						else
+//- 							p.price(class= "_" + number)= priceArray[number] + ' грн.'
 				
-			.close__btn.close-popup#close-popup
+//- 			.close__btn.close-popup#close-popup
 
 
 //- ============================================================
@@ -143,6 +143,35 @@ mixin createSlideSwiperRooms(number)
 						p.yellow__button обрати номер
 						+buttonBig()
 
+//- ===========================================================================
+//- ============================ SERVICES CARD =================================
+mixin createServices(number)
+	.services__content-rows(class="services__content-row-" + number)
+		.hidden-row-wrapper
+			.hidden__row._hidden(class=".hidden__row-" + number, id="hidden-row-" + number)
+				.hidden__content-wrapper
+					.hidden__text-button-wrapper
+						.services__button.button__wrapper-transparent
+							.rooms__info-button.button._big._transparent._hide-services-content._rotate(data-close="content-row" + number + "-close")
+								+buttonBig()
+						.hidden__content
+							.hidden__content-number.services__sub-title=servicesNumber[number]
+							h1.hidden__content-title.services__sub-title._mb=servicesTitleFirstHidden[number]
+								<br>
+								=servicesTitleSecondHidden[number]
+							p.hidden__content-text.text.text-dark.text__max-width=servicesText[number]
+				.hidden__images
+					img(src=src=servicesBigImg[0], alt="img")
+		.content__row-wrapper
+			.content-row(class="content__row-" + number, id="content-row" + number + "-close")
+				.content__images-wrapper
+					img(src=servicesImg[0], alt="img", class="content__img")
+				.services__title-wrapper
+					.services__content-number.services__sub-title=servicesNumber[number]
+					a(href="#", class="_show-services hidden-row-" + number)
+						h1.services__content-title.services__sub-title=servicesTitleOllShow[number]
+				.services__content-arrow
+					span(class="_show-services hidden-row-" + number)
 //- ===========================================================================
 //- =========================== SWIPER TWO SLIDES VAR ==============
 

@@ -151,6 +151,44 @@ $$(".circular").forEach(function (el) {
   el.appendChild(svg);
 });
 //===========================================================
+//================= SHOW SERVICES ===============
+const showServices = document.querySelectorAll("._show-services");
+if (showServices.length > 0) {
+  for (let index = 0; index < showServices.length; index++) {
+    const showService = showServices[index];
+    showService.addEventListener("click", function (e) {
+      let hideContentService = showService.closest(".content-row");
+      let showHiddenServices = showService
+        .getAttribute("class")
+        .replace("_show-services ", "");
+      hideContentService.classList.add("_hide-services");
+      const closeWrapper = hideContentService.closest(".content__row-wrapper");
+      closeWrapper.classList.add("_rotate");
+      let showHiddenService = document.getElementById(showHiddenServices);
+      showHiddenService.classList.remove("_hidden");
+      e.preventDefault();
+    });
+  }
+  const hideServices = document.querySelectorAll("._hide-services-content");
+  if (hideServices.length > 0) {
+    for (let i = 0; i < hideServices.length; i++) {
+      const hideService = hideServices[i];
+      hideService.addEventListener("click", function (e) {
+        let closeHidden = hideService.closest(".hidden__row");
+        closeHidden.classList.add("_hidden");
+        const getAttrContents = hideService.getAttribute("data-close");
+        const contentRowsClose = document.getElementById(getAttrContents);
+        const paddingContentRowsUp = contentRowsClose.closest(
+          ".content__row-wrapper"
+        );
+        contentRowsClose.classList.remove("_hide-services");
+        paddingContentRowsUp.classList.remove("_rotate");
+        e.preventDefault();
+      });
+    }
+  }
+}
+//========================================================================================
 //=================================================================
 
 // //========================= OUR PRODUCT HIDDEN ========================
