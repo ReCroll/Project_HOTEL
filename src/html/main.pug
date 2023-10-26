@@ -265,6 +265,8 @@ include ../components/mixins/mixins.pug
 	]
 //- ========================== BANNER ==================================
 - headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
+- footerInfo = ["0123456789", "вул. Готельна 1,", "м. Ніжин"]
+- footerNameCat = ["about us", "new", "socials"]
 - socialName = ["Facebook", "Instagram", "Twitter"]
 - socialLink = ["#", "#", "#"]
 - socialClass = ["_fb", "_in", "_tw"]
@@ -321,6 +323,10 @@ include ../components/mixins/mixins.pug
 		"@img//services/restaurant/02_big.jpg",
 		"@img//services/restaurant/03_big.jpg"
 		];
+//- ===========================================================================
+//- ============================ FOOTER TEXT =================================
+-
+	let footerText = "Reikartz hotel hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel"
 //- ===========================================================================
 
 main.page
@@ -516,256 +522,118 @@ main.page
 			h1.best__head-title.main__titles._services Best <br> apartments
 			.best__text-wrapper
 				p.best__content-text.text.big-text All room decoration was made with ecological certified and safe materials.
+	section.page__gallery.gallery
+		.gallery__container
+			.gallery__head-wrapper
+				p.actions__art._gallery Art & Congress <br> hall
+				.galleery__title-wrapper
+					.about__stamp.stamp.stamp-content._gallery
+						.circular premium rooms. Reikartz hotel
+						img.stamp__rotate(src="@img/icons/icon.svg", alt="icon_stamp")
+					h1.gallery__hed-title.main__titles our Gallery
+		.gallery__content-wrapper
+			.gallery__content-text
+				.gallery__text-wrapper 
+					p.gallery__text.text. 
+						Explore our spacious rooms with the gorgeous view to the
+						historical part of the city. Each room has an exclusive interior design decorated with
+						modern art pieces that will make your stay unforgettable.
+				.gallery__text.text__bottom-wrapper
+					.main__info-button.button._small.extra__small
+						+buttonSmall()
+					p.gallery__text.text.text__xl It is our pleasure to meet your most unrealistic expectations.
+			.images__container
+				.gallery__images-wrapper
+					.gallery__image-wrapper.image-1(data-move="move-1", style="top: 0%; left: 0%; right: auto; bottom: auto;")
+						img.img-1(src="@img/gallery/01.jpg", alt="gallery-img")
+					.gallery__image-wrapper.image-2(data-move="move-2", style="top: 0%; left: 83.5%; right: auto; bottom: auto;")
+						img.img-2(src="@img/gallery/02.jpg", alt="gallery-img")
+					.gallery__image-wrapper.image-4(data-move="move-4", style="top: 62%; left: 1.8%; right: auto; bottom: auto;")
+						img.img-4(src="@img/gallery/04.jpg", alt="gallery-img")
+					.gallery__image-wrapper.image-5(data-move="move-5", style="top: 100%; left: 75.2%; right: auto; bottom: auto;")
+						img.img-5(src="@img/gallery/05.jpg", alt="gallery-img")
+					.gallery__image-wrapper.image-3._active(data-move="move-3", style="top: 53%; left: 85%; right: auto; bottom: auto;")
+						img.img-3(src="@img/gallery/03.jpg", alt="gallery-img")
+		.gallery__footer.gallery-footer__container
+			h3.hotel__name Reikartz hotel
+				span.hotel__name-center
+					h3 Reikartz__hotel&copy
+				=footerText
+footer.footer 
+	.footer__container 
+		.page__touch.touch
+			.touch__telephone
+				p.main__actions-telephone.info__telephone.touch=footerInfo[0]
+			.touch__address.main__actions
+				p.main__actions-street.touch=footerInfo[1]
+				p.main__actions-street.touch=footerInfo[2]
+			.touch__title-wrapper
+				h1.touch__head-title.main__titles._big-title ми на 
+					span.title__icon-touch t 
+				h1.touch__head-title.main__titles._big-title зв’язку
+				.touch__images-wrapper
+					img.touch__img(src="@img/touch/01.jpg", alt="img")
+				.main__info-button.touch.button._big
+					p.yellow__button обрати номер
+					+buttonBig()
+			.check__list-wrapper
+				p.actions__art._services.touch find a room 
+				ul.check__list.touch
+					li.check-link.check-in.touch
+						p дата поселення
+						img(src="@img/icons/arow_ellow.svg", alt="arow")
+					li.check-link.check-out.touch 
+						p дата виїзду
+						img(src="@img/icons/arow_ellow.svg", alt="arow")
+					li.check-link.check-rooms.touch 
+						p обрати номер
 
-				
+		.page__about.touch
+			.touch__footer
+				.about__footer-column.about__footer
+					.column__content-wrapper
+						.about__footer-title
+							h4.actions__art._services
+								span /
+								=footerNameCat[0]
+						p.text.text-dark. 
+							The five-star hotel in a beautiful European city with a modern
+							restaurant, conference-hall, and art-bar.
+					.footer__touch-reserved
+						p 
+							a ©2021 All rights reserved.BankHotel
+				.about__footer-column.new__footer
+					.column__content-wrapper
+						.about__footer-title
+							h4.actions__art._services
+								span /
+								=footerNameCat[1]
+						p.text.text-dark. 
+							The five-star hotel in a beautiful European city with a
+							modern restaurant, conference-hall, and art-bar.
+					.footer__email-wrapper
+						input.email__input(type="text", placeholder="EMAIL")
+						button.email__submit(type="submit")
+				.about__footer-column.socials__footer
+					.about__footer-title
+						h4.actions__art._services
+							span /
+							=footerNameCat[2]
+					ul 
+						li 
+							a(href="", target="_blank") 
+								p Facebook
+						li 
+							a(href="", target="_blank") 
+								p Instagram
+						li 
+							a(href="", target="_blank") 
+								p twitter
+				.footer__touch-reserved.hidden
+					p 
+						a ©2021 All rights reserved.BankHotel
 
 
-
-
-
-
-
-
-
-	//- section.page__banner.banner 
-		.banner__container 
-
-
-
-			.banner__swiper-wrapper
-				.banner__text-wrapper
-					.banner__info-card.card__info 
-						.card__info-title
-							h1.
-								High-Quality
-								Furniture 
-								Just For You
-						.card__info-text 
-							p. 
-								Our furniture is made from selected and best quality materials that are suitable for your dream home
-						button.card__info-button.button. 
-							Shop Now
-							
-					.banner__price-card.card__price 
-						.swiper__price.swiper-container 
-							.swiper-wrapper
-								+bannerPrice(0)
-								+bannerPrice(1)
-								+bannerPrice(2)
-								+bannerPrice(3)
-
-				.swiper.swiper-container
-					.swiper-wrapper
-						.swiper-slide(data-index="0") 
-							.swiper-slide-wrapper
-								img(src="@img//banner/2.jpg", alt="img", srcset="")
-						.swiper-slide(data-index="1")
-							.swiper-slide-wrapper
-								img(src="@img//banner/1.jpg", alt="img", srcset="")
-						.swiper-slide(data-index="2")
-							.swiper-slide-wrapper
-								img(src="@img//banner/3.png", alt="img", srcset="")
-						.swiper-slide(data-index="3")
-							.swiper-slide-wrapper
-								img(src="@img//banner/1.jpg", alt="img", srcset="")
-				.swiper__navigation-wrapper
-					.swiper-pagination
-					.swiper__button-wrapper
-						.swiper-button-prev.arrow-corner.button-p-m.position__button-prev
-						.swiper-button-next.arrow-corner.button-p-m.position__button-next
-	section.page__products.products 
-		.products__container 
-			.products__wrapper 
-				.products__wrapper-title
-					h2 Our Products
-					//- form.footer__male-form.card__phone-form#form__phone(action="", method="post") 
-					//- 	.footer__male-send-wrapper.card__send-wrapper
-					//- 		input#phone.order__form-phone.req.form__one(type="text" name="phone" placeholder="Телефон")
-					//- 	button#submit.form-order-btn.form-btn-send(type="submit" name="sab") ми вам зателефонуємо
-				//- .products__wrapper-content.product__content 
-				//- 	+createCard('0', 50, '_menu-1', '_sub-4')
-				//- 	+createCard('1', 'new', '_menu-1', '_sub-2')
-				//- 	+createCard('2', 25, '_menu-2', '_sub-2')
-				//- 	+createCard('3', 'new', '_menu-3', '_sub-1')
-				//- 	+createCard('4', null, '_menu-4', '_sub-3')
-				//- 	+createCard('5', 47, '_menu-2', '_sub-1')
-				//- 	+createCard('6', 35, '_menu-3', '_sub-1')
-				//- 	+createCard('7', 12, '_menu-1', '_sub-2')
-				//- 	+createCard('8', 'new', '_menu-4', '_sub-2')
-				//- 	+createCard('9', 32, '_menu-2', '_sub-5')
-				//- 	+createCard('10', 55, '_menu-1', '_sub-4')
-				//- 	+createCard('11', "new", '_menu-3', '_sub-1')
-					
-				.button__wrapper
-					.product__wrapper-button.button.button__more._scrolling__mode#product__button(data-goto=".button__wrapper") Show Oll
-						//- p Show More 
-						//- p Hide Cards
-	section.page__inspiration.inspiration 
-		.inspiration__container 
-			.inspiration__wrapper 
-				.inspiration__wrapper-text-block 
-					h2 50+ Beautiful rooms inspiration
-					p Our designer already made a lot of beautiful prototipe of rooms that inspire you
-					button.button__more.product__wrapper-button2 Explore More 
-				.swiper__two-block
-					.swiper__two.swiper-container
-						.swiper-wrapper
-							+createSlideSwiperTwo('0')
-							+createSlideSwiperTwo('1')
-							+createSlideSwiperTwo('2')
-							+createSlideSwiperTwo('3')
-							+createSlideSwiperTwo('4')
-							+createSlideSwiperTwo('5')
-						//- .swiper__two-button-prev.arrow-corner.button-p-sm.position__button-prev
-						.swiper__two-button-next.arrow-corner.button-p-m.position__button-next
-						.swiper-pagination_two 
-	section.page__tips.tips 
-		.tips__container 
-			.tips__wrapper 
-				.tips__wrapper-title 
-					h2 Поради та Підказки
-					.swiper__three-block 
-						.swiper__three.swiper-container 
-							.swiper-wrapper 
-								+createSlideSwiperThree('0')
-								+createSlideSwiperThree('1')
-								+createSlideSwiperThree('2')
-								+createSlideSwiperThree('3')
-								+createSlideSwiperThree('4')
-								+createSlideSwiperThree('5')
-							.swiper__three-button-prev.arrow-corner.button-p-m.position__button-prev
-							.swiper__three-button-next.arrow-corner.button-p-m.position__button-next
-							.swiper-pagination_three 
-	section.page__furniture.furniture 
-		.furniture__title-block 
-			p погляньте як зробили
-			h2 #НашіКлієнти
-		.furniture__img-wrapper
-			.furniture__img-wrapper-left.left.furniture__rows
-				.left__row-top.row__flex-column.top
-					+createGalleryBlocks(0)(class='furniture__img-wrapper-blocks-0')
-					+createGalleryBlocks(1)(class='furniture__img-wrapper-blocks-1')
-				.left__row-bottom.row__flex-column.bottom
-					+createGalleryBlocks(2)(class='furniture__img-wrapper-blocks-2')
-					+createGalleryBlocks(3)(class='furniture__img-wrapper-blocks-3')
-			//- .furniture__img-wrapper-center.center.furniture__rows(data-da="._remove-row, 700, 2")
-			.furniture__img-wrapper-center.center.furniture__rows
-				.center__row-top.row__flex-column.center
-					+createGalleryBlocks(4)(class='furniture__img-wrapper-blocks-4')
-			.furniture__img-wrapper-right.right.furniture__rows._remove-row
-				.right__row-top.row__flex-column.top
-					+createGalleryBlocks(5)(class='furniture__img-wrapper-blocks-5')
-					+createGalleryBlocks(6)(class='furniture__img-wrapper-blocks-6')
-				.right__row-bottom.row__flex-column.bottom
-					+createGalleryBlocks(7)(class='furniture__img-wrapper-blocks-7')
-					+createGalleryBlocks(8)(class='furniture__img-wrapper-blocks-8')
-	section.popup#popup 
-		.popup__body.popup__container 
-			.popup__content
-				//- span.close__btn.close-popup#close-popup
-				.popup__content-wrapper 
-					.footer__blocks.card__phone#card__phone
-						form.footer__male-form.card__phone-form(action="", method="post", id="form__phone", data-id="form__phone", class="checked__id-phone") 
-							.footer__male-send-wrapper.card__send-wrapper
-								.input__wrapper 
-									input.order__form-phone.req.form__one(type="tel" name="phone" placeholder="Телефон", data-id="input__phone", class="checked__id-phone", class="input__phone")
-								//- .input__wrapper 
-								//- 	input.order__form-phone.req.form__one(type="tel" name="phone" placeholder="Телефон 2", data-id="input__" + number, class="checked__id-" + number, class="input__" + number)
-								//- .input__wrapper 	
-								//- 	input.order__form-phone.form__one(type="tel" name="phone" placeholder="Телефон 2", data-id="input__" + number, class="checked__id-" + number, class="input__" + number)
-							button.form-order-btn.form-btn-send(type="submit" name="sab", id="button__phone", data-id="button__phone", class="checked__id-phone") ми вам зателефонуємо
-	section.popup.popup__form#popupFormWarning 
-		.popup__body
-			.popup__form-content 
-				.icons__wrap.icon-wrap-warning
-					.icons__popup.icons-popup-warning ! 
-				.popup__title 
-					p Матінко рідна!
-				.popup__text 
-					p Ви забули вказати номер телефону
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form#popupError 
-		.popup__body
-			.popup__form-error.popup__form-content
-				.icons__wrap.icons-wrap-error
-					.icons-line-error 
-						span.icons__error.line__left 
-						span.icons__error.line__right 
-				.popup__title 
-					p Ой лишенько!
-				.popup__text 
-					p Сталась помилка з відпраправкою запиту
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form._close__popup-anchor#popupFormError 
-		.popup__body
-			.popup__form-error.popup__form-content
-				.icons__wrap.icons-wrap-error
-					.icons-line-error 
-						span.icons__error.line__left 
-						span.icons__error.line__right 
-				.popup__title 
-					p Ой лишенько!
-				.popup__text 
-					p Сталась помилка з відпраправкою запиту
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form#popupSuccess 
-		.popup__body
-			.popup__form-success.popup__form-content 
-				.icons__wrap.icons-wrap-success
-					.icons-line-success 
-						span.icons__error.line__small 
-						span.icons__error.line__big 
-						.success-ring
-						.success-fix
-						.success-circular-line-right
-				.popup__title 
-					p Все круто!
-				.popup__text 
-					p З Вами скоро зв'яжуться!
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form._close__popup-anchor#popupFormSuccess 
-		.popup__body
-			.popup__form-success.popup__form-content 
-				.icons__wrap.icons-wrap-success
-					.icons-line-success 
-						span.icons__error.line__small 
-						span.icons__error.line__big 
-						.success-ring
-						.success-fix
-						.success-circular-line-right
-				.popup__title 
-					p Все круто!
-				.popup__text 
-					p Про новинки повідомлятимемо Вас на пошту!
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form._close__popup-anchor#popupFormLikeSorting
-		.popup__body
-			.popup__form-content 
-				.icons__wrap.icon-wrap-warning
-					.icons__popup.icons-popup-warning ! 
-				.popup__title 
-					p Ну Ви даєте!
-				.popup__text 
-					p Ви ж не обрали жодного улюбленого товару
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	section.popup.popup__form._close__popup-anchor#popupFormEmailWarning 
-		.popup__body
-			.popup__form-content 
-				.icons__wrap.icon-wrap-warning
-					.icons__popup.icons-popup-warning ! 
-				.popup__title 
-					p Матінко рідна!
-				.popup__text 
-					p Ви забули вказати електронну адресу
-				.button__wrapper 
-					button.popup__close.close-popup(href="") OK
-	
 
 
 

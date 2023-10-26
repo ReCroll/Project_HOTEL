@@ -4604,7 +4604,7 @@ input {
   display: inline-block;
   width: calc(4.375rem + 80 * (100vw - 63.99875rem) / 896.02);
   line-height: calc(15.625rem + 50 * (100vw - 89.99875rem) / 480.02);
-  background: url(../images/icons/Star2_ellow.svg) no-repeat center/contain;
+  background: url(../img/icons/Star2_ellow.svg) no-repeat center/contain;
   color: transparent;
 }
 

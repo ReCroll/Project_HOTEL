@@ -1,3 +1,38 @@
+@font-face {
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Italic.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Helvetica;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Roman.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Mak;
+  font-display: swap;
+  src: url("../fonts/Mak-SemiBoldHigh.woff2") format("woff2"), url("../fonts/Mak-SemiBoldHigh.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Miracle;
+  font-display: swap;
+  src: url("../fonts/Miracle_Personal_use.woff2") format("woff2"), url("../fonts/Miracle_Personal_use.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 /**
  * Swiper 10.0.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -776,69 +811,6 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: HelveticaNeueCyr;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
-  src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"), url("../fonts/Gilroy-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Mak";
-  src: url("../fonts/Mak-SemiBoldHigh.eot");
-  src: local("0"), url("../fonts/Mak-SemiBoldHigh.woff") format("woff"), url("../fonts/Mak-SemiBoldHigh.ttf") format("truetype"), url("../fonts/Mak-SemiBoldHigh.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica";
-  src: url("../fonts/HelveticaNeueCyr-Medium.eot");
-  src: local("0"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Medium.ttf") format("truetype"), url("../fonts/HelveticaNeueCyr-Medium.svg") format("svg");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica";
-  src: url("../fonts/HelveticaNeueCyr-Roman.eot");
-  src: local("0"), url("../fonts/HelveticaNeueCyr-Roman.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Roman.ttf") format("truetype"), url("../fonts/HelveticaNeueCyr-Roman.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Miracle";
-  src: url("../fonts/Miracle_Personal_use.eot");
-  src: local("0"), url("../fonts/Miracle_Personal_use.woff") format("woff"), url("../fonts/Miracle_Personal_use.ttf") format("truetype"), url("../fonts/Miracle_Personal_use.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
 *,
 *::before,
 *::after {
@@ -1409,7 +1381,7 @@ input {
   transform: translate(-50%, -50%);
   width: 1.5rem;
   height: 0.75rem;
-  background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+  background: url(@img/icons/arow_ellow.svg) no-repeat center/contain;
 }
 
 .main__img-wrapper {
@@ -3115,7 +3087,7 @@ input {
   max-height: 2rem;
   min-width: 1.5rem;
   min-height: 1.25rem;
-  background: url(../images/icons/arrow.svg) no-repeat center/contain;
+  background: url(@img/icons/arrow.svg) no-repeat center/contain;
 }
 
 .button._transparent::before {
@@ -3445,7 +3417,7 @@ input {
   left: 63%;
   width: 3.125rem;
   height: 3.125rem;
-  background: url(../images/icons/Star_7.png) no-repeat center/cover;
+  background: url(@img/icons/Star_7.png) no-repeat center/cover;
 }
 
 .title__icon::before {
@@ -4669,7 +4641,7 @@ input {
   display: inline-block;
   width: calc(4.375rem + 80 * (100vw - 63.99875rem) / 896.02);
   line-height: calc(15.625rem + 50 * (100vw - 89.99875rem) / 480.02);
-  background: url(../images/icons/Star2_ellow.svg) no-repeat center/contain;
+  background: url(@img/icons/Star2_ellow.svg) no-repeat center/contain;
   color: transparent;
 }
 

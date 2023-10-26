@@ -189,7 +189,43 @@ if (showServices.length > 0) {
   }
 }
 //========================================================================================
-//=================================================================
+//============================= GALLERY 3 ===============================================
+const galleryImageArray = document.querySelectorAll(".gallery__image-wrapper");
+if (galleryImageArray.length > 0) {
+  for (let index = 0; index < galleryImageArray.length; index++) {
+    const galleryImageWrapper = galleryImageArray[index];
+    galleryImageWrapper.addEventListener("click", function (e) {
+      searchActive(galleryImageWrapper);
+    });
+  }
+}
+function searchActive(galleryImageWrapper) {
+  if (galleryImageWrapper.classList.contains("_active")) {
+    return;
+  } else {
+    removeActive(galleryImageWrapper);
+  }
+}
+function removeActive(galleryImageWrapper) {
+  var searchElemsActive = document.getElementsByClassName(
+    "gallery__image-wrapper _active"
+  );
+  for (let index = 0; index < searchElemsActive.length; index++) {
+    const searchElemActive = searchElemsActive[index];
+
+    searchElemActive.classList.remove("_active");
+    searchElemActive.style.top = galleryImageWrapper.style.top;
+    searchElemActive.style.left = galleryImageWrapper.style.left;
+    searchElemActive.style.right = galleryImageWrapper.style.right;
+    searchElemActive.style.bottom = galleryImageWrapper.style.bottom;
+
+    addClassActive(galleryImageWrapper);
+  }
+}
+function addClassActive(galleryImageWrapper) {
+  galleryImageWrapper.classList.add("_active");
+}
+//==========================================================================
 
 // //========================= OUR PRODUCT HIDDEN ========================
 
