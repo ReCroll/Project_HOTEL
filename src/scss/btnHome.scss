@@ -1,65 +1,68 @@
 //======================= BTN-HOME ==========================
 
 #btn-home {
-	display: none;
-	
-}
-.btn-top-wrapper {
-	position: fixed;
-	right: 50px;
-	bottom: 50px;
-	z-index: 10;
-}
-.top-btn {
-	width: 40px;
-	height: 40px;
-	
-	border-radius: 50%;
-	background-color: #fefefe;
+  display: none;
 
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-	-webkit-box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
-	box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
-	-webkit-transition: 0.5s;
-	-o-transition: 0.5s;
-	transition: 0.5s;
+}
+
+.btn-top-wrapper {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 10;
+}
+
+.top-btn {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background-color: #fefefe;
+
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .top-arrow {
-	width: 10px;
-	height: 10px;
-	position: absolute;
-	top: 52%;
-	left: 52%;
-	margin-right: -50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	border-left: 2px solid #313F38;
-	border-top: 2px solid #313F38;
-	/* border-right: 2px solid ;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 52%;
+  left: 52%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-left: 2px solid #313F38;
+  border-top: 2px solid #313F38;
+  /* border-right: 2px solid ;
 	border-bottom: 2px solid ; */
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 
-	-webkit-transition: 0.5s;
+  -webkit-transition: 0.5s;
 
-	-o-transition: 0.5s;
+  -o-transition: 0.5s;
 
-	transition: 0.5s;
+  transition: 0.5s;
 }
-		.top-btn:hover {
-				background-color: #FCD043;
-				-webkit-transition: 0.5s;
-				-o-transition: 0.5s;
-				transition: 0.5s;
-		}
-		
-		// .top-btn:hover .top-arrow {
-		// 		border-color: #313F38;
-		// 		-webkit-transition: 0.5s;
-		// 		-o-transition: 0.5s;
-		// 		transition: 0.5s;
-		// } 
+
+.top-btn:hover {
+  background-color: #FCD043;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+// .top-btn:hover .top-arrow {
+// 		border-color: #313F38;
+// 		-webkit-transition: 0.5s;
+// 		-o-transition: 0.5s;
+// 		transition: 0.5s;
+// } 

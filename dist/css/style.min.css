@@ -838,6 +838,14 @@ button.swiper-pagination-bullet {
   transition: opacity 0.8s ease 0s;
 }
 
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+}
+
 .popup__content {
   position: relative;
   color: rgb(0, 0, 0);
@@ -852,14 +860,6 @@ button.swiper-pagination-bullet {
   visibility: visible;
   opacity: 1;
   transition: all 0.8s ease 0s;
-}
-
-.popup__body {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 10px;
 }
 
 #popup-message .popup__content {
@@ -1610,7 +1610,7 @@ input {
   transform: translate(-50%, -50%);
   width: 1.5rem;
   height: 0.75rem;
-  background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+  background: url(../img/icons/arow_ellow.svg) no-repeat center/contain;
 }
 
 .main__img-wrapper {
@@ -2833,7 +2833,7 @@ input {
   transform: translate(-50%, 0%);
   width: 1.5rem;
   height: 0.75rem;
-  background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+  background: url(../img/icons/arow_ellow.svg) no-repeat center/contain;
 }
 
 .about__column-2 .button._big:hover span {
@@ -3347,7 +3347,7 @@ input {
   max-height: 2rem;
   min-width: 1.5rem;
   min-height: 1.25rem;
-  background: url(../images/icons/arrow.svg) no-repeat center/contain;
+  background: url(../img/icons/arrow.svg) no-repeat center/contain;
 }
 
 .button._transparent::before {
@@ -3674,7 +3674,7 @@ input {
   left: 63%;
   width: 3.125rem;
   height: 3.125rem;
-  background: url(../images/icons/Star_7.png) no-repeat center/cover;
+  background: url(../img/icons/Star_7.png) no-repeat center/cover;
 }
 
 .title__icon::before {
@@ -3865,7 +3865,7 @@ input {
   display: block;
   width: 5.5rem;
   height: 2.75rem;
-  background: url(../images/icons/arrow.svg) no-repeat center/contain;
+  background: url(../img/icons/arrow.svg) no-repeat center/contain;
 }
 
 .content-row:hover {
@@ -4890,7 +4890,7 @@ input {
   display: inline-block;
   width: calc(4.375rem + 80 * (100vw - 63.99875rem) / 896.02);
   line-height: calc(15.625rem + 50 * (100vw - 89.99875rem) / 480.02);
-  background: url(../images/icons/Star2_ellow.svg) no-repeat center/contain;
+  background: url(../img/icons/Star2_ellow.svg) no-repeat center/contain;
   color: transparent;
 }
 
@@ -5087,7 +5087,7 @@ input {
   position: relative;
   flex: 0 0 1.9375rem;
   height: 1.0625rem;
-  background: url(../images/icons/arrow-1.png) no-repeat center/cover;
+  background: url(../img/icons/arrow-1.png) no-repeat center/cover;
   opacity: 0.48;
   transition: all 0.3s ease 0s;
 }
@@ -5283,7 +5283,7 @@ input {
   }
 }
 .about__twin {
-  background: url(../images/icons/sinus_white.svg) no-repeat center/contain;
+  background: url(../img/icons/sinus_white.svg) no-repeat center/contain;
 }
 
 .date__hotel.rooms__page:not(:last-child) {
@@ -6028,7 +6028,7 @@ button.rooms__page:disabled {
   }
   .restaurant__details {
     padding-bottom: calc(6.25rem + 98 * (100vw - 47.99875rem) / 256);
-    background-image: url(../images/icons/sinus_white.svg);
+    background-image: url(../img/icons/sinus_white.svg);
     background-repeat: no-repeat;
     background-position-y: 77%;
     background-size: contain;
@@ -6168,7 +6168,7 @@ button.rooms__page:disabled {
 }
 footer.restaurant {
   background-color: #313F38;
-  background-image: url(../images/icons/sinus_white.svg);
+  background-image: url(../img/icons/sinus_white.svg);
   background-repeat: no-repeat;
   background-position-y: 11%;
   background-size: contain;
@@ -6263,7 +6263,7 @@ footer.restaurant h4 {
   opacity: 1;
 }
 .footer__email-wrapper.restaurant button {
-  background: url(../images/icons/arrow-white.png) no-repeat center/cover;
+  background: url(../img/icons/arrow-white.png) no-repeat center/cover;
 }
 
 .info__telephone.touch::before {

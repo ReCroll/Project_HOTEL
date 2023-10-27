@@ -1,0 +1,66 @@
+.popup.none__class#popup-in 
+	.popup__body
+		.popup__content
+			.calendar 
+				.calendar-body 
+					.calendar-body-wrapper._move-close__button
+						.calendar-week-title.calendar-title
+							h3 обрати дату
+						.calendar-header 
+							span.month-picker#month-picker Березень
+							.year-picker#year-picker 
+								span.year-change#pre-year 
+									pre <
+								span#year 2023
+								span.year-change#next-year 
+									pre > 
+						.calendar-week-days
+							div пон
+							div вів
+							div сер
+							div чет
+							div птн
+							div пнх
+							div нед
+						.calendar-days
+					.calendar-hours-wrapper.show
+						.close__btn.close-popup(data-da='._move-close__button, 820, 0')
+							.close__btn-icon 
+								span 
+								span 
+							span close
+						.calendar-hours-title.calendar-title
+							h3 обрати годину
+						.days-hours 
+							div=calendarHours[0]
+							div=calendarHours[1]
+							div=calendarHours[2]
+							div=calendarHours[3]
+							div=calendarHours[4]
+							div=calendarHours[5]
+							div=calendarHours[6]
+							div=calendarHours[7]
+							div=calendarHours[8]
+							div=calendarHours[9]
+							div=calendarHours[10]
+							div=calendarHours[11]
+							div=calendarHours[12]
+							div=calendarHours[13]
+							div=calendarHours[14]
+				.calendar-footer 
+				.date-time-formate 
+					.day-text-formate СЬОГОДНІ
+					.date-time-value 
+						.time-formate 15:50:20
+						.date-formate 24 - 03 - 2023
+					.show_checked-date
+				.month-list
+.popup.none__class#popup-message
+	.popup__body
+		.popup__content
+			.close__btn.close-popup
+				.close__btn-icon 
+					span 
+					span 
+			h3 Будьте ласкаві, оберіть дати <br> заселення та виселення
+			p Прогляньте наші номери<br>та оберіть той який підходитиме саме Вам

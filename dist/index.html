@@ -8,7 +8,7 @@
   </head>
   <body> 
     <div class="wrapper">
-      <header class="header">
+      <header class="header _home_scroll">
         <div class="header__container">
           <div class="header__logo header__page"> 
             <h1>Reikartz </h1>
@@ -17,14 +17,14 @@
             <div class="menu__body">
                     <nav class="menu__body-wrapper"> 
                       <ul class="header__menu-list menu__list">
-                              <li class="header__menu-link"><a href="[&quot;index.html&quot;]">
+                              <li class="header__menu-link"><a href="index.html">
                                   <p class="menu__link" data-goto="._home">головна</p></a></li>
                               <li class="header__menu-link">
                                 <p class="menu__link" data-goto="._about">про нас</p>
                               </li>
-                              <li class="header__menu-link"><a href="[&quot;twinroom.html&quot;]">
+                              <li class="header__menu-link"><a href="twinroom.html">
                                   <p class="menu__link" data-goto="._rooms">кімнати</p></a></li>
-                              <li class="header__menu-link"><a href="[&quot;restaurant.html&quot;]">
+                              <li class="header__menu-link"><a href="restaurant.html">
                                   <p class="menu__link" data-goto="._restaurant">ресторан</p></a></li>
                               <li class="header__menu-link">
                                 <p class="menu__link" data-goto="._conference">конференс зал</p>
@@ -82,74 +82,16 @@
             <div class="main__img-wrapper"> 
               <div class="main__images"> <img class="main__img-room _img" src="img/banner/01.jpg" alt="room"><img class="main__img-room _img _hide" src="img/banner/01_1.jpg" alt="room">
                 <ul class="check__list banner"> 
-                  <li class="check-link check-in"> 
+                  <li class="check-link check-date check-in get_date-popup" get_popup="#popup-in">
                     <p>дата поселення</p><img src="img/icons/arow_ellow.svg" alt="arow">
                   </li>
-                  <li class="check-link check-out"> 
+                  <li class="check-link check-date check-out get_date-popup" get_popup="#popup-in">
                     <p>дата виїзду</p><img src="img/icons/arow_ellow.svg" alt="arow">
                   </li>
-                  <li class="check-link check-rooms"> 
-                    <p>обрати номер</p>
+                  <li class="check-link check-rooms menu__link" data-goto="._rooms_scroll">
+                    <p class="menu__link" data-goto="._rooms_scroll">обрати номер</p>
                   </li>
                 </ul>
-                <div class="container _hide"> 
-                  <div class="calendar"> 
-                    <div class="calendar-body"> 
-                      <div class="calendar-body-wrapper"> 
-                        <div class="calendar-week-title calendar-title">
-                          <h3>обрати дату</h3>
-                        </div>
-                        <div class="calendar-header"> <span class="month-picker" id="month-picker">Березень</span>
-                          <div class="year-picker" id="year-picker"> <span class="year-change" id="pre-year"> 
-                              <pre><</pre></span><span id="year">2023</span><span class="year-change" id="next-year"> 
-                              <pre>> </pre></span></div>
-                        </div>
-                        <div class="calendar-week-days">
-                          <div>пон</div>
-                          <div>вів</div>
-                          <div>сер</div>
-                          <div>чет</div>
-                          <div>птн</div>
-                          <div>пнх</div>
-                          <div>нед</div>
-                        </div>
-                        <div class="calendar-days"></div>
-                      </div>
-                      <div class="calendar-hours-wrapper show">
-                        <div class="calendar-hours-title calendar-title">
-                          <h3>обрати годину</h3>
-                        </div>
-                        <div class="days-hours"> 
-                          <div>8:00</div>
-                          <div>9:00</div>
-                          <div>10:00</div>
-                          <div>11:00</div>
-                          <div>12:00</div>
-                          <div>13:00</div>
-                          <div>14:00</div>
-                          <div>15:00</div>
-                          <div>16:00</div>
-                          <div>17:00</div>
-                          <div>18:00</div>
-                          <div>19:00</div>
-                          <div>20:00</div>
-                          <div>21:00</div>
-                          <div>22:00</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="calendar-footer"> </div>
-                    <div class="date-time-formate"> 
-                      <div class="day-text-formate">СЬОГОДНІ</div>
-                      <div class="date-time-value"> 
-                        <div class="time-formate">15:50:20</div>
-                        <div class="date-formate">24 - 03 - 2023</div>
-                      </div>
-                      <div class="show_checked-date"></div>
-                    </div>
-                    <div class="month-list"></div>
-                  </div>
-                </div>
               </div>
               <div class="main__info-button button _big">
                 <p class="yellow__button">обрати номер</p><span class="line__button line-1"> </span><span class="line__button line-2"></span><span class="line__button line-3"></span><span class="line__button line-4"></span><span class="line__button line-5"></span>
@@ -159,10 +101,10 @@
                 <p class="main__actions-telephone info__telephone">0123456789</p>
                 <p class="main__actions-street">вул. Готельна 1, м. Ніжин</p></span><span class="actions__column-second">
                 <p class="actions__art">Art & Congress</p>
-                <p class="action__art">hall</p></span></div>
+                <p class="actions__art">hall</p></span></div>
           </div>
         </section>
-        <section class="page__about about">
+        <section class="page__about about _about_scroll">
           <div class="about__contain-padding about__container">
             <div class="about__column-1">
               <div class="about__images _big _pc"><img class="about__img _pc" src="img/reception/1 (2).jpg" alt="reception"></div>
@@ -201,7 +143,7 @@
         <section class="page__rooms rooms">
           <div class="rooms__container">
             <div class="rooms__page-content">
-              <div class="rooms__page-title-title">
+              <div class="rooms__page-title-title _rooms_scroll">
                 <h1 class="rooms__content-title main__titles _rooms">кімнати & <br> апартаменти</h1>
               </div>
               <div class="rooms__page-title-text">
@@ -458,7 +400,7 @@
                 </div>
               </div>
             </div>
-            <div class="services__content-wrapper">
+            <div class="services__content-wrapper _conference_scroll">
                     <div class="services__content-rows services__content-row-0">
                       <div class="hidden-row-wrapper">
                         <div class="hidden__row _hidden .hidden__row-0" id="hidden-row-0">
@@ -479,7 +421,7 @@
                         </div>
                       </div>
                       <div class="content__row-wrapper">
-                        <div class="content-row content__row-0" id="content-row0-close">
+                        <div class="content-row _show-services content__row-0" id="content-row0-close">
                           <div class="content__images-wrapper"><img class="content__img" src="img/services/restaurant/01.jpg" alt="img"></div>
                           <div class="services__title-wrapper">
                             <div class="services__content-number services__sub-title">01</div><a class="_show-services hidden-row-0" href="#">
@@ -509,7 +451,7 @@
                         </div>
                       </div>
                       <div class="content__row-wrapper">
-                        <div class="content-row content__row-1" id="content-row1-close">
+                        <div class="content-row _show-services content__row-1" id="content-row1-close">
                           <div class="content__images-wrapper"><img class="content__img" src="img/services/restaurant/01.jpg" alt="img"></div>
                           <div class="services__title-wrapper">
                             <div class="services__content-number services__sub-title">02</div><a class="_show-services hidden-row-1" href="#">
@@ -539,7 +481,7 @@
                         </div>
                       </div>
                       <div class="content__row-wrapper">
-                        <div class="content-row content__row-2" id="content-row2-close">
+                        <div class="content-row _show-services content__row-2" id="content-row2-close">
                           <div class="content__images-wrapper"><img class="content__img" src="img/services/restaurant/01.jpg" alt="img"></div>
                           <div class="services__title-wrapper">
                             <div class="services__content-number services__sub-title">03</div><a class="_show-services hidden-row-2" href="#">
@@ -554,7 +496,7 @@
         </section>
         <section class="page__best best">
           <div class="best__images"><img class="best__img _show" src="img/best_room/01_big.jpg" alt="best_apartments"><img class="best__img _hidden" src="img/best_room/01_small.jpg" alt="best_apartments"></div>
-          <div class="best__sinus-wrapper"><img src="img/icons/sinus.svg" alt="sinus"></div>
+          <div class="best__sinus-wrapper"><img class="best__sinus" src="img/icons/sinus.svg" alt="sinus"></div>
           <div class="best__container">
             <h1 class="best__head-title main__titles _services">Best <br> apartments</h1>
             <div class="best__text-wrapper">
@@ -627,19 +569,19 @@
             <div class="check__list-wrapper">
               <p class="actions__art _services touch">find a room </p>
               <ul class="check__list touch">
-                <li class="check-link check-in touch">
+                <li class="check-link check-date check-in get_date-popup touch" get_popup="#popup-in">
                   <p>дата поселення</p><img src="img/icons/arow_ellow.svg" alt="arow">
                 </li>
-                <li class="check-link check-out touch"> 
+                <li class="check-link check-date check-out get_date-popup touch" get_popup="#popup-in">
                   <p>дата виїзду</p><img src="img/icons/arow_ellow.svg" alt="arow">
                 </li>
-                <li class="check-link check-rooms touch"> 
-                  <p>обрати номер</p>
+                <li class="check-link check-rooms touch menu__link" data-goto="._rooms_scroll">
+                  <p class="menu__link" data-goto="._rooms_scroll">обрати номер</p>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="page__about touch">
+          <div class="page__about touch _contacts_scroll">
             <div class="touch__footer">
               <div class="about__footer-column about__footer">
                 <div class="column__content-wrapper">
@@ -693,6 +635,88 @@
           </div>
         </div>
       </footer>
+      <div class="popup none__class" id="popup-in"> 
+        <div class="popup__body">
+          <div class="popup__content">
+            <div class="calendar"> 
+              <div class="calendar-body"> 
+                <div class="calendar-body-wrapper _move-close__button">
+                  <div class="calendar-week-title calendar-title">
+                    <h3>обрати дату</h3>
+                  </div>
+                  <div class="calendar-header"> <span class="month-picker" id="month-picker">Березень</span>
+                    <div class="year-picker" id="year-picker"> <span class="year-change" id="pre-year"> 
+                        <pre><</pre></span><span id="year">2023</span><span class="year-change" id="next-year"> 
+                        <pre>> </pre></span></div>
+                  </div>
+                  <div class="calendar-week-days">
+                    <div>пон</div>
+                    <div>вів</div>
+                    <div>сер</div>
+                    <div>чет</div>
+                    <div>птн</div>
+                    <div>пнх</div>
+                    <div>нед</div>
+                  </div>
+                  <div class="calendar-days"></div>
+                </div>
+                <div class="calendar-hours-wrapper show">
+                  <div class="close__btn close-popup" data-da="._move-close__button, 820, 0">
+                    <div class="close__btn-icon"> <span> </span><span> </span></div><span>close</span>
+                  </div>
+                  <div class="calendar-hours-title calendar-title">
+                    <h3>обрати годину</h3>
+                  </div>
+                  <div class="days-hours"> 
+                    <div>8:00</div>
+                    <div>9:00</div>
+                    <div>10:00</div>
+                    <div>11:00</div>
+                    <div>12:00</div>
+                    <div>13:00</div>
+                    <div>14:00</div>
+                    <div>15:00</div>
+                    <div>16:00</div>
+                    <div>17:00</div>
+                    <div>18:00</div>
+                    <div>19:00</div>
+                    <div>20:00</div>
+                    <div>21:00</div>
+                    <div>22:00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="calendar-footer"> </div>
+              <div class="date-time-formate"> 
+                <div class="day-text-formate">СЬОГОДНІ</div>
+                <div class="date-time-value"> 
+                  <div class="time-formate">15:50:20</div>
+                  <div class="date-formate">24 - 03 - 2023</div>
+                </div>
+                <div class="show_checked-date"></div>
+              </div>
+              <div class="month-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup none__class" id="popup-message">
+        <div class="popup__body">
+          <div class="popup__content">
+            <div class="close__btn close-popup">
+              <div class="close__btn-icon"> <span> </span><span> </span></div>
+            </div>
+            <h3>Будьте ласкаві, оберіть дати <br> заселення та виселення</h3>
+            <p>Прогляньте наші номери<br>та оберіть той який підходитиме саме Вам</p>
+          </div>
+        </div>
+      </div>
+      <div id="btn-home"> <a href="#top">
+          <div class="btn-top-wrapper lock__padding">
+            <div class="top-btn menu__link" data-goto=".header">
+              <div class="top-arrow menu__link" data-goto=".header"></div>
+            </div>
+          </div></a></div>
     </div>
     <script src="./js/app.min.js"></script>
   </body>

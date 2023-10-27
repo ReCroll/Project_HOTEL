@@ -1,0 +1,78 @@
+include ../components/mixins/mixins.pug
+//- include ../components/mixins/mixins.pug
+include ../components/vars/vars.pug
+-
+	let restaurantHeaderText = [
+		"з гордістю вітає вас у ресторані «Назва», де ви захочете обідати щодня. Ресторан пропонує унікальне меню, розроблене командою професіоналів на чолі з шеф-кухарем Ім’я Прізвище, винну карту з понад 250 позицій, відмінний сервіс і незабутню атмосферу.",
+		"прагне перевершити всі очікування наших гостей. Наш шеф-кухар наполегливо працював над розробкою унікального меню, яке включає найкращі страви європейської кухні, які задовольнять смаки найвимогливіших клієнтів. Привітні та уважні офіціанти подбають про те, щоб ви провели час у нашому ресторані з користю."
+	]
+
+
+main.page
+	section.page__about.about.restaurant 
+		.about__contain-padding.restaurant
+			.about__column-1.restaurant
+			.about__column-2.restaurant
+		.restaurant__container
+			.restaurant__title-wrapper
+				h1.best__head-title.main__titles.title__bigger restaurant Reikartz
+			.restaurant__content-wrapper
+				.restaurant__content-row-1
+					.restaurant__content-title-big
+						h3 Єдиний у своєму роді
+					.restaurant__content-text.restaurant__content-text-header.text
+						.text__restaurant-wrapper
+							p Готель
+								span Reikartz 
+								=restaurantHeaderText[0]
+							.about__stamp.stamp.stamp-img.restaurant
+								.circular premium rooms. Reikartz hotel
+								img.stamp__rotate(src="@img/icons/icon.svg", alt="icon_stamp")
+				.restaurant__content-row-2
+					.restaurant__content-images-wrapper.bigger
+						img.restaurant__content-img.restaurant__content-img-bigger(src="@img/restaurant/01.jpg", alt="restaurant")
+					.restaurant__content-images-wrapper.smaller
+						img.restaurant__content-img.restaurant__content-img-smaller(src="@img/restaurant/02.jpg", alt="restaurant")
+				.restaurant__content-row-3
+					.restaurant__content-title
+						h3 До ваших послуг
+					.restaurant__content-text.bigger-text.text
+						.text__restaurant-wrapper 
+							p Команда ресторану 
+								span Reikartz 
+								=restaurantHeaderText[1]
+	section.restaurant__details
+		.restaurant-details__container
+			.restaurant__content-title.header__details.details
+				.restaurant__content-title-wrapper
+					h3 Одного разу спробувавши нашу кухню та сервіс, ви ніколи не захочете відвідати інший ресторан.
+			.restaurant__details-content-wrapper
+				.restaurant__details-row-1
+					.restaurant__details-images-wrapper.smaller
+						img(src="@img/restaurant/03.jpg", alt="restaurant")
+					.restaurant__details-text-wrapper.bigger.yellow
+						p Вся обробка приміщень виконана екологічно сертифікованими та безпечними матеріалами.
+				.restaurant__details-row-2
+					.restaurant__details-images-wrapper.bigger
+						img(src="@img/restaurant/04.jpg", alt="restaurant")
+					.restaurant__content-title.footer__details.details
+						.row-2__text-wrapper
+							h3 Проведіть час з нами
+					.restaurant__details-text-wrapper.smaller
+						.row-2__text-wrapper
+							p. 
+								Якщо ви шукаєте ексклюзивне місце для романтичної вечері, організації ділової зустрічі або
+								приємного вечора з друзями, відвідайте ресторан «Сейф» готелю «Банк». З нашими смачними стравами,
+								унікальним дизайном інтер'єру, атмосферою комфорту та вишуканості ви ніколи не захочете піти в інший
+								ресторан.
+	include ./restaurantFooter.pug
+	include ../components/pug/popup.pug
+	#btn-home 
+	a(href="#top")
+		.btn-top-wrapper.lock__padding
+			.top-btn.menu__link(data-goto=".header")
+				.top-arrow.menu__link(data-goto=".header")
+
+
+
+	

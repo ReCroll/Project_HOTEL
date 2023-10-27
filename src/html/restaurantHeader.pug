@@ -2,7 +2,7 @@ include ../components/mixins/mixins.pug
 block headerVars
 
 
-- var menuList = ['головна', 'про нас', 'кімнати', 'ресторан', 'конференс зал', 'контакти'];
+- var menuList = ['головна', 'контакти'];
 
 -	
 	let newPageLink = [
@@ -18,6 +18,11 @@ block headerVars
 - socialName = ["Facebook", "Instagram", "Twitter"]
 - socialLink = ["#", "#", "#"]
 - socialClass = ["_fb", "_in", "_tw"]
+mixin restaurantMenu()
+	nav.menu__body-wrapper 
+		ul.header__menu-list(class=attributes.class)
+			+createLists('0', '._home')
+			+createLists('1', '._contacts_scroll ')
 
 header.header._home_scroll
 	.header__container
@@ -25,7 +30,7 @@ header.header._home_scroll
 			h1 Reikartz 
 		.header__menu 
 			.menu__body
-				+menu()(class='menu__list')
+				+restaurantMenu()(class='sub__pages')
 				.header__info 
 					p.header__info-telephone.info__telephone=headerInfo[0]
 					p.header__info-street.info__street=headerInfo[1]

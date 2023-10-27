@@ -1,333 +1,91 @@
 include ../components/mixins/mixins.pug
+include ../components/vars/vars.pug
 
 
-//- ========================== BANNER PRICE ====================
-- 
-	let bannerPriceTitle = [
-		'Bohauss',
-		'Назва якась-2',
-		'Това ще один-3',
-		'Ну і зовсім пушка-4',
-	]
-- 
-	let bannerPriceText = [
-		'Luxury big sofa 2-seat',
-		'Якась назва чогось-2',
-		'Ще щось цікаве про щось-3',
-		'Ні і що дуже крутяцьке-4',
-	]
-- 
-	let bannerPricePrice = [
-		'12 000 грн',
-		'13 000 грн',
-		'11 000 грн',
-		'17 000 грн',
-	]
-//- ============================================================
-//- =================================== PRODUCTS ===================================
--	
-	let imgArray = [
-		["@img//products/0.png", "@img//products/0-1.png", "@img//products/0-2.png"],
-		["@img//products/1.png", "@img//products/1-1.png", "@img//products/1-2.png"],
-		["@img//products/2.png", "@img//products/2-1.png", "@img//products/2-2.png"],
-		["@img//products/3.png", "@img//products/3-1.png", "@img//products/3-2.png"],
-		["@img//products/4.png", "@img//products/4-1.png", "@img//products/4-2.png"],
-		["@img//products/5.png", "@img//products/5-1.png", "@img//products/5-2.png"],
-		["@img//products/6.png", "@img//products/6-1.png", "@img//products/6-2.png"],
-		["@img//products/7.png", "@img//products/7-1.png", "@img//products/7-2.png"],
-		["@img//products/8.png", "@img//products/8-1.png", "@img//products/8-2.png"],
-		["@img//products/9.png", "@img//products/9-1.png", "@img//products/9-2.png"],
-		["@img//products/10.png", "@img//products/10-1.png", "@img//products/10-2.png"],
-		["@img//products/11.png", "@img//products/11-1.png", "@img//products/11-2.png"]
-		//- undefined
-	];
+//- //- ========================== CALENDAR ====================
+//- -
+//- 	let calendarHours = [
+//- 		'8:00',
+//- 		'9:00',
+//- 		'10:00',
+//- 		'11:00',
+//- 		'12:00',
+//- 		'13:00',
+//- 		'14:00',
+//- 		'15:00',
+//- 		'16:00',
+//- 		'17:00',
+//- 		'18:00',
+//- 		'19:00',
+//- 		'20:00',
+//- 		'21:00',
+//- 		'22:00'
+//- 	]
+//- //- ========================== BANNER ==================================
+//- - headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
+//- - footerInfo = ["0123456789", "вул. Готельна 1,", "м. Ніжин"]
+//- - footerNameCat = ["about us", "new", "socials"]
+//- - socialName = ["Facebook", "Instagram", "Twitter"]
+//- - socialLink = ["#", "#", "#"]
+//- - socialClass = ["_fb", "_in", "_tw"]
 
-- var altImgArray = ['door1', 'door2', 'door3', 'door4', 'door5', 'door6', 'door7', 'door8', 'door9', 'door10', 'door11', 'door12'];
--	
-	let titleArray = [
-		`Syltherine`,
-		`Lolito`,
-		`Respira`,
-		`Grifo`,
-		`Muggo`,
-		'Pingky',
-		'Pingky',
-		'Greenke',
-		'Preenki',
-		'Sow buty',
-		'Щось круте',
-		'DESPIRA',
-		//- undefined
-	];
--	
-	let textArray = [
-		`Stylish cafe chair`,
-		`Luxury big sofa`,
-		`Minimalist fan`,
-		`Night lamp`,
-		`Small mug`,
-		`Cute bed set`,
-		`Cute bed set`,
-		'Fly the garden',
-		'Якась штуковина',
-		'Та давай і це продамо',
-		'А це також треба',
-		'Крута коротка фраза',
-		//- undefined
-	];
--	
-	let priceArray = [
-		2500,
-		7000,
-		5000,
-		15000,
-		1500,
-		3400,
-		3800,
-		3900,
-		4500,
-		9100,
-		4500,
-		2560,
-		//- undefined
-	];
--
-	let popupCardText = [
-		//- `ntrcn`
-		["ПРОБА 1 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 2 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 3 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 4 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 5 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 6 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 7 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 8 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 9 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 10 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 11 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"],
-		["ПРОБА 12 Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.",
-		"Composition —",
-		"Cotton 50%, Lyocell 50%", 
-		"Art. No. —",
-		"0643448004"]
-
-		//- [Conscious Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.]
-	];
-
-//- ====================================================================
-
-//- =========================== SWIPER TWO SLIDES VAR ==============
--
-	let swiperTwoImgArray = [
-		"@img//inspiration/1.png",
-		"@img//inspiration/2.png",
-		"@img//inspiration/3.png",
-		"@img//inspiration/2.png",
-		"@img//inspiration/1.png",
-		"@img//inspiration/3.png",
-	];
-
-- 
-	var altSwiperTwoImgArray = ['door1', 'door2', 'door3', 'door4', 'door5', 'door6'];
-
-	let swiperTwoCtgName = [
-		"01 - Вхідні двері",
-		"02 - Міжкімнатні двері",
-		"03 - Ворота",
-		"45 - Жалюзі",
-		"36 - Ще щось",
-		"78 - І ще якась штука",
-	];
--
-	let swiperTwoPrdName = [
-		"Назва дверей",
-		"Назва 2 дверей",
-		"Назва воріт",
-		"Назва жалюзей",
-		"Назва чогось",
-		"Назва штуки",
-	];
-//- ==============================================================================
-
-//- =========================== SWIPER THREE SLIDES VAR ==============
--
-	let swiperThreeImgArray = [
-		"@img//tips/1.png",
-		"@img//tips/2.png",
-		"@img//tips/3.png",
-		"@img//tips/2.png",
-		"@img//tips/1.png",
-		"@img//tips/3.png",
-	];
-
-- 
-	var altSwiperThreeImgArray = ['tips1', 'tips2', 'tips3', 'tips4', 'tips5', 'tips6'];
-
-	let swiperThreeDate = [
-		"20 jan 2020",
-		"10 jan 2020",
-		"20 jan 2020",
-		"26 jan 2022",
-		"15 may 2023",
-		"30 jan 2018",
-	];
--
-	let swiperThreeCtgName = [
-		"How to create a living room to love",
-		"Solution for clean look working space",
-		"Make your cooking activity more fun with good setup",
-		"How to create a living room to love",
-		"Make your cooking activity more fun with good setup",
-		"Solution for clean look working space",
-	];
-//- =============================================================
-
-//- =========================== GALLERY =======================================
--
-	let galleryImgArray = [
-		"@img//gallery/1.png",
-		"@img//gallery/3.png",
-		"@img//gallery/2.png",
-		"@img//gallery/4.png",
-		"@img//gallery/5.png",
-		"@img//gallery/6.png",
-		"@img//gallery/8.png",
-		"@img//gallery/7.png",
-		"@img//gallery/9.png",
-	];
-
--
-	var altGalleryImgArray = ['gallery1', 'gallery2', 'gallery3', 'gallery4', 'gallery5', 'gallery6', 'gallery7', 'gallery8', 'gallery9'];
-
-
-//- ========================== CALENDAR ====================
--
-	let calendarHours = [
-		'8:00',
-		'9:00',
-		'10:00',
-		'11:00',
-		'12:00',
-		'13:00',
-		'14:00',
-		'15:00',
-		'16:00',
-		'17:00',
-		'18:00',
-		'19:00',
-		'20:00',
-		'21:00',
-		'22:00'
-	]
-//- ========================== BANNER ==================================
-- headerInfo = ["0123456789", "вул. Готельна 1, м. Ніжин"]
-- footerInfo = ["0123456789", "вул. Готельна 1,", "м. Ніжин"]
-- footerNameCat = ["about us", "new", "socials"]
-- socialName = ["Facebook", "Instagram", "Twitter"]
-- socialLink = ["#", "#", "#"]
-- socialClass = ["_fb", "_in", "_tw"]
-
-//- ===========================================================================
-//- ========================== SWIPER ROOMS ===================================
--
-	let swiperRoomsTitle = [
-		"Покращений <br> двомісний номер",
-		"Покращений <br> одномісний номер",
-		"Якийсь <br> крутезний номер",
-		"Стандартний <br> двомісний номер",
-		"Стандартний <br> одномісний номер",
-		"Люкс <br> двомісний",
-		"Люкс <br> одномісний",
-		"Президентський <br> номер"
-	]
--
-	let swiperRoomsText = [
-		"Покращений двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Покращений крутезний номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Якийсь двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Стандартний двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Стандартний одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Люкс двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Люкс одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
-		"Президентський номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним"
-	];
-//- ===========================================================================
-//- ================================= SERVICES CARD ===========================
--
-	let servicesNumber = ['01', '02', '03'];
--
-	let servicesTitleFirstHidden = ['Ice', 'conference', 'Wine bar'];
--
-	let servicesTitleSecondHidden = ['restaurant', 'hall', '“reserve”'];
--
-	let servicesTitleOllShow = ['Ice restaurant', 'conference hall', 'Wine bar “reserve”'];
--
-	let servicesText = [
-		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
-		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
-		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.'
-		];
--
-	let servicesImg = [
-		"@img/services/restaurant/01.jpg",
-		"@img//services/restaurant/02.jpg",
-		"@img//services/restaurant/03.jpg"
-		];
--
-	let servicesBigImg = [
-		"@img/services/restaurant/01_big.jpg",
-		"@img//services/restaurant/02_big.jpg",
-		"@img//services/restaurant/03_big.jpg"
-		];
-//- ===========================================================================
-//- ============================ FOOTER TEXT =================================
--
-	let footerText = "Reikartz hotel hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel"
-//- ===========================================================================
+//- //- ===========================================================================
+//- //- ========================== SWIPER ROOMS ===================================
+//- -
+//- 	let swiperRoomsTitle = [
+//- 		"Покращений <br> двомісний номер",
+//- 		"Покращений <br> одномісний номер",
+//- 		"Якийсь <br> крутезний номер",
+//- 		"Стандартний <br> двомісний номер",
+//- 		"Стандартний <br> одномісний номер",
+//- 		"Люкс <br> двомісний",
+//- 		"Люкс <br> одномісний",
+//- 		"Президентський <br> номер"
+//- 	]
+//- -
+//- 	let swiperRoomsText = [
+//- 		"Покращений двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Покращений крутезний номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Якийсь двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Стандартний двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Стандартний одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Люкс двомісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Люкс одномісний ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним",
+//- 		"Президентський номер ідеально підходить для тих, хто планує залишитися надовго. Простора та світла кімната обставлена ​​розкішними італійськими меблями та має прекрасний вид на історичну частину міста. Стильний дизайн інтер'єру та зручні ліжка зроблять Ваш відпочинок затишним та приємним"
+//- 	];
+//- //- ===========================================================================
+//- //- ================================= SERVICES CARD ===========================
+//- -
+//- 	let servicesNumber = ['01', '02', '03'];
+//- -
+//- 	let servicesTitleFirstHidden = ['Ice', 'conference', 'Wine bar'];
+//- -
+//- 	let servicesTitleSecondHidden = ['restaurant', 'hall', '“reserve”'];
+//- -
+//- 	let servicesTitleOllShow = ['Ice restaurant', 'conference hall', 'Wine bar “reserve”'];
+//- -
+//- 	let servicesText = [
+//- 		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
+//- 		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.',
+//- 		'The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.'
+//- 		];
+//- -
+//- 	let servicesImg = [
+//- 		"@img/services/restaurant/01.jpg",
+//- 		"@img//services/restaurant/02.jpg",
+//- 		"@img//services/restaurant/03.jpg"
+//- 		];
+//- -
+//- 	let servicesBigImg = [
+//- 		"@img/services/restaurant/01_big.jpg",
+//- 		"@img//services/restaurant/02_big.jpg",
+//- 		"@img//services/restaurant/03_big.jpg"
+//- 		];
+//- //- ===========================================================================
+//- //- ============================ FOOTER TEXT =================================
+//- -
+//- 	let footerText = "Reikartz hotel hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel Reikartz hotel"
+//- //- ===========================================================================
 
 main.page
 	section.page__main.main 
@@ -359,64 +117,15 @@ main.page
 					img.main__img-room._img(src="@img/banner/01.jpg", alt="room")
 					img.main__img-room._img._hide(src="@img/banner/01_1.jpg", alt="room")
 					ul.check__list.banner 
-						li.check-link.check-in 
+						li.check-link.check-date.check-in.get_date-popup(get_popup="#popup-in")
 							p дата поселення
 							img(src="@img/icons/arow_ellow.svg", alt="arow")
-						li.check-link.check-out 
+						li.check-link.check-date.check-out.get_date-popup(get_popup="#popup-in")
 							p дата виїзду
 							img(src="@img/icons/arow_ellow.svg", alt="arow")
-						li.check-link.check-rooms 
-							p обрати номер
-					.container._hide 
-						.calendar 
-							.calendar-body 
-								.calendar-body-wrapper 
-									.calendar-week-title.calendar-title
-										h3 обрати дату
-									.calendar-header 
-										span.month-picker#month-picker Березень
-										.year-picker#year-picker 
-											span.year-change#pre-year 
-												pre <
-											span#year 2023
-											span.year-change#next-year 
-												pre > 
-									.calendar-week-days
-										div пон
-										div вів
-										div сер
-										div чет
-										div птн
-										div пнх
-										div нед
-									.calendar-days
-								.calendar-hours-wrapper.show
-									.calendar-hours-title.calendar-title
-										h3 обрати годину
-									.days-hours 
-										div=calendarHours[0]
-										div=calendarHours[1]
-										div=calendarHours[2]
-										div=calendarHours[3]
-										div=calendarHours[4]
-										div=calendarHours[5]
-										div=calendarHours[6]
-										div=calendarHours[7]
-										div=calendarHours[8]
-										div=calendarHours[9]
-										div=calendarHours[10]
-										div=calendarHours[11]
-										div=calendarHours[12]
-										div=calendarHours[13]
-										div=calendarHours[14]
-							.calendar-footer 
-							.date-time-formate 
-								.day-text-formate СЬОГОДНІ
-								.date-time-value 
-									.time-formate 15:50:20
-									.date-formate 24 - 03 - 2023
-								.show_checked-date
-							.month-list
+						li.check-link.check-rooms.menu__link(data-goto="._rooms_scroll")
+							p.menu__link(data-goto="._rooms_scroll") обрати номер
+
 				.main__info-button.button._big
 					p.yellow__button обрати номер
 					+buttonBig()
@@ -426,8 +135,8 @@ main.page
 					p.main__actions-street=headerInfo[1]
 				span.actions__column-second
 					p.actions__art Art & Congress
-					p.action__art hall
-	section.page__about.about
+					p.actions__art hall
+	section.page__about.about._about_scroll
 		.about__contain-padding.about__container
 			.about__column-1
 				.about__images._big._pc
@@ -458,7 +167,7 @@ main.page
 	section.page__rooms.rooms
 		.rooms__container
 			.rooms__page-content
-				.rooms__page-title-title
+				.rooms__page-title-title._rooms_scroll
 					h1.rooms__content-title.main__titles._rooms кімнати & <br> апартаменти
 				.rooms__page-title-text
 					p.rooms__content-text.text.big-text. 
@@ -508,7 +217,7 @@ main.page
 						img.services__img(src="@img/services/02_head.jpg", alt="services")
 						.services__stamp.stamp
 							.circular premium rooms. Reikartz hotel
-			.services__content-wrapper
+			.services__content-wrapper._conference_scroll
 				+createServices(0)
 				+createServices(1)
 				+createServices(2)
@@ -517,7 +226,7 @@ main.page
 			img.best__img._show(src="@img/best_room/01_big.jpg", alt="best_apartments")
 			img.best__img._hidden(src="@img/best_room/01_small.jpg", alt="best_apartments")
 		.best__sinus-wrapper
-			img(src="@img/icons/sinus.svg", alt="sinus")
+			img.best__sinus(src="@img/icons/sinus.svg", alt="sinus")
 		.best__container
 			h1.best__head-title.main__titles._services Best <br> apartments
 			.best__text-wrapper
@@ -559,79 +268,84 @@ main.page
 				span.hotel__name-center
 					h3 Reikartz__hotel&copy
 				=footerText
-footer.footer 
-	.footer__container 
-		.page__touch.touch
-			.touch__telephone
-				p.main__actions-telephone.info__telephone.touch=footerInfo[0]
-			.touch__address.main__actions
-				p.main__actions-street.touch=footerInfo[1]
-				p.main__actions-street.touch=footerInfo[2]
-			.touch__title-wrapper
-				h1.touch__head-title.main__titles._big-title ми на 
-					span.title__icon-touch t 
-				h1.touch__head-title.main__titles._big-title зв’язку
-				.touch__images-wrapper
-					img.touch__img(src="@img/touch/01.jpg", alt="img")
-				.main__info-button.touch.button._big
-					p.yellow__button обрати номер
-					+buttonBig()
-			.check__list-wrapper
-				p.actions__art._services.touch find a room 
-				ul.check__list.touch
-					li.check-link.check-in.touch
-						p дата поселення
-						img(src="@img/icons/arow_ellow.svg", alt="arow")
-					li.check-link.check-out.touch 
-						p дата виїзду
-						img(src="@img/icons/arow_ellow.svg", alt="arow")
-					li.check-link.check-rooms.touch 
-						p обрати номер
-
-		.page__about.touch
-			.touch__footer
-				.about__footer-column.about__footer
-					.column__content-wrapper
-						.about__footer-title
-							h4.actions__art._services
-								span /
-								=footerNameCat[0]
-						p.text.text-dark. 
-							The five-star hotel in a beautiful European city with a modern
-							restaurant, conference-hall, and art-bar.
-					.footer__touch-reserved
-						p 
-							a ©2021 All rights reserved.BankHotel
-				.about__footer-column.new__footer
-					.column__content-wrapper
-						.about__footer-title
-							h4.actions__art._services
-								span /
-								=footerNameCat[1]
-						p.text.text-dark. 
-							The five-star hotel in a beautiful European city with a
-							modern restaurant, conference-hall, and art-bar.
-					.footer__email-wrapper
-						input.email__input(type="text", placeholder="EMAIL")
-						button.email__submit(type="submit")
-				.about__footer-column.socials__footer
-					.about__footer-title
-						h4.actions__art._services
-							span /
-							=footerNameCat[2]
-					ul 
-						li 
-							a(href="", target="_blank") 
-								p Facebook
-						li 
-							a(href="", target="_blank") 
-								p Instagram
-						li 
-							a(href="", target="_blank") 
-								p twitter
-				.footer__touch-reserved.hidden
-					p 
-						a ©2021 All rights reserved.BankHotel
+include ./footer.pug
+include ../components/pug/popup.pug
+#btn-home 
+	a(href="#top")
+		.btn-top-wrapper.lock__padding
+			.top-btn.menu__link(data-goto=".header")
+				.top-arrow.menu__link(data-goto=".header")
+//- .popup.none__class#popup-in 
+//- 	.popup__body
+//- 		.popup__content
+//- 			.calendar 
+//- 				.calendar-body 
+//- 					.calendar-body-wrapper._move-close__button
+//- 						.calendar-week-title.calendar-title
+//- 							h3 обрати дату
+//- 						.calendar-header 
+//- 							span.month-picker#month-picker Березень
+//- 							.year-picker#year-picker 
+//- 								span.year-change#pre-year 
+//- 									pre <
+//- 								span#year 2023
+//- 								span.year-change#next-year 
+//- 									pre > 
+//- 						.calendar-week-days
+//- 							div пон
+//- 							div вів
+//- 							div сер
+//- 							div чет
+//- 							div птн
+//- 							div пнх
+//- 							div нед
+//- 						.calendar-days
+//- 					.calendar-hours-wrapper.show
+//- 						.close__btn.close-popup(data-da='._move-close__button, 820, 0')
+//- 							.close__btn-icon 
+//- 								span 
+//- 								span 
+//- 							span close
+//- 						.calendar-hours-title.calendar-title
+//- 							h3 обрати годину
+//- 						.days-hours 
+//- 							div=calendarHours[0]
+//- 							div=calendarHours[1]
+//- 							div=calendarHours[2]
+//- 							div=calendarHours[3]
+//- 							div=calendarHours[4]
+//- 							div=calendarHours[5]
+//- 							div=calendarHours[6]
+//- 							div=calendarHours[7]
+//- 							div=calendarHours[8]
+//- 							div=calendarHours[9]
+//- 							div=calendarHours[10]
+//- 							div=calendarHours[11]
+//- 							div=calendarHours[12]
+//- 							div=calendarHours[13]
+//- 							div=calendarHours[14]
+//- 				.calendar-footer 
+//- 				.date-time-formate 
+//- 					.day-text-formate СЬОГОДНІ
+//- 					.date-time-value 
+//- 						.time-formate 15:50:20
+//- 						.date-formate 24 - 03 - 2023
+//- 					.show_checked-date
+//- 				.month-list
+//- .popup.none__class#popup-message
+//- 	.popup__body
+//- 		.popup__content
+//- 			.close__btn.close-popup
+//- 				.close__btn-icon 
+//- 					span 
+//- 					span 
+//- 			h3 Будьте ласкаві, оберіть дати <br> заселення та виселення
+//- 			p Прогляньте наші номери<br>та оберіть той який підходитиме саме Вам
+//- #btn-home 
+//- 	a(href="#top")
+//- 		.btn-top-wrapper.lock__padding
+//- 			.top-btn.menu__link(data-goto=".header")
+//- 				.top-arrow.menu__link(data-goto=".header")
 
 
 

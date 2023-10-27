@@ -810,7 +810,7 @@ input {
   transform: translate(-50%, -50%);
   width: rem(24);
   height: rem(12);
-  background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+  background: url(@img/icons/arow_ellow.svg) no-repeat center/contain;
 
 }
 
@@ -2405,7 +2405,7 @@ input {
     transform: translate(-50%, 0%);
     width: rem(24);
     height: rem(12);
-    background: url(../images/icons/arow_ellow.svg) no-repeat center/contain;
+    background: url(@img/icons/arow_ellow.svg) no-repeat center/contain;
   }
 }
 
@@ -3091,7 +3091,7 @@ input {
   max-height: rem(32);
   min-width: rem(24);
   min-height: rem(20);
-  background: url(../images/icons/arrow.svg) no-repeat center / contain;
+  background: url(@img/icons/arrow.svg) no-repeat center / contain;
 }
 
 .button._transparent::before {
@@ -3515,7 +3515,7 @@ input {
   left: 63%;
   width: rem(50);
   height: rem(50);
-  background: url(../images/icons/Star_7.png) no-repeat center / cover;
+  background: url(@img/icons/Star_7.png) no-repeat center / cover;
 }
 
 .title__icon::before {
@@ -3784,7 +3784,7 @@ input {
   display: block;
   width: rem(88);
   height: rem(44);
-  background: url(../images/icons/arrow.svg) no-repeat center / contain;
+  background: url(@img/icons/arrow.svg) no-repeat center / contain;
 }
 
 .content-row:hover {
@@ -5239,7 +5239,7 @@ input {
   width: calc(rem(70) + (150 - 70) * ((100vw - rem($_1024)) / (1920 - $_1024)));
   line-height: calc(rem(250) + (300 - 250) * ((100vw - rem($_1440)) / (1920 - $_1440)));
   // height: calc(rem(70) + (150 - 70) * ((100vw - rem($_1024)) / (1920 - $_1024)));
-  background: url(../images/icons/Star2_ellow.svg) no-repeat center / contain;
+  background: url(@img/icons/Star2_ellow.svg) no-repeat center / contain;
   color: transparent;
 }
 
@@ -5476,7 +5476,7 @@ input {
   flex: 0 0 rem(31);
 
   height: rem(17);
-  background: url(../images/icons/arrow-1.png) no-repeat center / cover;
+  background: url(@img/icons/arrow-1.png) no-repeat center / cover;
   opacity: 0.48;
   transition: all 0.3s ease 0s;
 }
@@ -5765,7 +5765,7 @@ input {
 
 //======================================= ROOMS__PAGES ===================================
 .about__twin {
-  background: url(../images/icons/sinus_white.svg) no-repeat center / contain;
+  background: url(@img/icons/sinus_white.svg) no-repeat center / contain;
 }
 
 .date__hotel.rooms__page:not(:last-child) {
@@ -6791,7 +6791,7 @@ button.rooms__page:disabled {
 
   .restaurant__details {
     padding-bottom: calc(rem(100) + (198 - 100) * ((100vw - rem($_768)) / ($_1024 - $_768)));
-    background-image: url(../images/icons/sinus_white.svg);
+    background-image: url(@img/icons/sinus_white.svg);
     background-repeat: no-repeat;
     background-position-y: 77%;
     background-size: contain;
@@ -7059,7 +7059,7 @@ button.rooms__page:disabled {
 //=============================== FOOTER ======================
 footer.restaurant {
   background-color: #313F38;
-  background-image: url(../images/icons/sinus_white.svg);
+  background-image: url(@img/icons/sinus_white.svg);
   background-repeat: no-repeat;
   background-position-y: 11%;
   background-size: contain;
@@ -7165,7 +7165,7 @@ footer.restaurant {
   }
 
   button {
-    background: url(../images/icons/arrow-white.png) no-repeat center / cover;
+    background: url(@img/icons/arrow-white.png) no-repeat center / cover;
   }
 }
 

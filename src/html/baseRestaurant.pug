@@ -1,0 +1,30 @@
+block vars
+	- var siteTitle = 'Reikartz REASTAURANT';
+	- var lang = 'ua';
+
+doctype html
+html(lang=lang)
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{siteTitle}
+		//- link(rel="stylesheet", href="")
+		//- link(rel="stylesheet", href="/css/style.min.css")
+		link(rel="stylesheet", href="./css/style.min.css")
+
+		//- link(rel="stylesheet", href="/css/popup.min.css")
+		//- link(rel="stylesheet", href="/css/btnHome.min.css")
+	body 
+		block contentRestaurant
+		//- script(src="js/app.min.js")
+		//- script(src="../js/cdn.jsdelivr.net_npm_swiper@10_swiper-bundle.min.js") 
+		//- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+		//- script(src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js")
+		//- script(src="../js/swiper9.min.js")
+		//- <script type="text/javascript" src="../js/jquery.js"></script>
+		script(src="./js/app.min.js")
+		//- script(src="../js/swiper10_swiper-bundle.min.js") 
+
+		//- script(type="text/javascript", src="js/script.js")
+		//- <script src="js/app.min.js"></script>
+		//- <script src="js/script.js"></script>

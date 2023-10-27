@@ -1,13 +1,13 @@
-footer.footer 
-	.footer__container 
-		.page__touch.touch
-			.touch__telephone
-				p.main__actions-telephone.info__telephone.touch=footerInfo[0]
-			.touch__address.main__actions
-				p.main__actions-street.touch=footerInfo[1]
+footer.footer.restaurant
+	.footer__container.restaurant
+		.page__touch.touch.restaurant
+			.touch__telephone.restaurant
+				p.main__actions-telephone.info__telephone.touch.text-dark=footerInfo[0]
+			.touch__address.main__actions.restaurant
+				p.main__actions-street.touch.text-dark=footerInfo[1]
 				p.main__actions-street.touch=footerInfo[2]
-			.touch__title-wrapper
-				h1.touch__head-title.main__titles._big-title ми на 
+			.touch__title-wrapper.restaurant
+				h1.touch__head-title.main__titles._big-title.text-white ми на 
 					span.title__icon-touch t 
 				h1.touch__head-title.main__titles._big-title зв’язку
 				.touch__images-wrapper
@@ -15,19 +15,19 @@ footer.footer
 				.main__info-button.touch.button._big
 					p.yellow__button обрати номер
 					+buttonBig()
-			.check__list-wrapper
+			.check__list-wrapper.restaurant
 				p.actions__art._services.touch find a room 
-				ul.check__list.touch
+				ul.check__list.touch.restaurant
 					li.check-link.check-date.check-in.get_date-popup.touch(get_popup="#popup-in")
 						p дата поселення
 						img(src="@img/icons/arow_ellow.svg", alt="arow")
 					li.check-link.check-date.check-out.get_date-popup.touch(get_popup="#popup-in")
 						p дата виїзду
 						img(src="@img/icons/arow_ellow.svg", alt="arow")
-					li.check-link.check-rooms.touch.menu__link(data-goto="._rooms_scroll")
-						p.menu__link(data-goto="._rooms_scroll") обрати номер
-
-		.page__about.touch._contacts_scroll
+					li.check-link.check-rooms.yellow 
+						a(href="index.html") 
+						p обрати номер
+		.page__about.touch._contacts_scroll.restaurant
 			.touch__footer
 				.about__footer-column.about__footer
 					.column__content-wrapper
@@ -50,7 +50,7 @@ footer.footer
 						p.text.text-dark. 
 							The five-star hotel in a beautiful European city with a
 							modern restaurant, conference-hall, and art-bar.
-					.footer__email-wrapper
+					.footer__email-wrapper.restaurant
 						input.email__input(type="text", placeholder="EMAIL")
 						button.email__submit(type="submit")
 				.about__footer-column.socials__footer

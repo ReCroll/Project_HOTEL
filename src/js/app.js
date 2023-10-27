@@ -4,6 +4,8 @@ import * as maskFunctions from "./modules/inputmask.js";
 flsFunctions.isWebp();
 import "./jquery.js";
 import "./modules/swiper.js";
+import "./modules/scroll.js";
+import "./modules/popup.js";
 // import * as useDynamicAdapt from "./modules/dynamicAdapt.js";
 
 // useDynamicAdapt();
@@ -77,60 +79,139 @@ for (let index = 0; index < menuMobile.length; index++) {
 // }
 // });
 // console.log(menuMobile);
-
+// ======================= ТЕКСТ ПО КОЛУ ======================
+function $$(selector, context) {
+  context = context || document;
+  var elements = context.querySelectorAll(selector);
+  return Array.prototype.slice.call(elements);
+}
+$$(".circular").forEach(function (el) {
+  var NS = "http://www.w3.org/2000/svg";
+  // var xlinkNS = "http://www.w3.org/1999/xlink";
+  var svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 100 100");
+  var circle = document.createElementNS(NS, "path");
+  circle.setAttribute("d", "M0,50 a50,50 0 1,1 0,1z");
+  circle.setAttribute("id", "circle");
+  var text = document.createElementNS(NS, "text");
+  var textPath = document.createElementNS(NS, "textPath");
+  textPath.textContent = el.textContent;
+  textPath.setAttributeNS(
+    "http://www.w3.org/1999/xlink",
+    "xlink:href",
+    "#circle"
+  );
+  text.appendChild(textPath);
+  svg.appendChild(circle);
+  svg.appendChild(text);
+  el.textContent = "";
+  el.appendChild(svg);
+});
+//===========================================================
 //=====================================================================
 //============================== ПРОКРУТКА ДО БЛОКА ===============
-//========================== SCROLLING =======================
 
-// const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
-// // console.log(menuLinks);
-// if (menuLinks.length > 0) {
-//   menuLinks.forEach((menuLink) => {
-//     menuLink.addEventListener("click", onMenuLinkClick);
-//     menuLink.addEventListener("click", sortingProducts);
-//   });
+const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+if (menuLinks.length > 0) {
+  menuLinks.forEach((menuLink) => {
+    menuLink.addEventListener("click", onMenuLinkClick);
+  });
 
-//   function onMenuLinkClick(e) {
-//     // console.log(menuLinks);
+  function onMenuLinkClick(e) {
+    const menuLink = e.target;
+    if (
+      menuLink.dataset.goto &&
+      document.querySelector(menuLink.dataset.goto)
+    ) {
+      const gotoBlock = document.querySelector(menuLink.dataset.goto);
+      const gotoBlockValue =
+        gotoBlock.getBoundingClientRect().top +
+        scrollY -
+        document.querySelector("header").offsetHeight;
 
-//     const menuLink = e.target;
-//     if (
-//       menuLink.dataset.goto &&
-//       document.querySelector(menuLink.dataset.goto)
-//     ) {
-//       // console.log(menuLink.dataset.goto);
-//       // console.log(document.querySelector(menuLink.dataset.goto));
-//       const gotoBlock = document.querySelector(menuLink.dataset.goto);
-//       const gotoBlockValue =
-//         gotoBlock.getBoundingClientRect().top +
-//         scrollY -
-//         document.querySelector("header").offsetHeight;
+      if (iconMenu.classList.contains("_active")) {
+        document.body.classList.remove("_lock");
+        iconMenu.classList.remove("_active");
+        menuBody.classList.remove("_active");
+        headerMenu.classList.remove("_active");
+      }
 
-//       if (iconMenu.classList.contains("_active")) {
-//         document.body.classList.remove("_lock");
-//         iconMenu.classList.remove("_active");
-//         menuBody.classList.remove("_active");
-//       }
-
-//       window.scrollTo({
-//         top: gotoBlockValue,
-//         behavior: "smooth",
-//       });
-//       e.preventDefault();
-//     }
-//   }
-// }
-//=========================== CALENDAR ===============================================================================================================
-let inCalendars = document.getElementsByClassName("check-in");
+      window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth",
+      });
+      e.preventDefault();
+    }
+  }
+}
+//===================================== SEND DATE COMPONENT ===============================
+var showCheckedDate = document.querySelector(".show_checked-date");
+let inCalendars = document.getElementsByClassName("check-date");
+var inOrOut = [];
+// var popup_messages = document.getElementsByClassName('rooms__info-button');
+// console.log(popup_messages);
 console.log(inCalendars);
+console.log(inOrOut);
 for (let index = 0; index < inCalendars.length; index++) {
   const inCalendar = inCalendars[index];
   console.log(inCalendar);
   inCalendar.addEventListener("click", function (e) {
-    createCalendar();
+    // inOrOut = ["non"];
+    // console.log(inOrOut);
+    if (inCalendar.classList.contains("check-in")) {
+      inText(inOrOut);
+      console.log("inDate");
+      showCheckedDate.classList.add("in_date");
+      if (showCheckedDate.classList.contains("out_date")) {
+        showCheckedDate.classList.remove("out_date");
+      }
+      console.log(showCheckedDate);
+      // inOrOut[0] = "ЗАСЕЛЕННЯ:";
+    } else if (inCalendar.classList.contains("check-out")) {
+      outText(inOrOut);
+      showCheckedDate.classList.add("out_date");
+      if (showCheckedDate.classList.contains("in_date")) {
+        showCheckedDate.classList.remove("in_date");
+      }
+      console.log("outDate");
+    }
+    let monthInWrapper = document.querySelector(".month-list");
+    console.log(monthInWrapper);
+    let monthListsIn = monthInWrapper.getElementsByTagName("div");
+    console.log(monthListsIn);
+    if (monthListsIn.length < 12) {
+      createCalendar();
+    } else {
+      return;
+    }
     e.preventDefault();
   });
 }
+console.log(inOrOut);
+function inText(inOrOut) {
+  inOrOut[0] = "ЗАСЕЛЕННЯ:";
+  console.log(inOrOut[0]);
+  inOrOut = "non";
+  console.log(inOrOut);
+}
+function outText(inOrOut) {
+  inOrOut[0] = "ВИЇЗД:";
+  console.log(inOrOut[0]);
+  inOrOut = "non";
+  console.log(inOrOut);
+}
+
+// for (let index = 0; index < popup_messages.length; index++) {
+// 	const popup_message = popup_messages[index];
+// 	if (popup_message.hasAttribute('data-popup')) {
+// 		let popup_array = [popup_message];
+// 		// popup_array = popup_message;
+// 		console.log(popup_array);
+// 	}
+// 	console.log(popup_message);
+// }
+
+//=========================== CALENDAR ===============================================================================================================
 
 function createCalendar() {
   const isLeapYear = (year) => {
@@ -143,11 +224,9 @@ function createCalendar() {
     return isLeapYear(year) ? 29 : 28;
   };
   let calendar = document.querySelector(".calendar");
-  console.log(calendar);
-  let calendarContainer = calendar.closest(".container");
-  if (calendarContainer.classList.contains("_hide")) {
-    calendarContainer.classList.remove("_hide");
-  }
+  // let month_names = [];
+  // console.log(month_names);
+  // if (month_names.length == 0) {
   const month_names = [
     "Січень",
     "Лютий",
@@ -162,13 +241,23 @@ function createCalendar() {
     "Листопад",
     "Грудень",
   ];
+  // console.log(month_names);
+  // }
+
   let month_picker = document.querySelector("#month-picker");
   const dayTextFormate = document.querySelector(".day-text-formate");
   const timeFormate = document.querySelector(".time-formate");
   const dateFormate = document.querySelector(".date-formate");
-  var showCheckedDate = document.querySelector(".show_checked-date");
+  // var showCheckedDate = document.querySelector(".show_checked-date");
 
   month_picker.onclick = () => {
+    console.log("click by month");
+    if (showCheckedDate.classList.contains("_pulsing")) {
+      showCheckedDate.classList.remove("_pulsing");
+    }
+    // reloadCheckedTime(send_time);
+    // showDate(send_time);
+    // reCheckedHour();
     month_list.classList.remove("hideonce");
     month_list.classList.remove("hide");
     month_list.classList.add("show");
@@ -183,8 +272,13 @@ function createCalendar() {
     // hideBorder();
   };
   var send_time = [];
+  var get_oll_time = [];
+  // if (generateCalendar.length < 0) {
+  // 	console.log(generateCalendar);
+  // }
 
-  const generateCalendar = (month, year) => {
+  var generateCalendar = (month, year) => {
+    // console.log(generateCalendar);
     let calendar_days = document.querySelector(".calendar-days");
     calendar_days.innerHTML = "";
     let calendar_header_year = document.querySelector("#year");
@@ -270,6 +364,43 @@ function createCalendar() {
     // }
     // console.log(`Ви обрали ${send_time[0]} число та ${send_time[1]} годину`);
     // console.log(send_time);
+    let closePopupWrapper = calendar.closest(".popup__content");
+    let closePopupBody = calendar.closest(".popup__body");
+    // console.log(closePopupBody);
+
+    // console.log(closePopupBody);
+    closePopupBody.addEventListener("click", function (e) {
+      // console.log("click by body");
+      if (!e.target.closest(".popup__content")) {
+        console.log("click by body2");
+        console.log("close body");
+        reloadCheckedTime(send_time);
+        reloadTime(send_time);
+        reloadCheckedTime(send_time);
+        showCheckedDate.classList.remove("show_in_date");
+        showCheckedDate.classList.remove("_pulsing");
+        if (showCheckedDate.classList.contains("in_date")) {
+          showCheckedDate.classList.remove("in_date");
+        } else if (showCheckedDate.classList.contains("out_date")) {
+          showCheckedDate.classList.remove("out_date");
+        }
+        console.log(send_time);
+        // e.preventDefault();
+      }
+    });
+    console.log(closePopupWrapper);
+    let closePopup = closePopupWrapper.querySelector(".close__btn");
+    console.log(closePopup);
+    closePopup.addEventListener("click", function (e) {
+      // reloadCheckedTime(send_time);
+      console.log("fi");
+      reloadTime(send_time);
+      reloadCheckedTime(send_time);
+      showCheckedDate.classList.remove("show_in_date");
+      showCheckedDate.classList.remove("_pulsing");
+      console.log(send_time);
+      e.preventDefault();
+    });
 
     function reloadTime(send_time) {
       if (send_time[0] != undefined) {
@@ -295,6 +426,14 @@ function createCalendar() {
 
       // sendTime(send_time);
       // console.log(`Ви обрали дату ${send_time[0]} та час ${send_time[1]}`);
+      for (let i = 0; i < days_in_month.length; i++) {
+        var checked_day = days_in_month[i];
+        // console.log(checked_day);
+
+        if (checked_day.classList.contains("checked-day")) {
+          checked_day.classList.remove("checked-day");
+        }
+      }
     }
     let days_hours = document.querySelector(".days-hours");
     // console.log(days_hours);
@@ -309,6 +448,7 @@ function createCalendar() {
           var send_hour = hour.innerHTML;
           console.log(send_hour);
           send_time[2] = send_hour;
+          console.log(send_time);
           sendTime(send_time);
         }
         hideBorder();
@@ -389,8 +529,14 @@ function createCalendar() {
         console.log(month_checked);
         // console.log(day_in_month.innerHTML);
         // reloadDateText();
+        if (day_in_month.innerHTML === "") {
+          console.log("stop");
+          return;
+        } else if (day_in_month.innerHTML !== "") {
+          console.log("go");
+          sendTime(send_time);
+        }
 
-        sendTime(send_time);
         if (
           day_in_month.classList.contains("get_background-border") ||
           day_in_month.classList.contains("current-date")
@@ -407,10 +553,11 @@ function createCalendar() {
           // sendTime(send_time);
         } else if (day_in_month.innerHTML === "") {
           console.log("no");
-          console.log(send_time);
-          reloadTime(send_time);
-          console.log(send_time);
-          showDate(send_time);
+          return;
+          // console.log(send_time);
+          // reloadTime(send_time);
+          // console.log(send_time);
+          // showDate(send_time);
         }
 
         for (let i = 0; i < days_in_month.length; i++) {
@@ -528,8 +675,11 @@ function createCalendar() {
                 el.classList.contains("checked-hour")
               ) {
                 send_time[2] = undefined;
+                // send_time[0] = undefined;
                 showDate(send_time);
                 el.classList.remove("checked-hour");
+                // reloadTime(send_time);
+                // showDate(send_time);
               }
             }
             for (
@@ -555,7 +705,7 @@ function createCalendar() {
         // console.log(send_hour);
         // console.log("ви обрали дату + `$send_day` та час `$send_hour`");
         // console.log(`Ви обрали дату ${send_time[0]} та час ${send_time[1]}`);
-
+        console.log("look 1");
         showDate(send_time);
         // console.log(send_day);
       }
@@ -563,28 +713,171 @@ function createCalendar() {
   };
 
   var show_checked_dates = document.getElementsByClassName("show_checked-date");
+  console.log(show_checked_dates);
+  for (let show = 0; show < show_checked_dates.length; show++) {
+    var show_checked_date = show_checked_dates[show];
+  }
   function showDate(send_time) {
-    for (let show = 0; show < show_checked_dates.length; show++) {
-      var show_checked_date = show_checked_dates[show];
-      console.log(show_checked_date);
-      if (send_time[0] != undefined && send_time[2] != undefined) {
-        show_checked_date.innerHTML = "";
-        show_checked_date.innerHTML = `Підтвердити <span style="color: #FCC000;"> ЗАСЕЛЕННЯ: </span> <br/> ЧАС: 
-			<span style="color: #FCC000;"> ${send_time[2]} година </span>  <br/> ДАТА: <span style="color: #FCC000;"> ${send_time[0]}  число </span>   <br/> МІСЯЦЬ: <span style="color: #FCC000;"> ${send_time[1]} </span>`;
-        showCheckedDate.classList.add("show_in_date");
-        // reloadDateText(show_checked_date);
-      } else if (send_time[0] === undefined || send_time[2] === undefined) {
-        console.log(show_checked_date);
-        setTimeout(() => {
-          show_checked_date.innerHTML = "";
-        }, 500);
-        showCheckedDate.classList.remove("show_in_date");
-        console.log("delete");
-      }
+    console.log(show_checked_date);
+    if (send_time[0] !== undefined && send_time[2] !== undefined) {
+      // show_checked_date.innerHTML = "";
+      // show_checked_date.innerHTML = `Підтвердити <span style="color: #FCC000;"> ${inOrOut} </span> <br/> ЧАС:
+      // <span style="color: #FCC000;"> ${send_time[2]} година </span>  <br/>
+      // ДАТА: <span style="color: #FCC000;"> ${send_time[0]}  число </span>   <br/>
+      // МІСЯЦЬ: <span style="color: #FCC000;"> ${send_time[1]} </span>`;
+      // showCheckedDate.classList.add('show_in_date');
+      // showCheckedDate.classList.add('_pulsing');
+      show_checked_date.innerHTML = `Підтвердити  ${inOrOut} <br/> ЧАС: 
+				${send_time[2]} година  <br/> 
+				ДАТА: ${send_time[0]}  число   <br/> 
+				МІСЯЦЬ: ${send_time[1]}`;
+      showCheckedDate.classList.add("show_in_date");
+      console.log("look");
+      showCheckedDate.classList.add("_pulsing");
+      // show_checked_date.classList.add('_pulsing');
+      console.log("what do it");
+      // sendCheckedInDate(show_checked_date)
+      // show_checked_date.innerHTML = "";
       // reloadDateText(show_checked_date);
+    } else if (send_time[0] === undefined || send_time[2] === undefined) {
+      console.log(show_checked_date);
+      console.log("why hes undefined?");
+      setTimeout(() => {
+        show_checked_date.innerHTML = "";
+      }, 500);
+      showCheckedDate.classList.remove("show_in_date");
+      showCheckedDate.classList.remove("_pulsing");
+      console.log("delete");
     }
+    // reloadDateText(show_checked_date);
+    // }
     // 	// e.preventDefault();
   }
+  show_checked_date.addEventListener("click", function (e) {
+    if (
+      send_time[0] !== undefined &&
+      send_time[2] !== undefined &&
+      show_checked_date.innerHTML !== ""
+    ) {
+      console.log("ну і де зміни?");
+      // show_checked_date.innerHTML = `<span style="color: #FCC000;"> ПІДТВЕРДЖЕНО: </span> <br/> ЧАС:
+      // <span style="color: #FCC000;"> ${send_time[2]} година </span>  <br/>
+      // ДАТА: <span style="color: #FCC000;"> ${send_time[0]}  число </span>   <br/>
+      // МІСЯЦЬ: <span style="color: #FCC000;"> ${send_time[1]} </span>`;
+      // if (show_checked_date.innerHTML == " ") {
+
+      show_checked_date.innerHTML = ` ПІДТВЕРДЖЕНО: <br/> ЧАС: 
+			${send_time[2]} година  <br/> 
+			ДАТА: ${send_time[0]}  число   <br/> 
+			МІСЯЦЬ: ${send_time[1]} </span>`;
+      showCheckedDate.classList.remove("_pulsing");
+      getOllTime(show_checked_date);
+      console.log(`1 ++`);
+      // }
+      e.preventDefault();
+    }
+  });
+  // function sendCheckedInDate(show_checked_date) {
+
+  // }
+
+  function getOllTime(show_checked_date) {
+    if (show_checked_date.classList.contains("in_date")) {
+      get_oll_time[0] = `Заселення ${show_checked_date.innerHTML}`;
+      console.log("test-1");
+    }
+    if (show_checked_date.classList.contains("out_date")) {
+      get_oll_time[1] = `Виселення ${show_checked_date.innerHTML}`;
+      console.log("test-2");
+    }
+    // if ((get_oll_time[0] !== undefined) && (get_oll_time[1] !== undefined)) {
+    if (get_oll_time.length >= 2) {
+      console.log("test-3");
+      createMessageOffDate(get_oll_time);
+    }
+    // console.log(send_time);
+    console.log(get_oll_time);
+  }
+  // console.log(popup_message);
+  function createMessageOffDate(get_oll_time) {
+    var popup_message = document.getElementById("popup-message");
+    var popup_massages_content =
+      popup_message.querySelectorAll(".popup__content");
+    // console.log(popup_massages_content);
+    var popup_massages_tittle = popup_message.getElementsByTagName("h3");
+    var popup_massages_text = popup_message.getElementsByTagName("p");
+    for (let i = 0; i < popup_massages_tittle.length; i++) {
+      const popup_massage_tittle = popup_massages_tittle[i];
+      popup_massage_tittle.innerHTML = "";
+      popup_massage_tittle.innerHTML =
+        "Ми зв’яжемося з вами <br> якомога швидше";
+      console.log("test-4");
+      // Ваші дані були надіслані нашому оператору, <br> який зв'яжеться з вами найблищим часом. <h3>(For programmer:</h3>
+      // <p>${get_oll_time[0]} <br> та <br> ${get_oll_time[1]}</p>)
+    }
+    for (let t = 0; t < popup_massages_text.length; t++) {
+      var popup_massage_text = popup_massages_text[t];
+      popup_massage_text.innerHTML = "";
+      popup_massage_text.innerHTML = `Ваші дані були надіслані нашому оператору, <br> який зв'яжеться з вами найблищим часом 
+			<h4>For programmer:</h4>
+				<strong>${get_oll_time[0]} <br> та <br> ${get_oll_time[1]}</strong>`;
+      console.log("test-5");
+    }
+    // let programmer_message = document.createElement("div");
+    // if (get_oll_time.length == 2 ) {
+    // 	console.log(get_oll_time);
+    // 	console.log(programmer_message);
+    // 	for (let c = 0; c < popup_massages_content.length; c++) {
+    // 		var popup_massage_content = popup_massages_content[c];
+    // 		// console.log(popup_massage_content);
+    // 		programmer_message.innerHTML = `<h4>(For programmer:</h4>
+    // 		<strong>${get_oll_time[0]} <br> та <br> ${get_oll_time[1]}</strong>)`;
+    // 		console.log("test-6");
+    // 		console.log(programmer_message);
+
+    // 		// popup_massage_content.append(programmer_message);
+
+    // 		// let programmer_message = popup_massage_content.createElement("div");
+    // 		// popup_massage_content.createElementsByTagName("div");
+    // 		// console.log(programmer_message);
+    // 		// popup_massage_content.innerHTML = `<h3>(For programmer:</h3>
+    // 		// <p>${get_oll_time[0]} <br> та <br> ${get_oll_time[1]}</p>)`;
+    // 		let check_content = popup_massage_content.querySelectorAll('div');
+    // 		if (check_content.length <= 2) {
+
+    // 			popup_massage_content.append(programmer_message);
+    // 			// popup_massage_content.append(programmer_message);
+    // 		// 	// programmer_message.remove();
+    // 			console.log(programmer_message);
+
+    // 		}
+    // 		programmer_message.innerHTML = "";
+    // 		// if (check_content.length > 2) {
+    // 		// 	console.log("remove_programmer text");
+    // 		// }
+    // 		// programmer_message.firstChild.remove();
+
+    // 	}
+    // }
+    console.log(popup_message);
+    console.log(get_oll_time);
+  }
+
+  // show_checked_date.addEventListener("click", function (e) {
+  // 	console.log("ну і де зміни?");
+  // 	show_checked_date.innerHTML = `Ви підтвердили дату заселення`;
+  // 	e.preventDefault();
+  // })
+
+  // let closePopupWrapper = calendar.closest(".popup__content");
+  // console.log(closePopupWrapper);
+  // let closePopup = closePopupWrapper.querySelector('.close__btn');
+  // console.log(closePopup);
+  // closePopup.addEventListener("click", function (e) {
+  // 	// reloadCheckedTime(send_time);
+  // 	reloadTime(send_time)
+  // 	e.preventDefault();
+  // })
 
   function reloadCheckedTime(send_time) {
     if (send_time[0] != undefined) {
@@ -611,10 +904,23 @@ function createCalendar() {
   // }
 
   let month_list = calendar.querySelector(".month-list");
+  console.log(month_list);
+  // let month_list_out = calendar.querySelector(".month-list_out");
   month_names.forEach((e, index) => {
     let month = document.createElement("div");
+    // console.log(month.innerHTML);
+    // if (month.innerHTML !== `<div>${e}</div>`) {
+    // console.log("gh");
     month.innerHTML = `<div>${e}</div>`;
     month_list.append(month);
+    // month_list.append(month);
+    // month_list_out.append(month);
+    // console.log(month.innerHTML);
+    // } else {
+    // 	// month_list.append(month);
+    // 	return;
+    // }
+
     month.onclick = () => {
       reloadCheckedTime(send_time);
       showDate(send_time);
@@ -711,74 +1017,8 @@ function createCalendar() {
     todayShowTime.textContent = formateTimer;
   }, 1000);
 }
-//============================================================
-// ======================= ТЕКСТ ПО КОЛУ ======================
-function $$(selector, context) {
-  context = context || document;
-  var elements = context.querySelectorAll(selector);
-  return Array.prototype.slice.call(elements);
-}
-$$(".circular").forEach(function (el) {
-  var NS = "http://www.w3.org/2000/svg";
-  // var xlinkNS = "http://www.w3.org/1999/xlink";
-  var svg = document.createElementNS(NS, "svg");
-  svg.setAttribute("viewBox", "0 0 100 100");
-  var circle = document.createElementNS(NS, "path");
-  circle.setAttribute("d", "M0,50 a50,50 0 1,1 0,1z");
-  circle.setAttribute("id", "circle");
-  var text = document.createElementNS(NS, "text");
-  var textPath = document.createElementNS(NS, "textPath");
-  textPath.textContent = el.textContent;
-  textPath.setAttributeNS(
-    "http://www.w3.org/1999/xlink",
-    "xlink:href",
-    "#circle"
-  );
-  text.appendChild(textPath);
-  svg.appendChild(circle);
-  svg.appendChild(text);
-  el.textContent = "";
-  el.appendChild(svg);
-});
-//===========================================================
-//================= SHOW SERVICES ===============
-const showServices = document.querySelectorAll("._show-services");
-if (showServices.length > 0) {
-  for (let index = 0; index < showServices.length; index++) {
-    const showService = showServices[index];
-    showService.addEventListener("click", function (e) {
-      let hideContentService = showService.closest(".content-row");
-      let showHiddenServices = showService
-        .getAttribute("class")
-        .replace("_show-services ", "");
-      hideContentService.classList.add("_hide-services");
-      const closeWrapper = hideContentService.closest(".content__row-wrapper");
-      closeWrapper.classList.add("_rotate");
-      let showHiddenService = document.getElementById(showHiddenServices);
-      showHiddenService.classList.remove("_hidden");
-      e.preventDefault();
-    });
-  }
-  const hideServices = document.querySelectorAll("._hide-services-content");
-  if (hideServices.length > 0) {
-    for (let i = 0; i < hideServices.length; i++) {
-      const hideService = hideServices[i];
-      hideService.addEventListener("click", function (e) {
-        let closeHidden = hideService.closest(".hidden__row");
-        closeHidden.classList.add("_hidden");
-        const getAttrContents = hideService.getAttribute("data-close");
-        const contentRowsClose = document.getElementById(getAttrContents);
-        const paddingContentRowsUp = contentRowsClose.closest(
-          ".content__row-wrapper"
-        );
-        contentRowsClose.classList.remove("_hide-services");
-        paddingContentRowsUp.classList.remove("_rotate");
-        e.preventDefault();
-      });
-    }
-  }
-}
-//========================================================================================
+
+//====================================================================================================================================================
 //============================= GALLERY 3 ===============================================
 const galleryImageArray = document.querySelectorAll(".gallery__image-wrapper");
 if (galleryImageArray.length > 0) {
