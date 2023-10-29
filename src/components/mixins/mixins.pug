@@ -40,81 +40,57 @@ mixin buttonBig()
 	span.line__button.line-4
 	span.line__button.line-5
 
-//- ============================================================
-//- //- ========================== BANNER PRICE ====================
-//- mixin bannerPrice(number)
-//- 	.swiper-slide 
-//- 		.card__price-title 
-//- 			h4= bannerPriceTitle[number]
-//- 		.card__price-text 
-//- 			p= bannerPriceText[number]
-//- 		.card__price-number 
-//- 			p= bannerPricePrice[number]
-//- 			.card__price-arrow 
-//- 				.arrow__wrapper 
-//- 					.arrow__wrapper-arrow
-//- 						span
-//- 			//- img(src="@img/icons/Arrow.svg", alt="", srcset="")
-//- //- ===========================================================
-//- ========================== PRODUCTS CARD ===================
+//-============================ ROOMS ============================================
+//-================================================================================
+//- -
+//- 	let roomsTitleFirstWord = [
+//- 		"Покращений",
+//- 	]
 
-//- mixin createCard(number, discount, category, subCategory)
-//- 	.product__content-card.card(class=attributes.class, class=category, class =subCategory, get-attr = "_" + number)
-//- 		.card__hover 
-//- 			button.card__hover-button.button__more.popup-link(href = "#popup", get-attr = "_" + number) Add to cart 
-//- 			.card__hover-links 
-//- 				.share 
-//- 					img(src="@img//icons/share.svg", alt="share")
-//- 					p Share
-//- 				.like(class = "like_card-" + number)
-//- 					//- img(src="@img//icons/like.svg", alt="like")
-//- 					.heart
-//- 						span
-//- 						img(src="@img//icons/like.svg", alt="like")
-//- 					p Like
-//- 		.card__img
-//- 			.first__row
-//- 				.images__wrapper 
-//- 					.card__img-wrap.img__wrappers
-//- 						img.first__child(src=imgArray[number][0], alt=altImgArray[number], class= "_" + number, srcset="")
-//- 					.card__img-wrap.img__wrappers
-//- 						img(src=imgArray[number][1], alt=altImgArray[number], class= "_" + number, srcset="")
-//- 					//- .card__img-wrap
-//- 					//- 	img(src= imgArray[number][2], alt=altImgArray[number], class= "_" + number)
-//- 					if (typeof discount == 'number')
-//- 						.sales__wrapper
-//- 							p= '-' + discount + '%'
-//- 					else if (typeof discount == 'string')
-//- 						.news__wrapper 
-//- 							p= discount
-//- 			.second__row
-//- 				.images__wrapper 
-//- 					.card__img-wrap.img__wrappers
-//- 						img(src=imgArray[number][2], alt=altImgArray[number], class= "_" + number, srcset="")
-//- 			.third__row
-//- 				p.third__row-text=popupCardText[number][0]
-//- 				.third__row-composes
-//- 					span= popupCardText[number][1]
-//- 					p= popupCardText[number][2]
-//- 				.third__row-article
-//- 					span= popupCardText[number][3]
-//- 					p= popupCardText[number][4]
-//- 		.card__info-wrapper
-//- 			.card__info-wrapper-price-phone 
-//- 				.card__info.block__text 
-//- 					h5.block__text-title(class= "_" + number)= titleArray[number]
-//- 					p.block__text-text(class= "_" + number)= textArray[number]
-//- 					.block__text-price-wrapper
-//- 						if (typeof discount == 'number')
-//- 							p.price(class= "_" + number)= priceArray[number] - (priceArray[number] * discount / 100) + ' грн.'
-//- 							p.price.sale(class= "_" + number)= priceArray[number] + ' грн.'
-//- 						else
-//- 							p.price(class= "_" + number)= priceArray[number] + ' грн.'
-				
-//- 			.close__btn.close-popup#close-popup
+//- -
+//- 	let roomsTitleSecondWord = [
+//- 		"двомісний",
+//- 	]
+	
+//- -
+//- 	let roomsBannerText = [
+//- 		"All room decoration was made with ecological certified and safe materials.",
+//- 	]
+
+//- -
+//- 	let roomsBannerImg = [
+//- 		"@img/twinroom/banner_01.jpg",
+//- 	]
+
+//- -
+//- 	let roomsBannerAlt = [
+//- 		"twin__room",
+//- 	]
+//- ================================================================================
 
 
-//- ============================================================
+mixin createRoomPage(number)
+	section.page__main.main.rooms__page
+		.best__images.rooms__page.twin__room
+			img.best__img.rooms__page.twin__room(src=roomsBannerImg[number], alt=roomsBannerAlt[number])
+		.best__sinus-wrapper.rooms__page
+			img.best__sinus(src="@img/icons/sinus.svg", alt="sinus")
+		.best__container.rooms__page
+			h1.best__head-title.main__titles._services.title__bigger=roomsTitleFirstWord[number] 
+				<br>
+				=roomsTitleSecondWord[number]
+			.best__text-wrapper.rooms__page-text-wrapper
+				p.best__content-text.text.big-text.rooms__page-big-text=roomsBannerText[number]
+			.rooms__info-button.button._big.button__big-yellow.rooms__page(get_popup="#popup-message")
+				p.yellow__button обрати номер
+				+buttonBig()
+	section.rooms__about.about__twin._rooms-pages
+		.rooms-page__container-small
+			.smaller__small-container
+				span.date__hotel.rooms__page(data-da="._rooms__pages-content, 767.98, 1")
+					img(src="@img/icons/Star_ellow.svg", alt="star")
+					p з 2023 року
+//-================================================================================
 
 
 //- =========================== SWIPER ROOMS ==============
