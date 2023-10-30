@@ -72,11 +72,11 @@ mixin buttonBig()
 mixin createRoomPage(number)
 	section.page__main.main.rooms__page
 		.best__images.rooms__page.twin__room
-			img.best__img.rooms__page.twin__room(src=roomsBannerImg[number], alt=roomsBannerAlt[number])
+			img.best__img.rooms__page.twin__room(src=roomsBannerImg[number], alt=roomsAltImg[number])
 		.best__sinus-wrapper.rooms__page
 			img.best__sinus(src="@img/icons/sinus.svg", alt="sinus")
 		.best__container.rooms__page
-			h1.best__head-title.main__titles._services.title__bigger=roomsTitleFirstWord[number] 
+			h1.best__head-title.main__titles._services.title__bigger._rooms_scroll=roomsTitleFirstWord[number] 
 				<br>
 				=roomsTitleSecondWord[number]
 			.best__text-wrapper.rooms__page-text-wrapper
@@ -90,6 +90,41 @@ mixin createRoomPage(number)
 				span.date__hotel.rooms__page(data-da="._rooms__pages-content, 767.98, 1")
 					img(src="@img/icons/Star_ellow.svg", alt="star")
 					p з 2023 року
+				.rooms__pages-content._rooms__pages-content
+					.rooms__pages-title
+						h3 Усі апартаменти мають унікальний дизайн, тому що ми хочемо, щоб кожен наш гість почувався особливим.
+					.rooms__pages-text-wrapper
+						.rooms__pages-text.text
+							p=roomsContentFirstText[number]
+				.rooms__pages-name
+					p=roomsName[number]
+				.rooms__pages-images(data-da="._rooms-pages, 1023.98, 1")
+					img(src=roomsContentFirstImg[number], alt=roomsAltImg[number])
+	section.rooms__details
+		.details__container-small
+			.details__column-wrapper
+				.details__column-1
+					.details__images.details__images-1
+						img.details__img(src=roomsContentSecondImg[number], alt=roomsContentFirstAltImg[number])
+						.about__stamp.stamp.stamp-img.rooms__pages-stamp(data-da="._rooms__get-stamp, 767, 1")
+							.circular.text-dark premium rooms. Reikartz hotel
+							img.stamp__rotate(src="@img/icons/icon.svg", alt="icon_stamp")
+					.details__title.rooms__pages-title.text-dark
+						h3=roomsTitleFirstWord[number]
+							<br>
+								=roomsTitleSecondWord[number]
+					.details__text.rooms__pages-text.text.text-dark
+						p._rooms__get-stamp=roomsContentSecondText[number]
+				.details__column-2
+					.details__images.details__images-2
+						img.details__img(src=roomsContentThirdImg[number], alt=roomsContentSecondAltImg[number])
+					.details__text.rooms__pages-text.text.text-dark
+						p._rooms__get-stamp=roomsContentThirdText[number]
+				button.date__hotel.rooms__page.check__oll-rooms
+					a(href="index.html")
+						p.button__rooms-page-text /Book room
+					
+
 //-================================================================================
 
 
@@ -102,7 +137,7 @@ mixin createSlideSwiperRooms(number)
 				.slide__row-1.button__wrapper-transparent
 					.rooms__images._small
 						img.rooms__img._small(src="@img/rooms/rooms_small-1.jpg", alt="rooms")
-					a.position__mode(href="twinroom.html")
+					a.position__mode(href=roomsLinks[number])
 						.rooms__info-button.button._big._transparent 
 							+buttonBig()
 				.slide__row-2 
@@ -137,11 +172,11 @@ mixin createServices(number)
 								=servicesTitleSecondHidden[number]
 							p.hidden__content-text.text.text-dark.text__max-width=servicesText[number]
 				.hidden__images
-					img(src=src=servicesBigImg[0], alt="img")
+					img(src=src=servicesBigImg[number], alt="img")
 		.content__row-wrapper
 			.content-row._show-services(class="content__row-" + number, id="content-row" + number + "-close")
 				.content__images-wrapper
-					img(src=servicesImg[0], alt="img", class="content__img")
+					img(src=servicesImg[number], alt="img", class="content__img")
 				.services__title-wrapper
 					.services__content-number.services__sub-title=servicesNumber[number]
 					a(href="#", class="_show-services hidden-row-" + number)
