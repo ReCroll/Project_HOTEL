@@ -50,9 +50,9 @@ footer.footer
 						p.text.text-dark. 
 							The five-star hotel in a beautiful European city with a
 							modern restaurant, conference-hall, and art-bar.
-					.footer__email-wrapper
-						input.email__input(type="text", placeholder="EMAIL")
-						button.email__submit(type="submit")
+					form.footer__email-wrapper#form__email(action="", method="post")
+						input.email__input.req._email(type="text", name="email" placeholder="EMAIL")
+						button.email__submit(type="submit", name="sab__email")
 				.about__footer-column.socials__footer
 					.about__footer-title
 						h4.actions__art._services

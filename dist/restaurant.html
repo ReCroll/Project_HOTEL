@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reikartz REASTAURANT</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20231030145758">
+    <link rel="stylesheet" href="./css/style.min.css">
   </head>
   <body> 
     <div class="wrapper">
@@ -70,8 +70,8 @@
                 </div>
               </div>
               <div class="restaurant__content-row-2">
-                <div class="restaurant__content-images-wrapper bigger"><picture><source srcset="img/restaurant/01.webp" type="image/webp"><img class="restaurant__content-img restaurant__content-img-bigger" src="img/restaurant/01.jpg" alt="restaurant"></picture></div>
-                <div class="restaurant__content-images-wrapper smaller"><picture><source srcset="img/restaurant/02.webp" type="image/webp"><img class="restaurant__content-img restaurant__content-img-smaller" src="img/restaurant/02.jpg" alt="restaurant"></picture></div>
+                <div class="restaurant__content-images-wrapper bigger"><img class="restaurant__content-img restaurant__content-img-bigger" src="img/restaurant/01.jpg" alt="restaurant"></div>
+                <div class="restaurant__content-images-wrapper smaller"><img class="restaurant__content-img restaurant__content-img-smaller" src="img/restaurant/02.jpg" alt="restaurant"></div>
               </div>
               <div class="restaurant__content-row-3">
                 <div class="restaurant__content-title">
@@ -96,13 +96,13 @@
             </div>
             <div class="restaurant__details-content-wrapper">
               <div class="restaurant__details-row-1">
-                <div class="restaurant__details-images-wrapper smaller"><picture><source srcset="img/restaurant/03.webp" type="image/webp"><img src="img/restaurant/03.jpg" alt="restaurant"></picture></div>
+                <div class="restaurant__details-images-wrapper smaller"><img src="img/restaurant/03.jpg" alt="restaurant"></div>
                 <div class="restaurant__details-text-wrapper bigger yellow">
                   <p>Вся обробка приміщень виконана екологічно сертифікованими та безпечними матеріалами.</p>
                 </div>
               </div>
               <div class="restaurant__details-row-2">
-                <div class="restaurant__details-images-wrapper bigger"><picture><source srcset="img/restaurant/04.webp" type="image/webp"><img src="img/restaurant/04.jpg" alt="restaurant"></picture></div>
+                <div class="restaurant__details-images-wrapper bigger"><img src="img/restaurant/04.jpg" alt="restaurant"></div>
                 <div class="restaurant__content-title footer__details details">
                   <div class="row-2__text-wrapper">
                     <h3>Проведіть час з нами</h3>
@@ -135,7 +135,7 @@
               <div class="touch__title-wrapper restaurant">
                 <h1 class="touch__head-title main__titles _big-title text-white">ми на <span class="title__icon-touch">t </span></h1>
                 <h1 class="touch__head-title main__titles _big-title">зв’язку</h1>
-                <div class="touch__images-wrapper"><picture><source srcset="img/touch/01.webp" type="image/webp"><img class="touch__img" src="img/touch/01.jpg" alt="img"></picture></div>
+                <div class="touch__images-wrapper"><img class="touch__img" src="img/touch/01.jpg" alt="img"></div>
                 <div class="main__info-button touch button _big">
                   <p class="yellow__button">обрати номер</p><span class="line__button line-1"> </span><span class="line__button line-2"></span><span class="line__button line-3"></span><span class="line__button line-4"></span><span class="line__button line-5"></span>
                 </div>
@@ -183,10 +183,10 @@
                       modern restaurant, conference-hall, and art-bar.
                     </p>
                   </div>
-                  <div class="footer__email-wrapper restaurant">
-                    <input class="email__input" type="text" placeholder="EMAIL">
-                    <button class="email__submit" type="submit"></button>
-                  </div>
+                  <form class="footer__email-wrapper" id="form__email" action="" method="post">
+                    <input class="email__input req _email" type="text" name="email" placeholder="EMAIL">
+                    <button class="email__submit" type="submit" name="sab__email"></button>
+                  </form>
                 </div>
                 <div class="about__footer-column socials__footer">
                   <div class="about__footer-title">
@@ -274,7 +274,7 @@
             </div>
           </div>
         </div>
-        <div class="popup none__class" id="popup-message">
+        <div class="popup none__class popup-message" id="popup-message">
           <div class="popup__body">
             <div class="popup__content">
               <div class="close__btn close-popup">
@@ -282,6 +282,39 @@
               </div>
               <h3>Будьте ласкаві, оберіть дати <br> заселення та виселення</h3>
               <p>Прогляньте наші номери<br>та оберіть той який підходитиме саме Вам</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormSuccess">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Все складається добре</h3>
+              <p>На надішлемо на Вашу адресу новини про знижки та акції</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormError">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Сталась якась помилка з відправкою адреси</h3>
+              <p>Спробуйте будь ласка пізніше</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormEmailWarning">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Будьте ласкаві</h3>
+              <p>Перегляньте чи правильно Ви вказали свою пошту</p>
             </div>
           </div>
         </div>
@@ -293,6 +326,6 @@
           </div></a>
       </main>
     </div>
-    <script src="./js/app.min.js?_v=20231030145758"></script>
+    <script src="./js/app.min.js"></script>
   </body>
 </html>

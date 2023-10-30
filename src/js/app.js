@@ -1088,6 +1088,7 @@ function addClassActive(galleryImageWrapper) {
   galleryImageWrapper.classList.add("_active");
 }
 //==========================================================================
+
 //============================= ПРИБРАТИ PLACEHOLDER =====================
 jQuery(document).ready(function ($) {
   $("input[type=text], textarea").focus(function () {

@@ -87,7 +87,7 @@ $_320: 319.98;
 
 
 
-#popup-message .popup__content {
+.popup-message .popup__content {
   // width: max-content;
   // height: 400px;
   background: #FFFCF6;
@@ -254,9 +254,11 @@ $_320: 319.98;
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-
+form.error {
+	border: 1px solid #FCD043;
+}
 @media (min-width: em($_1920)) {
-  #popup-message .popup__content {
+  .popup-message .popup__content {
     padding: rem(100) rem(215) rem(100) rem(70);
   }
 }

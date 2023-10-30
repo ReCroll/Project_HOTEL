@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reikartz ROOMS</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20231030145758">
+    <link rel="stylesheet" href="./css/style.min.css">
   </head>
   <body> 
     <div class="wrapper">
@@ -46,7 +46,7 @@
       </header>
       <main class="page"> 
               <section class="page__main main rooms__page">
-                <div class="best__images rooms__page twin__room"><picture><source srcset="img/oneroom/banner_01.webp" type="image/webp"><img class="best__img rooms__page twin__room" src="img/oneroom/banner_01.jpg" alt="one__room"></picture></div>
+                <div class="best__images rooms__page twin__room"><img class="best__img rooms__page twin__room" src="img/oneroom/banner_01.jpg" alt="one__room"></div>
                 <div class="best__sinus-wrapper rooms__page"><img class="best__sinus" src="img/icons/sinus.svg" alt="sinus"></div>
                 <div class="best__container rooms__page">
                   <h1 class="best__head-title main__titles _services title__bigger _rooms_scroll">Покращений<br>одномісний</h1>
@@ -75,7 +75,7 @@
                     <div class="rooms__pages-name">
                       <p>Покращений одномісний</p>
                     </div>
-                    <div class="rooms__pages-images" data-da="._rooms-pages, 1023.98, 1"><picture><source srcset="img/oneroom/room_01.webp" type="image/webp"><img src="img/oneroom/room_01.jpg" alt="one__room"></picture></div>
+                    <div class="rooms__pages-images" data-da="._rooms-pages, 1023.98, 1"><img src="img/oneroom/room_01.jpg" alt="one__room"></div>
                   </div>
                 </div>
               </section>
@@ -83,7 +83,7 @@
                 <div class="details__container-small">
                   <div class="details__column-wrapper">
                     <div class="details__column-1">
-                      <div class="details__images details__images-1"><picture><source srcset="img/oneroom/room_02.webp" type="image/webp"><img class="details__img" src="img/oneroom/room_02.jpg" alt="room"></picture>
+                      <div class="details__images details__images-1"><img class="details__img" src="img/oneroom/room_02.jpg" alt="room">
                         <div class="about__stamp stamp stamp-img rooms__pages-stamp" data-da="._rooms__get-stamp, 767, 1">
                           <div class="circular text-dark">premium rooms. Reikartz hotel</div><img class="stamp__rotate" src="img/icons/icon.svg" alt="icon_stamp">
                         </div>
@@ -97,7 +97,7 @@
                       </div>
                     </div>
                     <div class="details__column-2">
-                      <div class="details__images details__images-2"><picture><source srcset="img/oneroom/room_03.webp" type="image/webp"><img class="details__img" src="img/oneroom/room_03.jpg" alt="room"></picture></div>
+                      <div class="details__images details__images-2"><img class="details__img" src="img/oneroom/room_03.jpg" alt="room"></div>
                       <div class="details__text rooms__pages-text text text-dark">
                         <p class="_rooms__get-stamp">Покращений номер складається з двох функціональних зон: вітальні з кращими італійськими меблями та ізольованої затишної спальні з великим ліжком. Тут ви знайдете місце як для роботи, так і для комфортного відпочинку. Готель пропонує найвищий комфорт і відмінне цілодобове обслуговування номерів, щоб переконатися, що час, проведений тут, буде приємним і приємним.</p>
                       </div>
@@ -120,7 +120,7 @@
               <div class="touch__title-wrapper">
                 <h1 class="touch__head-title main__titles _big-title">ми на <span class="title__icon-touch">t </span></h1>
                 <h1 class="touch__head-title main__titles _big-title">зв’язку</h1>
-                <div class="touch__images-wrapper"><picture><source srcset="img/touch/01.webp" type="image/webp"><img class="touch__img" src="img/touch/01.jpg" alt="img"></picture></div>
+                <div class="touch__images-wrapper"><img class="touch__img" src="img/touch/01.jpg" alt="img"></div>
                 <div class="main__info-button touch button _big">
                   <p class="yellow__button">обрати номер</p><span class="line__button line-1"> </span><span class="line__button line-2"></span><span class="line__button line-3"></span><span class="line__button line-4"></span><span class="line__button line-5"></span>
                 </div>
@@ -168,10 +168,10 @@
                       modern restaurant, conference-hall, and art-bar.
                     </p>
                   </div>
-                  <div class="footer__email-wrapper">
-                    <input class="email__input" type="text" placeholder="EMAIL">
-                    <button class="email__submit" type="submit"></button>
-                  </div>
+                  <form class="footer__email-wrapper" id="form__email" action="" method="post">
+                    <input class="email__input req _email" type="text" name="email" placeholder="EMAIL">
+                    <button class="email__submit" type="submit" name="sab__email"></button>
+                  </form>
                 </div>
                 <div class="about__footer-column socials__footer">
                   <div class="about__footer-title">
@@ -259,7 +259,7 @@
             </div>
           </div>
         </div>
-        <div class="popup none__class" id="popup-message">
+        <div class="popup none__class popup-message" id="popup-message">
           <div class="popup__body">
             <div class="popup__content">
               <div class="close__btn close-popup">
@@ -267,6 +267,39 @@
               </div>
               <h3>Будьте ласкаві, оберіть дати <br> заселення та виселення</h3>
               <p>Прогляньте наші номери<br>та оберіть той який підходитиме саме Вам</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormSuccess">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Все складається добре</h3>
+              <p>На надішлемо на Вашу адресу новини про знижки та акції</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormError">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Сталась якась помилка з відправкою адреси</h3>
+              <p>Спробуйте будь ласка пізніше</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup none__class popup-message" id="popupFormEmailWarning">
+          <div class="popup__body">
+            <div class="popup__content">
+              <div class="close__btn close-popup">
+                <div class="close__btn-icon"> <span> </span><span> </span></div>
+              </div>
+              <h3>Будьте ласкаві</h3>
+              <p>Перегляньте чи правильно Ви вказали свою пошту</p>
             </div>
           </div>
         </div>
@@ -278,6 +311,6 @@
             </div></a></div>
       </main>
     </div>
-    <script src="./js/app.min.js?_v=20231030145758"></script>
+    <script src="./js/app.min.js"></script>
   </body>
 </html>
