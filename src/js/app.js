@@ -1019,6 +1019,38 @@ function createCalendar() {
 }
 
 //====================================================================================================================================================
+//================= SHOW SERVICES ===============
+const showServices = document.querySelectorAll("._show-services");
+if (showServices.length > 0) {
+  for (let index = 0; index < showServices.length; index++) {
+    const showService = showServices[index];
+    showService.addEventListener("click", function (e) {
+      showService.classList.add("_hide-services");
+      showService.closest(".content__row-wrapper").classList.add("_rotate");
+      let showHiddenServicesWrapper = showService.closest(
+        ".services__content-rows"
+      );
+      let getHiddenService =
+        showHiddenServicesWrapper.querySelector(".hidden__row");
+      getHiddenService.classList.remove("_hidden");
+      e.preventDefault();
+      const hideServices = showHiddenServicesWrapper.querySelector(
+        "._hide-services-content"
+      );
+      hideServices.addEventListener("click", function (e) {
+        hideServices.closest(".hidden__row").classList.add("_hidden");
+        showService
+          .closest(".content__row-wrapper")
+          .classList.remove("_rotate");
+        showService.classList.remove("_hide-services");
+        e.preventDefault();
+      });
+    });
+  }
+}
+
+//========================================================================================
+
 //============================= GALLERY 3 ===============================================
 const galleryImageArray = document.querySelectorAll(".gallery__image-wrapper");
 if (galleryImageArray.length > 0) {
