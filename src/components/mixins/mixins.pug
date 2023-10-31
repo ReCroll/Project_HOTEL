@@ -150,14 +150,14 @@ mixin createSlideSwiperRooms(number)
 			.slide__row-3 
 				.image__slider-wrapper
 					img.slider__img(src="@img/rooms/rooms_big-1.jpg", alt="rooms")
-					.rooms__info-button.button._big.button__big-yellow
+					.rooms__info-button.button._big.button__big-yellow(get_popup="#popup-message")
 						p.yellow__button обрати номер
 						+buttonBig()
 
 //- ===========================================================================
 //- ============================ SERVICES CARD =================================
-mixin createServices(number)
-	.services__content-rows(class="services__content-row-" + number)
+mixin createServices(number, scrollClass)
+	.services__content-rows(class="services__content-row-" + number, class=scrollClass)
 		.hidden-row-wrapper
 			.hidden__row._hidden(class=".hidden__row-" + number, id="hidden-row-" + number)
 				.hidden__content-wrapper

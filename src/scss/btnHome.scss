@@ -66,3 +66,10 @@
 // 		-o-transition: 0.5s;
 // 		transition: 0.5s;
 // } 
+@media (max-width: 767.98px) {
+  .btn-top-wrapper {
+    right: rem(30);
+    bottom: rem(30);
+
+  }
+}

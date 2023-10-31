@@ -183,9 +183,9 @@ main.page
 						+createSlideSwiperRooms(5)
 						+createSlideSwiperRooms(6)
 						+createSlideSwiperRooms(7)
-					.swiper-button-prev
-					.swiper-button-next
-					.swiper-pagination
+				.swiper-button-prev
+				.swiper-button-next
+				.swiper-pagination
 	section.page__services.services
 		.services__container
 			.services__head-wrapper
@@ -218,13 +218,13 @@ main.page
 						.services__stamp.stamp
 							.circular premium rooms. Reikartz hotel
 			.services__content-wrapper._conference_scroll
-				+createServices(0)
-				+createServices(1)
-				+createServices(2)
+				+createServices(0,)
+				+createServices(1, '_conference')
+				+createServices(2,)
 	section.page__best.best
 		.best__images
 			img.best__img._show(src="@img/best_room/01_big.jpg", alt="best_apartments")
-			img.best__img._hidden(src="@img/best_room/01_small.jpg", alt="best_apartments")
+			img.best__img._hidden(src="@img/best_room/02_small.jpg", alt="best_apartments")
 		.best__sinus-wrapper
 			img.best__sinus(src="@img/icons/sinus.svg", alt="sinus")
 		.best__container
