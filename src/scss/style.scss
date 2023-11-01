@@ -2885,24 +2885,30 @@ input {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-  column-gap: rem(32);
+  column-gap: rem(122);
   justify-content: space-between;
 
 
 }
 
 .rooms__content-swiper-wrapper {
-  width: calc(50% - 16px);
+  // width: calc(50% - 16px);
   // position: absolute;
   top: 0;
 }
 
 ._img__swiper {
+  // flex: 1 1 auto;
+  width: calc(40% - 61px);
   right: 0%;
   left: auto;
 }
 
 ._content__swiper {
+  // flex: 1 1 55%;
+  width: calc(60% - 61px);
+  // width: calc(60% - 16px);
+  // width: prc(1130, 1860);
   left: 0%;
   right: auto;
 }
@@ -2978,6 +2984,24 @@ input {
 
 .rooms__swiper {
   overflow: visible;
+}
+
+.swiper-slide {
+  opacity: 0.15;
+  height: 85%;
+  transition: all 0.3s ease 0s;
+}
+
+.swiper-slide.swiper-slide-prev {
+  opacity: 0.45;
+  height: 95%;
+  transition: all 0.3s ease 0s;
+}
+
+.swiper-slide.swiper-slide-active {
+  opacity: 1;
+  height: 100%;
+  transition: all 0.3s ease 0s;
 }
 
 // .swiper__navigation-wrapper {
@@ -3061,7 +3085,8 @@ input {
     width: 100%;
     max-width: rem(757);
     align-items: flex-start;
-    padding-bottom: prc(1000, 757);
+    // padding-bottom: prc(1000, 756);
+    padding-top: prc(1000, 757);
 
     .slider__img {
       position: absolute;
