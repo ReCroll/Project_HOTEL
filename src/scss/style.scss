@@ -2881,6 +2881,49 @@ input {
   // @include adaptiveValue("gap", 60, 20);
 }
 
+.rooms__swipers-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  column-gap: rem(20);
+  justify-content: space-between;
+
+
+}
+
+.rooms__content-swiper-wrapper {
+  width: 48%;
+  // position: absolute;
+  top: 0;
+}
+
+._img__swiper {
+  right: 0%;
+  left: auto;
+}
+
+._content__swiper {
+  left: 0%;
+  right: auto;
+}
+
+.rooms__content-slider {
+  // width: 50%;
+  overflow: hidden;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+}
+
+.rooms__img-slider {
+  // width: 50%;
+  overflow: hidden;
+  // position: absolute;
+  // top: 0;
+  // right: auto;
+  // left: 0;
+}
+
 .rooms__content-title._rooms {
   color: #1B3B36;
   // font-size:  calc(rem(100) + (150 - 100) * ((100vw - rem($_1024)) / (1920 - $_1024)));
@@ -2918,13 +2961,29 @@ input {
   }
 }
 
+// .rooms__container {
+//   position: relative;
+// }
+
 .rooms__swiper {
   overflow: visible;
 }
 
+// .swiper__navigation-wrapper {
+//   position: absolute;
+//   bottom: 0%;
+//   right: auto;
+//   left: 0%;
+//   width: 100%;
+//   // height: 40px;
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
 .swiper-pagination {
   position: absolute;
   bottom: -5%;
+  z-index: 0;
 }
 
 //======================= BULET ===========================================================
@@ -2979,7 +3038,8 @@ input {
 }
 
 .slide__row-3 {
-  flex: 0 0 prc(757, 1860);
+  flex: 0 0 100%;
+  // flex: 0 0 prc(757, 1860);
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -3384,6 +3444,8 @@ input {
     flex-direction: column-reverse;
 
   }
+
+
 
   .swiper-pagination {
     // top: 67%;

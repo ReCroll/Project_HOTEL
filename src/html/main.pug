@@ -172,20 +172,39 @@ main.page
 				.rooms__page-title-text
 					p.rooms__content-text.text.big-text. 
 						Всі оздоблення кімнат виконані екологічно сертифікованими та безпечними матеріалами.
-			.rooms__swiper
-				.rooms__slider.swiper-container
-					.swiper-wrapper
-						+createSlideSwiperRooms(0)
-						+createSlideSwiperRooms(1)
-						+createSlideSwiperRooms(2)
-						+createSlideSwiperRooms(3)
-						+createSlideSwiperRooms(4)
-						+createSlideSwiperRooms(5)
-						+createSlideSwiperRooms(6)
-						+createSlideSwiperRooms(7)
-				.swiper-button-prev
-				.swiper-button-next
-				.swiper-pagination
+			.rooms__swipers-wrapper
+				.rooms__content-swiper-wrapper._img__swiper
+					.rooms__swiper.rooms__img-swiper
+						.rooms__slider.rooms__img-slider.swiper-container
+							.swiper-wrapper
+								+createSlideSwiperImgRooms(0)
+								+createSlideSwiperImgRooms(1)
+								+createSlideSwiperImgRooms(2)
+								+createSlideSwiperImgRooms(3)
+								+createSlideSwiperImgRooms(4)
+								+createSlideSwiperImgRooms(5)
+								+createSlideSwiperImgRooms(6)
+								+createSlideSwiperImgRooms(7)
+						//- .swiper-button-prev
+						//- .swiper-button-next
+						.swiper-pagination
+				.rooms__content-swiper-wrapper._content__swiper
+					.rooms__swiper.rooms__content-swiper
+						.rooms__slider.rooms__content-slider.swiper-container
+							.swiper-wrapper
+								+createSlideSwiperContentRooms(0)
+								+createSlideSwiperContentRooms(1)
+								+createSlideSwiperContentRooms(2)
+								+createSlideSwiperContentRooms(3)
+								+createSlideSwiperContentRooms(4)
+								+createSlideSwiperContentRooms(5)
+								+createSlideSwiperContentRooms(6)
+								+createSlideSwiperContentRooms(7)
+				//- .swiper__navigation-wrapper
+				//- 	.swiper-pagination
+				//- 		.swiper__button-wrapper
+				//- 			.swiper-button-prev
+				//- 			.swiper-button-next
 	section.page__services.services
 		.services__container
 			.services__head-wrapper

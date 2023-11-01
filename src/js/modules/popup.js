@@ -22,17 +22,17 @@ const timeout = 800;
 const timeoutTwo = 600;
 
 var ollPopupsHidden = document.querySelectorAll(".popup");
-console.log(ollPopupsHidden);
+// console.log(ollPopupsHidden);
 for (let hiddenPopup = 0; hiddenPopup < ollPopupsHidden.length; hiddenPopup++) {
   let ollPopupHidden = ollPopupsHidden[hiddenPopup];
-  console.log(ollPopupHidden);
+  // console.log(ollPopupHidden);
   setTimeout(function () {
-    console.log("what is doing");
+    // console.log("what is doing");
     // ollPopupHidden.classList.remove('none__class')
     // if (ollPopupHidden.length > 0) {
 
     ollPopupHidden.classList.remove("none__class");
-    console.log(ollPopupHidden);
+    // console.log(ollPopupHidden);
     // }
   }, timeout);
 }
@@ -76,7 +76,7 @@ function popupOpen(curentPopup) {
     const popupActive = document.querySelector(".popup.open");
     // console.log(popupActive);
     if (popupActive) {
-      console.log(popupActive);
+      // console.log(popupActive);
       popupClose(popupActive, false);
     } else {
       bodyLock();
@@ -93,7 +93,7 @@ function popupOpen(curentPopup) {
 
 function popupClose(popupActive, doUnlock = true) {
   if (unlock) {
-    console.log(popupActive);
+    // console.log(popupActive);
     //     // const contentActives = document.querySelector('.lesson__content.open');
     //     // const sliderImageShow = document.querySelector('.slider__popup-img.open');
     if (popupActive) {
@@ -131,7 +131,7 @@ function bodyLock() {
   if (lockPadding.length > 0) {
     for (let index = 0; index < lockPadding.length; index++) {
       const el = lockPadding[index];
-      console.log(el);
+      // console.log(el);
       el.style.paddingRight = lockPaddingValue;
     }
   }

@@ -130,13 +130,23 @@ mixin createRoomPage(number)
 
 //- =========================== SWIPER ROOMS ==============
 
-mixin createSlideSwiperRooms(number)
+mixin createSlideSwiperImgRooms(number)
 	.swiper-slide 
 		.slide__wrapper
-			.slide__wrapper-rows 
+
+			.slide__row-3 
+				.image__slider-wrapper
+					img.slider__img(src=swiperRoomsImgBig[number], alt="rooms")
+					.rooms__info-button.button._big.button__big-yellow(get_popup="#popup-message")
+						p.yellow__button обрати номер
+						+buttonBig()
+mixin createSlideSwiperContentRooms(number)
+	.swiper-slide 
+		.slide__wrapper
+			.slide__wrapper-rows._position-pag 
 				.slide__row-1.button__wrapper-transparent
 					.rooms__images._small
-						img.rooms__img._small(src="@img/rooms/rooms_small-1.jpg", alt="rooms")
+						img.rooms__img._small(src=swiperRoomsImgSmall[number], alt="rooms")
 					a.position__mode(href=roomsLinks[number])
 						.rooms__info-button.button._big._transparent 
 							+buttonBig()
@@ -147,12 +157,12 @@ mixin createSlideSwiperRooms(number)
 					.slide__content-text-wrapper 
 						h3.slide__content-title.main__sub-titles._rooms=swiperRoomsTitle[number]
 						p.slide__content-text.text=swiperRoomsText[number]
-			.slide__row-3 
-				.image__slider-wrapper
-					img.slider__img(src="@img/rooms/rooms_big-1.jpg", alt="rooms")
-					.rooms__info-button.button._big.button__big-yellow(get_popup="#popup-message")
-						p.yellow__button обрати номер
-						+buttonBig()
+			//- .slide__row-3 
+			//- 	.image__slider-wrapper
+			//- 		img.slider__img(src=swiperRoomsImgBig[number], alt="rooms")
+			//- 		.rooms__info-button.button._big.button__big-yellow(get_popup="#popup-message")
+			//- 			p.yellow__button обрати номер
+			//- 			+buttonBig()
 
 //- ===========================================================================
 //- ============================ SERVICES CARD =================================

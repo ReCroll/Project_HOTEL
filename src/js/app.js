@@ -1100,5 +1100,56 @@ jQuery(document).ready(function ($) {
   });
 });
 //=======================================================================
+//=========================== POSITION PAGINATION ============================
+function positionPag(height) {
+  let pagination = document.querySelector(".swiper-pagination");
+  height = Number(height);
+  if (height < 2000) {
+    pagination.style.top = height + 30 + "px";
+    // setTimeout(() => {
+    //   pagination.style.top = height + 30 + "px";
+    //   console.log("why?");
+    // }, 200);
+  }
+  console.log(pagination);
+  console.log(height);
+  console.log(typeof height);
+  // height + 130;
+  // height + "30px";
+  console.log(height);
+}
+
+let slideRows = document.querySelector(".slider__img");
+let slideRowsHeight = window
+  .getComputedStyle(slideRows)
+  .height.replace("px", " ");
+console.log(slideRowsHeight);
+console.log(typeof slideRowsHeight);
+// setTimeout(() => {
+//   slideRows = document.querySelector(".slider__img");
+//   slideRowsHeight = window
+//     .getComputedStyle(slideRows)
+//     .height.replace("px", " ");
+//   console.log(slideRowsHeight);
+//   console.log(typeof slideRowsHeight);
+//   // pagination.style.top = height + 30 + "px";
+//   positionPag(slideRowsHeight);
+//   console.log("why static?");
+// }, 200);
+positionPag(slideRowsHeight);
+window.addEventListener("resize", function () {
+  slideRowsHeight = window
+    .getComputedStyle(slideRows)
+    .height.replace("px", " ");
+  console.log(slideRowsHeight);
+  positionPag(slideRowsHeight);
+});
+// for (let index = 0; index < slideRows.length; index++) {
+//   const el = slideRows[index];
+// }
+// let slideWrapperRow = slideRows.closest(".swiper-slide-active");
+// console.log(slideWrapperRow);
+// console.log(slideRows);
+//=======================================================================
 
 // //========================= OUR PRODUCT HIDDEN ========================
