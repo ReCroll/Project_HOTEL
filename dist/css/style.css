@@ -384,7 +384,6 @@
   bottom: var(--swiper-pagination-bottom, 8px);
   top: var(--swiper-pagination-top, auto);
   left: 0;
-  width: 100%;
 }
 
 .swiper-pagination-bullets-dynamic {
@@ -3219,12 +3218,12 @@ input {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-  column-gap: 1.25rem;
+  column-gap: 2rem;
   justify-content: space-between;
 }
 
 .rooms__content-swiper-wrapper {
-  width: 48%;
+  width: calc(50% - 16px);
   top: 0;
 }
 
@@ -3266,13 +3265,15 @@ input {
   bottom: 0;
   color: rgba(27, 59, 54, 0.32);
 }
-.rooms__slider .swiper-pagination .swiper-pagination-current,
-.rooms__slider .swiper-pagination .swiper-pagination-total {
+
+.swiper-pagination-current,
+.swiper-pagination-total {
   margin: 0 0.875rem;
   font-size: calc(1rem + 6 * (100vw - 63.99875rem) / 896.02);
   line-height: calc(1.375rem + 4 * (100vw - 63.99875rem) / 896.02);
 }
-.rooms__slider .swiper-pagination .swiper-pagination-current {
+
+.swiper-pagination-current {
   color: rgb(27, 59, 54);
 }
 
@@ -3282,8 +3283,9 @@ input {
 
 .swiper-pagination {
   position: absolute;
-  bottom: -5%;
-  z-index: 0;
+  bottom: 0;
+  left: -50%;
+  z-index: 1;
 }
 
 .swiper-button-prev::after,
@@ -3304,6 +3306,8 @@ input {
   display: flex;
   justify-content: space-between;
   column-gap: 20.5464480874%;
+  padding-top: calc(3.125rem + 126 * (100vw - 89.99875rem) / 480.02);
+  padding-bottom: calc(7.4375rem + 7 * (100vw - 63.99875rem) / 416);
   padding-bottom: 0px;
 }
 
@@ -3538,8 +3542,8 @@ input {
   .swiper-button-next:after {
     font-size: 5rem;
   }
-  .rooms__slider .swiper-pagination .swiper-pagination-current,
-  .rooms__slider .swiper-pagination .swiper-pagination-total {
+  .swiper-pagination-current,
+  .swiper-pagination-total {
     font-size: 1.375rem;
     line-height: 1.625rem;
   }
@@ -3604,6 +3608,13 @@ input {
     row-gap: calc(3.125rem + 100 * (100vw - 23.43625rem) / 393);
     padding-top: calc(4.375rem + 54 * (100vw - 23.43625rem) / 649);
   }
+  .rooms__swipers-wrapper {
+    flex-direction: column;
+    row-gap: 5.75rem;
+  }
+  .rooms__content-swiper-wrapper {
+    width: 100%;
+  }
   .rooms__page-content {
     flex-direction: column;
     justify-content: flex-start;
@@ -3623,6 +3634,13 @@ input {
   .slide__wrapper {
     row-gap: calc(4.375rem + 20 * (100vw - 23.43625rem) / 393);
     flex-direction: column-reverse;
+  }
+  .swiper-pagination {
+    display: inline-block;
+    bottom: -45px;
+    right: 0%;
+    left: auto;
+    z-index: 0;
   }
   .slide__wrapper-rows {
     padding: 0;

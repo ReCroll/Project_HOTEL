@@ -2885,14 +2885,14 @@ input {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-  column-gap: rem(20);
+  column-gap: rem(32);
   justify-content: space-between;
 
 
 }
 
 .rooms__content-swiper-wrapper {
-  width: 48%;
+  width: calc(50% - 16px);
   // position: absolute;
   top: 0;
 }
@@ -2949,16 +2949,27 @@ input {
   color: rgba(27, 59, 54, 0.32);
 
   // opacity: 0.32;
-  .swiper-pagination-current,
-  .swiper-pagination-total {
-    margin: 0 rem(14);
-    font-size: calc(rem(16) + (22 - 16) * ((100vw - rem($_1024)) / (1920 - $_1024)));
-    line-height: calc(rem(22) + (26 - 22) * ((100vw - rem($_1024)) / (1920 - $_1024)));
-  }
+  // .swiper-pagination-current,
+  // .swiper-pagination-total {
+  //   margin: 0 rem(14);
+  //   font-size: calc(rem(16) + (22 - 16) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+  //   line-height: calc(rem(22) + (26 - 22) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+  // }
 
-  .swiper-pagination-current {
-    color: rgba(27, 59, 54, 1);
-  }
+  // .swiper-pagination-current {
+  //   color: rgba(27, 59, 54, 1);
+  // }
+}
+
+.swiper-pagination-current,
+.swiper-pagination-total {
+  margin: 0 rem(14);
+  font-size: calc(rem(16) + (22 - 16) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+  line-height: calc(rem(22) + (26 - 22) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+}
+
+.swiper-pagination-current {
+  color: rgba(27, 59, 54, 1);
 }
 
 // .rooms__container {
@@ -2982,8 +2993,9 @@ input {
 
 .swiper-pagination {
   position: absolute;
-  bottom: -5%;
-  z-index: 0;
+  bottom: 0;
+  left: -50%;
+  z-index: 1;
 }
 
 //======================= BULET ===========================================================
@@ -3032,8 +3044,8 @@ input {
   justify-content: space-between;
   column-gap: prc(188, 915);
   // // padding-top: prc(176, 1000);
-  // padding-top: calc(rem(50) + (176 - 50) * ((100vw - rem($_1440)) / (1920 - $_1440)));
-  // padding-bottom: calc(rem(119) + (126 - 119) * ((100vw - rem($_1024)) / ($_1440 - $_1024)));
+  padding-top: calc(rem(50) + (176 - 50) * ((100vw - rem($_1440)) / (1920 - $_1440)));
+  padding-bottom: calc(rem(119) + (126 - 119) * ((100vw - rem($_1024)) / ($_1440 - $_1024)));
   padding-bottom: 0px;
 }
 
@@ -3310,13 +3322,12 @@ input {
     font-size: rem(80);
   }
 
-  .rooms__slider .swiper-pagination {
+  .rooms__slider .swiper-pagination {}
 
-    .swiper-pagination-current,
-    .swiper-pagination-total {
-      font-size: rem(22);
-      line-height: rem(26);
-    }
+  .swiper-pagination-current,
+  .swiper-pagination-total {
+    font-size: rem(22);
+    line-height: rem(26);
   }
 
 }
@@ -3414,6 +3425,15 @@ input {
     padding-top: calc(rem(70) + (124 - 70) * ((100vw - rem($_375)) / ($_1024 - $_375)));
   }
 
+  .rooms__swipers-wrapper {
+    flex-direction: column;
+    row-gap: rem(92);
+  }
+
+  .rooms__content-swiper-wrapper {
+    width: 100%;
+  }
+
   .rooms__page-content {
     flex-direction: column;
     justify-content: flex-start;
@@ -3448,10 +3468,11 @@ input {
 
 
   .swiper-pagination {
-    // top: 67%;
-    // left: 1%;
-    // right: auto;
-    // z-index: 0;
+    display: inline-block;
+    bottom: -45px;
+    right: 0%;
+    left: auto;
+    z-index: 0;
   }
 
   .slide__wrapper-rows {

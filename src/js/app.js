@@ -1019,137 +1019,137 @@ function createCalendar() {
 }
 
 //====================================================================================================================================================
-//================= SHOW SERVICES ===============
-const showServices = document.querySelectorAll("._show-services");
-if (showServices.length > 0) {
-  for (let index = 0; index < showServices.length; index++) {
-    const showService = showServices[index];
-    showService.addEventListener("click", function (e) {
-      showService.classList.add("_hide-services");
-      showService.closest(".content__row-wrapper").classList.add("_rotate");
-      let showHiddenServicesWrapper = showService.closest(
-        ".services__content-rows"
-      );
-      let getHiddenService =
-        showHiddenServicesWrapper.querySelector(".hidden__row");
-      getHiddenService.classList.remove("_hidden");
-      e.preventDefault();
-      const hideServices = showHiddenServicesWrapper.querySelector(
-        "._hide-services-content"
-      );
-      hideServices.addEventListener("click", function (e) {
-        hideServices.closest(".hidden__row").classList.add("_hidden");
-        showService
-          .closest(".content__row-wrapper")
-          .classList.remove("_rotate");
-        showService.classList.remove("_hide-services");
-        e.preventDefault();
-      });
-    });
-  }
-}
+// //================= SHOW SERVICES ===============
+// const showServices = document.querySelectorAll("._show-services");
+// if (showServices.length > 0) {
+//   for (let index = 0; index < showServices.length; index++) {
+//     const showService = showServices[index];
+//     showService.addEventListener("click", function (e) {
+//       showService.classList.add("_hide-services");
+//       showService.closest(".content__row-wrapper").classList.add("_rotate");
+//       let showHiddenServicesWrapper = showService.closest(
+//         ".services__content-rows"
+//       );
+//       let getHiddenService =
+//         showHiddenServicesWrapper.querySelector(".hidden__row");
+//       getHiddenService.classList.remove("_hidden");
+//       e.preventDefault();
+//       const hideServices = showHiddenServicesWrapper.querySelector(
+//         "._hide-services-content"
+//       );
+//       hideServices.addEventListener("click", function (e) {
+//         hideServices.closest(".hidden__row").classList.add("_hidden");
+//         showService
+//           .closest(".content__row-wrapper")
+//           .classList.remove("_rotate");
+//         showService.classList.remove("_hide-services");
+//         e.preventDefault();
+//       });
+//     });
+//   }
+// }
 
-//========================================================================================
+// //========================================================================================
 
-//============================= GALLERY 3 ===============================================
-const galleryImageArray = document.querySelectorAll(".gallery__image-wrapper");
-if (galleryImageArray.length > 0) {
-  for (let index = 0; index < galleryImageArray.length; index++) {
-    const galleryImageWrapper = galleryImageArray[index];
-    galleryImageWrapper.addEventListener("click", function (e) {
-      searchActive(galleryImageWrapper);
-    });
-  }
-}
-function searchActive(galleryImageWrapper) {
-  if (galleryImageWrapper.classList.contains("_active")) {
-    return;
-  } else {
-    removeActive(galleryImageWrapper);
-  }
-}
-function removeActive(galleryImageWrapper) {
-  var searchElemsActive = document.getElementsByClassName(
-    "gallery__image-wrapper _active"
-  );
-  for (let index = 0; index < searchElemsActive.length; index++) {
-    const searchElemActive = searchElemsActive[index];
+// //============================= GALLERY 3 ===============================================
+// const galleryImageArray = document.querySelectorAll(".gallery__image-wrapper");
+// if (galleryImageArray.length > 0) {
+//   for (let index = 0; index < galleryImageArray.length; index++) {
+//     const galleryImageWrapper = galleryImageArray[index];
+//     galleryImageWrapper.addEventListener("click", function (e) {
+//       searchActive(galleryImageWrapper);
+//     });
+//   }
+// }
+// function searchActive(galleryImageWrapper) {
+//   if (galleryImageWrapper.classList.contains("_active")) {
+//     return;
+//   } else {
+//     removeActive(galleryImageWrapper);
+//   }
+// }
+// function removeActive(galleryImageWrapper) {
+//   var searchElemsActive = document.getElementsByClassName(
+//     "gallery__image-wrapper _active"
+//   );
+//   for (let index = 0; index < searchElemsActive.length; index++) {
+//     const searchElemActive = searchElemsActive[index];
 
-    searchElemActive.classList.remove("_active");
-    searchElemActive.style.top = galleryImageWrapper.style.top;
-    searchElemActive.style.left = galleryImageWrapper.style.left;
-    searchElemActive.style.right = galleryImageWrapper.style.right;
-    searchElemActive.style.bottom = galleryImageWrapper.style.bottom;
+//     searchElemActive.classList.remove("_active");
+//     searchElemActive.style.top = galleryImageWrapper.style.top;
+//     searchElemActive.style.left = galleryImageWrapper.style.left;
+//     searchElemActive.style.right = galleryImageWrapper.style.right;
+//     searchElemActive.style.bottom = galleryImageWrapper.style.bottom;
 
-    addClassActive(galleryImageWrapper);
-  }
-}
-function addClassActive(galleryImageWrapper) {
-  galleryImageWrapper.classList.add("_active");
-}
-//==========================================================================
+//     addClassActive(galleryImageWrapper);
+//   }
+// }
+// function addClassActive(galleryImageWrapper) {
+//   galleryImageWrapper.classList.add("_active");
+// }
+// //==========================================================================
 
-//============================= ПРИБРАТИ PLACEHOLDER =====================
-jQuery(document).ready(function ($) {
-  $("input[type=text], textarea").focus(function () {
-    $(this).data("placeholder", $(this).attr("placeholder"));
-    $(this).attr("placeholder", "");
-  });
-  $("input[type=text], textarea").blur(function () {
-    $(this).attr("placeholder", $(this).data("placeholder"));
-  });
-});
-//=======================================================================
-//=========================== POSITION PAGINATION ============================
-function positionPag(height) {
-  let pagination = document.querySelector(".swiper-pagination");
-  height = Number(height);
-  if (height < 2000) {
-    pagination.style.top = height + 30 + "px";
-    // setTimeout(() => {
-    //   pagination.style.top = height + 30 + "px";
-    //   console.log("why?");
-    // }, 200);
-  }
-  console.log(pagination);
-  console.log(height);
-  console.log(typeof height);
-  // height + 130;
-  // height + "30px";
-  console.log(height);
-}
+// //============================= ПРИБРАТИ PLACEHOLDER =====================
+// jQuery(document).ready(function ($) {
+//   $("input[type=text], textarea").focus(function () {
+//     $(this).data("placeholder", $(this).attr("placeholder"));
+//     $(this).attr("placeholder", "");
+//   });
+//   $("input[type=text], textarea").blur(function () {
+//     $(this).attr("placeholder", $(this).data("placeholder"));
+//   });
+// });
+// //=======================================================================
+// //=========================== POSITION PAGINATION ============================
+// function positionPag(height) {
+//   let pagination = document.querySelector(".swiper-pagination");
+//   height = Number(height);
+//   if (height < 2000) {
+//     pagination.style.top = height + 30 + "px";
+//     // setTimeout(() => {
+//     //   pagination.style.top = height + 30 + "px";
+//     //   console.log("why?");
+//     // }, 200);
+//   }
+//   console.log(pagination);
+//   console.log(height);
+//   console.log(typeof height);
+//   // height + 130;
+//   // height + "30px";
+//   console.log(height);
+// }
 
-let slideRows = document.querySelector(".slider__img");
-let slideRowsHeight = window
-  .getComputedStyle(slideRows)
-  .height.replace("px", " ");
-console.log(slideRowsHeight);
-console.log(typeof slideRowsHeight);
-// setTimeout(() => {
-//   slideRows = document.querySelector(".slider__img");
+// let slideRows = document.querySelector(".slider__img");
+// let slideRowsHeight = window
+//   .getComputedStyle(slideRows)
+//   .height.replace("px", " ");
+// console.log(slideRowsHeight);
+// console.log(typeof slideRowsHeight);
+// // setTimeout(() => {
+// //   slideRows = document.querySelector(".slider__img");
+// //   slideRowsHeight = window
+// //     .getComputedStyle(slideRows)
+// //     .height.replace("px", " ");
+// //   console.log(slideRowsHeight);
+// //   console.log(typeof slideRowsHeight);
+// //   // pagination.style.top = height + 30 + "px";
+// //   positionPag(slideRowsHeight);
+// //   console.log("why static?");
+// // }, 200);
+// positionPag(slideRowsHeight);
+// window.addEventListener("resize", function () {
 //   slideRowsHeight = window
 //     .getComputedStyle(slideRows)
 //     .height.replace("px", " ");
 //   console.log(slideRowsHeight);
-//   console.log(typeof slideRowsHeight);
-//   // pagination.style.top = height + 30 + "px";
 //   positionPag(slideRowsHeight);
-//   console.log("why static?");
-// }, 200);
-positionPag(slideRowsHeight);
-window.addEventListener("resize", function () {
-  slideRowsHeight = window
-    .getComputedStyle(slideRows)
-    .height.replace("px", " ");
-  console.log(slideRowsHeight);
-  positionPag(slideRowsHeight);
-});
-// for (let index = 0; index < slideRows.length; index++) {
-//   const el = slideRows[index];
-// }
-// let slideWrapperRow = slideRows.closest(".swiper-slide-active");
-// console.log(slideWrapperRow);
-// console.log(slideRows);
-//=======================================================================
+// });
+// // for (let index = 0; index < slideRows.length; index++) {
+// //   const el = slideRows[index];
+// // }
+// // let slideWrapperRow = slideRows.closest(".swiper-slide-active");
+// // console.log(slideWrapperRow);
+// // console.log(slideRows);
+// //=======================================================================
 
 // //========================= OUR PRODUCT HIDDEN ========================
