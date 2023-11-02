@@ -1166,6 +1166,7 @@ window.addEventListener("resize", function () {
 
   anchorWidthGap = (anchorWidthGapWidth / 100) * anchorWidthGap;
   finishWidth = anchorWidthWrap - anchorWidthGap - roomsImgWidth - row1Width;
+  positionPag(finishWidth);
 });
 
 // // for (let index = 0; index < slideRows.length; index++) {

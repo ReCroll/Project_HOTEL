@@ -3278,6 +3278,10 @@ input {
   color: rgba(27, 59, 54, 0.32);
 }
 
+.swiper-pagination-fraction {
+  color: rgba(27, 59, 54, 0.32);
+}
+
 .swiper-pagination-current,
 .swiper-pagination-total {
   margin: 0 0.875rem 0 0;
@@ -3292,7 +3296,7 @@ input {
 }
 
 .swiper-pagination-current {
-  color: rgb(27, 59, 54);
+  color: rgba(27, 59, 54, 0.8);
 }
 
 .rooms__swiper {
