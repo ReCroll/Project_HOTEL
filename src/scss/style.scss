@@ -2885,7 +2885,7 @@ input {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-  column-gap: rem(122);
+  column-gap: calc(rem(32) + (122 - 32) * ((100vw - rem($_1024)) / ($_1440 - $_1024)));
   justify-content: space-between;
 
 
@@ -2895,6 +2895,10 @@ input {
   // width: calc(50% - 16px);
   // position: absolute;
   top: 0;
+}
+
+.rooms__content-swiper {
+  height: 100%;
 }
 
 ._img__swiper {
@@ -2916,9 +2920,14 @@ input {
 .rooms__content-slider {
   // width: 50%;
   overflow: hidden;
+  height: 100%;
+
   // position: absolute;
   // top: 0;
   // right: 0;
+  .slide__wrapper {
+    height: 100%;
+  }
 }
 
 .rooms__img-slider {
@@ -2945,6 +2954,11 @@ input {
 .rooms__swiper {
   position: relative;
   overflow: hidden;
+
+  .date__hotel {
+    margin-bottom: calc(rem(24) + (96 - 24) * ((100vw - rem($_1024)) / (1920 - $_1024)))
+  }
+
   // .swiper-cube-shadow::before {
   //     background: transparent;
   // }
@@ -2968,6 +2982,12 @@ input {
 }
 
 .swiper-pagination-current,
+.swiper-pagination-total {
+  margin: 0 rem(14) 0 0;
+  font-size: calc(rem(16) + (22 - 16) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+  line-height: calc(rem(22) + (26 - 22) * ((100vw - rem($_1024)) / (1920 - $_1024)));
+}
+
 .swiper-pagination-total {
   margin: 0 rem(14);
   font-size: calc(rem(16) + (22 - 16) * ((100vw - rem($_1024)) / (1920 - $_1024)));
@@ -3018,7 +3038,7 @@ input {
 .swiper-pagination {
   position: absolute;
   bottom: 0;
-  left: -50%;
+  left: 0%;
   z-index: 1;
 }
 
@@ -3056,7 +3076,7 @@ input {
 .slide__wrapper {
   display: flex;
   justify-content: space-between;
-  column-gap: prc(188, 1860);
+  // column-gap: prc(188, 1860);
   min-width: 0;
   // column-gap: rem(188);
 
@@ -3066,7 +3086,7 @@ input {
   flex: 0 1 auto;
   display: flex;
   justify-content: space-between;
-  column-gap: prc(188, 915);
+  column-gap: 9%;
   // // padding-top: prc(176, 1000);
   padding-top: calc(rem(50) + (176 - 50) * ((100vw - rem($_1440)) / (1920 - $_1440)));
   padding-bottom: calc(rem(119) + (126 - 119) * ((100vw - rem($_1024)) / ($_1440 - $_1024)));
@@ -3332,9 +3352,11 @@ input {
     padding-top: rem(300);
   }
 
+
+
   .slide__wrapper-rows {
     padding-top: rem(176);
-    padding-bottom: rem(126);
+    // padding-bottom: rem(126);
   }
 
   .big-text {
@@ -3357,6 +3379,15 @@ input {
 
 }
 
+@media (min-width: em($_1440)) {
+  .rooms__swipers-wrapper {
+    column-gap: rem(122);
+
+
+
+  }
+}
+
 @media (max-width: em($_1440)) {
   .rooms__container {
     row-gap: rem(150);
@@ -3377,6 +3408,12 @@ input {
 @media (max-width: em($_1024)) {
   .rooms__container {
     padding-top: rem(124);
+  }
+
+  ._img__swiper {
+    flex: 1 1 auto;
+    // width: calc(52% - 61px);
+    // height: 100%;
   }
 
   .slide__wrapper-rows {
@@ -3493,7 +3530,8 @@ input {
 
 
   .swiper-pagination {
-    display: inline-block;
+    // display: flex;
+    // width: 100px;
     bottom: -45px;
     right: 0%;
     left: auto;

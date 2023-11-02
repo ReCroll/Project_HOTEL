@@ -3218,12 +3218,16 @@ input {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-  column-gap: 7.625rem;
+  column-gap: calc(2rem + 90 * (100vw - 63.99875rem) / 416);
   justify-content: space-between;
 }
 
 .rooms__content-swiper-wrapper {
   top: 0;
+}
+
+.rooms__content-swiper {
+  height: 100%;
 }
 
 ._img__swiper {
@@ -3240,6 +3244,10 @@ input {
 
 .rooms__content-slider {
   overflow: hidden;
+  height: 100%;
+}
+.rooms__content-slider .slide__wrapper {
+  height: 100%;
 }
 
 .rooms__img-slider {
@@ -3261,6 +3269,9 @@ input {
   position: relative;
   overflow: hidden;
 }
+.rooms__swiper .date__hotel {
+  margin-bottom: calc(1.5rem + 72 * (100vw - 63.99875rem) / 896.02);
+}
 
 .rooms__slider .swiper-pagination {
   bottom: 0;
@@ -3268,6 +3279,12 @@ input {
 }
 
 .swiper-pagination-current,
+.swiper-pagination-total {
+  margin: 0 0.875rem 0 0;
+  font-size: calc(1rem + 6 * (100vw - 63.99875rem) / 896.02);
+  line-height: calc(1.375rem + 4 * (100vw - 63.99875rem) / 896.02);
+}
+
 .swiper-pagination-total {
   margin: 0 0.875rem;
   font-size: calc(1rem + 6 * (100vw - 63.99875rem) / 896.02);
@@ -3303,7 +3320,7 @@ input {
 .swiper-pagination {
   position: absolute;
   bottom: 0;
-  left: -50%;
+  left: 0%;
   z-index: 1;
 }
 
@@ -3316,7 +3333,6 @@ input {
 .slide__wrapper {
   display: flex;
   justify-content: space-between;
-  column-gap: 10.1075268817%;
   min-width: 0;
 }
 
@@ -3324,7 +3340,7 @@ input {
   flex: 0 1 auto;
   display: flex;
   justify-content: space-between;
-  column-gap: 20.5464480874%;
+  column-gap: 9%;
   padding-top: calc(3.125rem + 126 * (100vw - 89.99875rem) / 480.02);
   padding-bottom: calc(7.4375rem + 7 * (100vw - 63.99875rem) / 416);
   padding-bottom: 0px;
@@ -3551,7 +3567,6 @@ input {
   }
   .slide__wrapper-rows {
     padding-top: 11rem;
-    padding-bottom: 7.875rem;
   }
   .big-text {
     font-size: 1.625rem;
@@ -3565,6 +3580,11 @@ input {
   .swiper-pagination-total {
     font-size: 1.375rem;
     line-height: 1.625rem;
+  }
+}
+@media (min-width: 89.99875em) {
+  .rooms__swipers-wrapper {
+    column-gap: 7.625rem;
   }
 }
 @media (max-width: 89.99875em) {
@@ -3581,6 +3601,9 @@ input {
 @media (max-width: 63.99875em) {
   .rooms__container {
     padding-top: 7.75rem;
+  }
+  ._img__swiper {
+    flex: 1 1 auto;
   }
   .slide__wrapper-rows {
     padding-bottom: 7.4375rem;
@@ -3655,7 +3678,6 @@ input {
     flex-direction: column-reverse;
   }
   .swiper-pagination {
-    display: inline-block;
     bottom: -45px;
     right: 0%;
     left: auto;

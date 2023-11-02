@@ -143,14 +143,14 @@ mixin createSlideSwiperImgRooms(number)
 mixin createSlideSwiperContentRooms(number)
 	.swiper-slide 
 		.slide__wrapper
-			.slide__wrapper-rows._position-pag 
-				.slide__row-1.button__wrapper-transparent
+			.slide__wrapper-rows._anchor__width-gap
+				.slide__row-1.button__wrapper-transparent._row-1-width
 					.rooms__images._small
 						img.rooms__img._small(src=swiperRoomsImgSmall[number], alt="rooms")
 					a.position__mode(href=roomsLinks[number])
 						.rooms__info-button.button._big._transparent 
 							+buttonBig()
-				.slide__row-2 
+				.slide__row-2._position-pag 
 					span.date__hotel._rooms-date
 						img(src="@img/icons/Star_ellow.svg", alt="star")
 						p з 2023 року
